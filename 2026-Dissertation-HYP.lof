@@ -1,6 +1,12 @@
 \hbox {FIGURE}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces The Big House, taken from Michigan Radio's article about it \cite {the_big_house}}}{3}{figure.caption.16}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The Big House, taken from Michigan Radio's article about it \cite {the_big_house}}}{9}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {8pt}
-\addvspace {8pt}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Position analysis using the Method of Projections for: (a-b) a general quadrilateral linkage; (c) a unique configuration of a six-bar linkage; (d-e) Extent of actuation in terms of \% actuation of the DOF explained for two different geometries of quadrilateral linkage. \textbf {Note:} A Ground link is not explicitly shown in (a)-(c) but is assumed to be present between nodes A and D.}}{11}{figure.caption.19}%
