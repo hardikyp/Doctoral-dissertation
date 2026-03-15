@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  13 MAR 2026 21:54
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  15 MAR 2026 16:39
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/University of Michigan Dropbox/Hardik Patil/01-Projects/01-Dissertation/02-Manuscript/2026-Dissertation-HYP"
@@ -675,7 +675,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [0
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<00-front-material/frontispiece.png, id=119, 1284.8pt x 926.46124pt>
+<00-front-material/frontispiece.png, id=123, 1284.8pt x 926.46124pt>
 File: 00-front-material/frontispiece.png Graphic file (type png)
 <use 00-front-material/frontispiece.png>
 Package luatex.def Info: 00-front-material/frontispiece.png  used on input line 124.
@@ -700,35 +700,50 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.0'
 \openout4 = 2026-Dissertation-HYP.toc
 
 
-[6] (./2026-Dissertation-HYP.lof)
+[6] (./2026-Dissertation-HYP.lof
+
+[7])
 \tf@lof=\write5
 
 \openout5 = 2026-Dissertation-HYP.lof
 
 
-[7] (./2026-Dissertation-HYP.lot)
+[8] (./2026-Dissertation-HYP.lot)
 \tf@lot=\write6
 
 \openout6 = 2026-Dissertation-HYP.lot
 
 
-[8] (./2026-Dissertation-HYP.lop)
+[9] (./2026-Dissertation-HYP.lop)
 \tf@lop=\write7
 
 \openout7 = 2026-Dissertation-HYP.lop
 
 
-[9] (./2026-Dissertation-HYP.loapp)
+[10] (./2026-Dissertation-HYP.loapp)
 \tf@loapp=\write8
 
 \openout8 = 2026-Dissertation-HYP.loapp
 
 
-[10]
+[11]
 
-[11] (./00-front-material/abstract.tex)
+LaTeX Warning: Hyper reference `acro:TLA' on page xii undefined on input line 124.
 
-[12] (./02-chapters/01-chapter.tex
+
+LaTeX Warning: Hyper reference `acro:TLA' on page xii undefined on input line 124.
+
+
+LaTeX Warning: Hyper reference `acro:SOA' on page xii undefined on input line 124.
+
+
+LaTeX Warning: Hyper reference `acro:SOA' on page xii undefined on input line 124.
+
+
+
+[12] (./00-front-material/abstract.tex)
+
+[13] (./02-chapters/01-chapter.tex
 CHAPTER 1.
 ) (./02-chapters/02-chapter.tex
 
@@ -736,106 +751,161 @@ CHAPTER 1.
 
 ]
 CHAPTER 2.
-) (./02-chapters/03-chapter.tex
+
 
 [2
 
 ]
+
+LaTeX Warning: Reference `sec-data' on page 3 undefined on input line 9.
+
+
+
+[3]
+
+[4]
+
+[5]
+<01-figures/01-01-node-intro-rules-190mm.jpg, id=428, 540.5796pt x 312.9291pt>
+File: 01-figures/01-01-node-intro-rules-190mm.jpg Graphic file (type jpg)
+<use 01-figures/01-01-node-intro-rules-190mm.jpg>
+Package luatex.def Info: 01-figures/01-01-node-intro-rules-190mm.jpg  used on input line 30.
+(luatex.def)             Requested size: 469.75502pt x 271.93573pt.
+
+
+[6<./01-figures/01-01-node-intro-rules-190mm.jpg>]
+
+[7]
+<01-figures/01-02-node-intro-algo-190mm.jpg, id=446, 540.5796pt x 273.1806pt>
+File: 01-figures/01-02-node-intro-algo-190mm.jpg Graphic file (type jpg)
+<use 01-figures/01-02-node-intro-algo-190mm.jpg>
+Package luatex.def Info: 01-figures/01-02-node-intro-algo-190mm.jpg  used on input line 58.
+(luatex.def)             Requested size: 469.75502pt x 237.39424pt.
+
+
+[8<./01-figures/01-02-node-intro-algo-190mm.jpg>]
+
+[9]
+
+LaTeX Warning: Reference `appx-subsec-actuation' on page 10 undefined on input line 80.
+
+<01-figures/01-03-traditional-truss-190mm.jpg, id=461, 540.5796pt x 270.2898pt>
+File: 01-figures/01-03-traditional-truss-190mm.jpg Graphic file (type jpg)
+<use 01-figures/01-03-traditional-truss-190mm.jpg>
+Package luatex.def Info: 01-figures/01-03-traditional-truss-190mm.jpg  used on input line 89.
+(luatex.def)             Requested size: 469.75502pt x 234.88214pt.
+
+
+[10]
+
+[11<./01-figures/01-03-traditional-truss-190mm.jpg>]
+
+[12]
+
+[13]
+<01-figures/01-04-arbitrary-truss-190mm.jpg, id=492, 540.5796pt x 341.40347pt>
+File: 01-figures/01-04-arbitrary-truss-190mm.jpg Graphic file (type jpg)
+<use 01-figures/01-04-arbitrary-truss-190mm.jpg>
+Package luatex.def Info: 01-figures/01-04-arbitrary-truss-190mm.jpg  used on input line 115.
+(luatex.def)             Requested size: 469.75502pt x 296.68001pt.
+
+
+[14<./01-figures/01-04-arbitrary-truss-190mm.jpg>]
+
+[15]
+
+[16]
+<01-figures/01-05-out-of-plane-assembly.jpg, id=521, 540.5796pt x 168.3891pt>
+File: 01-figures/01-05-out-of-plane-assembly.jpg Graphic file (type jpg)
+<use 01-figures/01-05-out-of-plane-assembly.jpg>
+Package luatex.def Info: 01-figures/01-05-out-of-plane-assembly.jpg  used on input line 138.
+(luatex.def)             Requested size: 469.75502pt x 146.3303pt.
+
+
+[17<./01-figures/01-05-out-of-plane-assembly.jpg>]
+
+[18]
+<01-figures/01-06-cantilever-testing.jpg, id=541, 540.5796pt x 284.59926pt>
+File: 01-figures/01-06-cantilever-testing.jpg Graphic file (type jpg)
+<use 01-figures/01-06-cantilever-testing.jpg>
+Package luatex.def Info: 01-figures/01-06-cantilever-testing.jpg  used on input line 151.
+(luatex.def)             Requested size: 469.75502pt x 247.31708pt.
+
+
+[19<./01-figures/01-06-cantilever-testing.jpg>]
+
+[20]
+
+[21]
+<01-figures/01-07-warren-truss-testing.jpg, id=577, 540.5796pt x 284.59926pt>
+File: 01-figures/01-07-warren-truss-testing.jpg Graphic file (type jpg)
+<use 01-figures/01-07-warren-truss-testing.jpg>
+Package luatex.def Info: 01-figures/01-07-warren-truss-testing.jpg  used on input line 170.
+(luatex.def)             Requested size: 469.75502pt x 247.31708pt.
+
+
+[22<./01-figures/01-07-warren-truss-testing.jpg>]
+
+[23]
+
+[24]) (./02-chapters/03-chapter.tex
+
+[25]
+
+[26]
 CHAPTER 3.
 ) (./02-chapters/04-chapter.tex
 
-[3
+[27
 
 ]
 CHAPTER 4.
 ) (./02-chapters/05-chapter.tex
 
-[4
+[28
 
 ]
 CHAPTER 5.
 ) (./02-chapters/06-chapter.tex
 
-[5
+[29
 
 ]
 CHAPTER 6.
-) (./02-chapters/example_chapter_01.tex
-
-[6
-
-]
-CHAPTER 7.
-Package acronym Info: Label `acro:TLA' newly defined as it shall be overridden
-although it is yet undefined on input line 12.
-Package acronym Info: Label `acro:SOA' newly defined as it shall be overridden
-although it is yet undefined on input line 12.
-
-
-[7
-
-]
-Underfull \hbox (badness 1609) in paragraph at lines 30--30
-[]\TU/TimesNewRoman(0)/m/n/12 Ta-ble 7.1: |An ex-am-ple ta-ble with things in it. See [][]|   [][][] for a
- []
-
-
-Underfull \hbox (badness 1484) in paragraph at lines 30--30
-\TU/TimesNewRoman(0)/m/n/12 relatively-easy la-tex ta-ble gen-er-a-tor. Other op-tions in-clude [][]|   [][][] and
- []
-
-<02-chapters/figures/the_big_house.jpeg, id=284, 192.72pt x 127.9179pt>
-File: 02-chapters/figures/the_big_house.jpeg Graphic file (type jpg)
-<use 02-chapters/figures/the_big_house.jpeg>
-Package luatex.def Info: 02-chapters/figures/the_big_house.jpeg  used on input line 44.
-(luatex.def)             Requested size: 192.71951pt x 127.91757pt.
-) (./02-chapters/example_chapter_99.tex
-
-[8]
-
-[9<./02-chapters/figures/the_big_house.jpeg>]
-CHAPTER 8.
 )
 
-[10
+[30
 
 ] (./03-appendices/01-appendix.tex
 APPENDIX A.
-
-LaTeX Warning: Reference `subsec-algo' on page 11 undefined on input line 2.
-
-<01-figures/a1-linkage-kinematics-190mm.jpg, id=301, 540.5796pt x 241.81541pt>
+<01-figures/a1-linkage-kinematics-190mm.jpg, id=622, 540.5796pt x 241.81541pt>
 File: 01-figures/a1-linkage-kinematics-190mm.jpg Graphic file (type jpg)
 <use 01-figures/a1-linkage-kinematics-190mm.jpg>
-Package luatex.def Info: 01-figures/a1-linkage-kinematics-190mm.jpg  used on input line 5.
+Package luatex.def Info: 01-figures/a1-linkage-kinematics-190mm.jpg  used on input line 6.
 (luatex.def)             Requested size: 469.75502pt x 210.13786pt.
 
 
-[11
+[31
 
 
 <./01-figures/a1-linkage-kinematics-190mm.jpg>]
 
-[12]
+[32]
 
-[13])
+[33])
 
-[14] (./2026-Dissertation-HYP.bbl
-Underfull \hbox (badness 1226) in paragraph at lines 8--11
-[]\TU/TimesNewRoman(0)/m/n/12 Eric Con-stans and Karl B Dyer.  |   []   |   []   |   []   |   []   |   []   |   []
- []
+[34] (./2026-Dissertation-HYP.bbl
 
-
-Overfull \hbox (66.73662pt too wide) in paragraph at lines 13--16
-[]\TU/TimesNewRoman(0)/m/n/12 Ha-keem Jef-fer-son.  |   [].
- []
-
-)
-
-[15
+[35
 
 
-] (./2026-Dissertation-HYP.aux)
+]
+
+[36]
+
+[37])
+
+[38] (./2026-Dissertation-HYP.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -845,23 +915,23 @@ L3 programming layer <2025-03-26>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `2026-Dissertation-HYP.out' has not changed.
-(rerunfilecheck)             Checksum: 9EC3C2FBE0051EBF802CFABBB2E9C3DD;4797.
+(rerunfilecheck)             Checksum: D1DA4914DF0E98E302C9EEFBF0756B0F;6399.
 )
 
 Here is how much of LuaTeX's memory you used:
- 18734 strings out of 471941
+ 18981 strings out of 471941
  100000,953878 words of node,token memory allocated
- 576 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 11 attribute, 61 glue_spec, 11 attribute_list, 1 write, 3 pdf_action nodes
-   avail lists: 1:1,2:714,3:228,4:176,5:352,6:74,7:9103,8:32,9:843,10:29,11:673
- 44701 multiletter control sequences out of 65536+600000
- 52 fonts using 15002735 bytes
- 87i,12n,89p,1589b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 2026-Dissertation-HYP.pdf (29 pages, 1036998 bytes).
+ 664 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 21 attribute, 61 glue_spec, 21 attribute_list, 1 write, 11 pdf_action nodes
+   avail lists: 1:1,2:1159,3:410,4:200,5:609,6:75,7:8779,8:26,9:910,10:32,11:841
+ 44863 multiletter control sequences out of 65536+600000
+ 53 fonts using 15776183 bytes
+ 87i,12n,89p,2823b,688s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on 2026-Dissertation-HYP.pdf (53 pages, 9470095 bytes).
 
-PDF statistics: 423 PDF objects out of 1000 (max. 8388607)
- 364 compressed objects within 4 object streams
- 91 named destinations out of 1000 (max. 131072)
- 217 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 749 PDF objects out of 1000 (max. 8388607)
+ 660 compressed objects within 7 object streams
+ 170 named destinations out of 1000 (max. 131072)
+ 225 words of extra memory for PDF output out of 10000 (max. 100000000)
 

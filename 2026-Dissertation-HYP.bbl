@@ -1,27 +1,228 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{the_big_house}
-John~U Bacon.
-\newblock \href{https://www.michiganradio.org/post/michigan-athletic-department-embarrasses-while-trying-fill-seats}{Michigan Athletic Department embarrasses while trying to fill seats}, 2014.
+\bibitem{ario2013bridge}
+Ichiro Ario, Masatoshi Nakazawa, Yoshikazu Tanaka, Izumi Tanikura, and Syuichi Ono.
+\newblock Development of a prototype deployable bridge based on origami skill.
+\newblock {\em Automation in construction}, 32:104--111, 2013.
+
+\bibitem{baker1980bricard}
+J~Eddie Baker.
+\newblock An analysis of the bricard linkages.
+\newblock {\em Mechanism and machine Theory}, 15(4):267--286, 1980.
+
+\bibitem{barker1985complete}
+Clark~R Barker.
+\newblock A complete classification of planar four-bar linkages.
+\newblock {\em Mechanism and Machine Theory}, 20(6):535--554, 1985.
+
+\bibitem{brouwer2002arch}
+Greg Brouwer.
+\newblock Retractable arch will take center stage in salt lake.
+\newblock {\em Civil Engineering}, 72(1):15, 2002.
+
+\bibitem{chen2005bennett}
+Yan Chen and Zhong You.
+\newblock Mobile assemblies based on the bennett linkage.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 461(2056):1229--1245, 2005.
+
+\bibitem{clough1960finite}
+Ray~W Clough.
+\newblock The finite element in plane stress analysis.
+\newblock {\em Proc. 2\^{}< nd> ASCE Confer. On Electric Computation, 1960}, 1960.
 
 \bibitem{constans2018introduction}
 Eric Constans and Karl~B Dyer.
 \newblock {\em Introduction to mechanism design: With computer applications}.
 \newblock CRC Press, 2018.
 
-\bibitem{jefferson2019policing}
-Hakeem Jefferson.
-\newblock {\em \href{https://deepblue.lib.umich.edu/handle/2027.42/149919}{Policing Norms: Punishment and the Politics of Respectability among Black Americans}}.
-\newblock PhD thesis, University of Michigan, 2019.
+\bibitem{farshad1978iranian}
+M.~Farshad and D.~Isfahanian.
+\newblock Iranian plateau - the homeland of original truss structures.
+\newblock {\em Journal of the American Oriental Society}, 98(3):248--250, 1978.
 
-\bibitem{ong1997gilbert}
-Chong~Jin Ong and Elmer~G Gilbert.
-\newblock \href{https://ieeexplore.ieee.org/abstract/document/614298}{The Gilbert-Johnson-Keerthi distance algorithm: A fast version for incremental motions}.
-\newblock In {\em Proceedings of International Conference on Robotics and Automation}, volume~2, pages 1183--1189. IEEE, 1997.
+\bibitem{garcia2021limitations}
+Carlos~Jos{\'e} Garc{\'\i}a-Mora and Jose S{\'a}nchez-S{\'a}nchez.
+\newblock Limitations in the design of deployable structures with straight scissors using identical elements.
+\newblock {\em International Journal of Solids and Structures}, 230:111171, 2021.
 
-\bibitem{shannon1948mathematical}
-Claude~E Shannon.
-\newblock \href{https://ieeexplore.ieee.org/abstract/document/6773024}{A mathematical theory of communication}.
-\newblock {\em The Bell system technical journal}, 27(3):379--423, 1948.
+\bibitem{gasparini1989early}
+Dario~A Gasparini and Caterina Provost.
+\newblock Early nineteenth century developments in truss design in britain, france and the united states.
+\newblock {\em Construction history}, 5:21--33, 1989.
+
+\bibitem{giersch2010deployment}
+Louis~R Giersch and Kevin Knarr.
+\newblock Deployment of a curved truss.
+\newblock Technical report, 2010.
+
+\bibitem{grashof1883voss}
+Franz Grashof.
+\newblock {\em Theoretische Maschinenlehre: Theorie der Getriebe und der mechanischen Me{\ss}instrumente}, volume~2.
+\newblock Voss, 1883.
+
+\bibitem{han2019antenna}
+Bo~Han, Yundou Xu, Jiantao Yao, Dong Zheng, Yongjie Li, and Yongsheng Zhao.
+\newblock Design and analysis of a scissors double-ring truss deployable mechanism for space antennas.
+\newblock {\em Aerospace Science and Technology}, 93:105357, 2019.
+
+\bibitem{hibbeler2006structural}
+Russell~Charles Hibbeler and Kiang-Hwee Tan.
+\newblock {\em Structural analysis}.
+\newblock Pearson Prentice Hall Upper Saddle River, 2006.
+
+\bibitem{hoberman1991scissor}
+Charles Hoberman.
+\newblock Radial expansion/retraction truss structures, June~18 1991.
+\newblock US Patent 5,024,031.
+
+\bibitem{kassabian1999roof}
+PE~Kassabian, Zhong You, and Sergio Pellegrino.
+\newblock Retractable roof structures.
+\newblock {\em Proceedings of the Institution of Civil Engineers-Structures and Buildings}, 134(1):45--56, 1999.
+
+\bibitem{kim2014opt}
+Suh~In Kim and Yoon~Young Kim.
+\newblock Topology optimization of planar linkage mechanisms.
+\newblock {\em International Journal for Numerical Methods in Engineering}, 98(4):265--286, 2014.
+
+\bibitem{kim2021scissor}
+Tae-Hyun Kim, Jong-Eun Suh, and Jae-Hung Han.
+\newblock Deployable truss structure with flat-form storability using scissor-like elements.
+\newblock {\em Mechanism and Machine Theory}, 159:104252, 2021.
+
+\bibitem{kiper2008polyhedra}
+G{\"o}khan Kiper, Eres S{\"o}ylemez, and AU~{\"O}zg{\"u}r Ki{\c{s}}isel.
+\newblock A family of deployable polygons and polyhedra.
+\newblock {\em Mechanism and Machine Theory}, 43(5):627--640, 2008.
+
+\bibitem{li2023opt}
+Yaxin Li and Sudarshan Krishnan.
+\newblock Geometric design and optimization of scissor-type deployable structures.
+\newblock {\em Journal of Building Engineering}, 65:105724, 2023.
+
+\bibitem{liu2009myard}
+SY~Liu and Yan Chen.
+\newblock Myard linkage and its mobile assemblies.
+\newblock {\em Mechanism and Machine Theory}, 44(10):1950--1963, 2009.
+
+\bibitem{liu2022tensegrity}
+Yixiang Liu, Qing Bi, Xiaoming Yue, Jiang Wu, Bin Yang, and Yibin Li.
+\newblock A review on tensegrity structures-based robots.
+\newblock {\em Mechanism and Machine Theory}, 168:104571, 2022.
+
+\bibitem{lum2000laser}
+KCP Lum, SL~Ng, and I~Black.
+\newblock Co2 laser cutting of mdf: 1. determination of process parameter settings.
+\newblock {\em Optics \& laser technology}, 32(1):67--76, 2000.
+
+\bibitem{mira2014arch}
+Lara~Alegria Mira, Ashley~P Thrall, and Niels De~Temmerman.
+\newblock Deployable scissor arch for transitional shelters.
+\newblock {\em Automation in Construction}, 43:123--131, 2014.
+
+\bibitem{miura1984design}
+Koryo Miura.
+\newblock Design and operation of a deployable truss structure.
+\newblock In {\em NASA. Goddard Space Flight Center The 18th Aerospace Mech. Symp.}, 1984.
+
+\bibitem{mushtaq2020laser}
+Ray~Tahir Mushtaq, Yanen Wang, Mudassar Rehman, Aqib~Mashood Khan, and Mozammel Mia.
+\newblock State-of-the-art and trends in co2 laser cutting of polymeric materials—a review.
+\newblock {\em Materials}, 13(17):3839, 2020.
+
+\bibitem{packman2005rolling}
+R~Packman.
+\newblock The rolling bridge, paddington basin.
+\newblock {\em Structural Engineer}, 83(2), 2005.
+
+\bibitem{patel2007scissor}
+Jiten Patel and GK~Ananthasuresh.
+\newblock A kinematic theory for radially foldable planar linkages.
+\newblock {\em International journal of solids and structures}, 44(18-19):6279--6298, 2007.
+
+\bibitem{qi2017bricard}
+Xiaozhi Qi, Hailin Huang, Zhihuai Miao, Bing Li, and Zongquan Deng.
+\newblock Design and mobility analysis of large deployable mechanisms based on plane-symmetric bricard linkage.
+\newblock {\em Journal of Mechanical Design}, 139(2):022302, 2017.
+
+\bibitem{ross2010wood}
+Robert~J Ross et~al.
+\newblock Wood handbook: wood as an engineering material.
+\newblock {\em USDA Forest Service, Forest Products Laboratory, General Technical Report FPL-GTR-190, 2010: 509 p. 1 v.}, 190, 2010.
+
+\bibitem{sigmund2013topology}
+Ole Sigmund and Kurt Maute.
+\newblock Topology optimization approaches: A comparative review.
+\newblock {\em Structural and multidisciplinary optimization}, 48(6):1031--1055, 2013.
+
+\bibitem{snelson1965tensegrity}
+Kenneth~D Snelson.
+\newblock Continuous tension, discontinuous compression structures, February~16 1965.
+\newblock US Patent 3,169,611.
+
+\bibitem{sofla2009shape}
+AYN Sofla, DM~Elzey, and HNG Wadley.
+\newblock Shape morphing hinged truss structures.
+\newblock {\em Smart Materials and Structures}, 18(6):065012, 2009.
+
+\bibitem{stolpe2016truss}
+Mathias Stolpe.
+\newblock Truss optimization with discrete design variables: a critical review.
+\newblock {\em Structural and Multidisciplinary Optimization}, 53:349--374, 2016.
+
+\bibitem{studio2002rolling}
+Heatherwick Studio.
+\newblock Rolling bridge.
+\newblock {\em Retrieved May}, 30:2020, 2002.
+
+\bibitem{thorne2017structural}
+Robert Thorne.
+\newblock {\em Structural Iron and Steel, 1850--1900}.
+\newblock Routledge, 2017.
+
+\bibitem{tibert2002tensegrity}
+Gunnar Tibert.
+\newblock {\em Deployable tensegrity structures for space applications}.
+\newblock PhD thesis, KTH, 2002.
+
+\bibitem{turner1956stiffness}
+M~Jon Turner, Ray~W Clough, Harold~C Martin, and LJ~Topp.
+\newblock Stiffness and deflection analysis of complex structures.
+\newblock {\em journal of the Aeronautical Sciences}, 23(9):805--823, 1956.
+
+\bibitem{tyrrell1970convex}
+R~Tyrrell~Rockafellar.
+\newblock Convex analysis.
+\newblock {\em Princeton mathematical series}, 28, 1970.
+
+\bibitem{ullah2022topopt}
+Zahur Ullah, Baseer Ullah, and Wajid Khan.
+\newblock Proportional topology optimisation with maximum entropy-based meshless method for minimum compliance and stress constrained problems.
+\newblock {\em Engineering with Computers}, 38(6):5541--5561, 2022.
+
+\bibitem{wang2015design}
+Yan Wang, Rongqiang Liu, Hui Yang, Qiang Cong, and Hongwei Guo.
+\newblock Design and deployment analysis of modular deployable structure for large antennas.
+\newblock {\em Journal of Spacecraft and Rockets}, 52(4):1101--1111, 2015.
+
+\bibitem{yao2023dynamic}
+Huaibo Yao, Yixin Huang, Wenlai Ma, Lei Liang, and Yang Zhao.
+\newblock Dynamic analysis of a large deployable space truss structure considering semi-rigid joints.
+\newblock {\em Aerospace}, 10(9):821, 2023.
+
+\bibitem{you1997scissor}
+Zhong You and Sergio Pellegrino.
+\newblock Foldable bar structures.
+\newblock {\em International Journal of Solids and Structures}, 34(15):1825--1847, 1997.
+
+\bibitem{zegard2020continuum}
+Tomas Zegard, Christian Hartz, Arek Mazurek, and William~F Baker.
+\newblock Advancing building engineering through structural and topology optimization.
+\newblock {\em Structural and Multidisciplinary Optimization}, 62(2):915--935, 2020.
+
+\bibitem{zegard2014grand}
+Tom{\'a}s Zegard and Glaucio~H Paulino.
+\newblock Grand—ground structure based topology optimization for arbitrary 2d domains using matlab.
+\newblock {\em Structural and Multidisciplinary Optimization}, 50:861--882, 2014.
 
 \end{thebibliography}
