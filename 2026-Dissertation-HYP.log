@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  15 MAR 2026 16:39
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  15 MAR 2026 18:06
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/University of Michigan Dropbox/Hardik Patil/01-Projects/01-Dissertation/02-Manuscript/2026-Dissertation-HYP"
@@ -473,7 +473,7 @@ Package: ulem 2019/11/18
 \ULdepth=\dimen194
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 897.
-) (./packages.tex) (c:/texlive/2025/texmf-dist/tex/latex/blindtext/blindtext.sty
+) (./packages.tex (c:/texlive/2025/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
  (c:/texlive/2025/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -496,31 +496,83 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@randommax=\count331
 \c@blind@pangramcount=\count332
 \c@blind@pangrammax=\count333
+) (c:/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen195
+\ar@mcellbox=\box62
+\extrarowheight=\dimen196
+\NC@list=\toks46
+\extratabsurround=\skip76
+\backup@length=\skip77
+\ar@cellbox=\box63
+)
+\TX@col@width=\dimen197
+\TX@old@table=\dimen198
+\TX@old@col=\dimen199
+\TX@target=\dimen256
+\TX@delta=\dimen257
+\TX@cols=\count334
+\TX@ftn=\toks47
+) (c:/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip78
+\multirow@cntb=\count335
+\multirow@dima=\skip79
+\bigstrutjot=\dimen258
+) (c:/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip80
+\LTright=\skip81
+\LTpre=\skip82
+\LTpost=\skip83
+\LTchunksize=\count336
+\LTcapwidth=\dimen259
+\LT@head=\box64
+\LT@firsthead=\box65
+\LT@foot=\box66
+\LT@lastfoot=\box67
+\LT@gbox=\box68
+\LT@cols=\count337
+\LT@rows=\count338
+\c@LT@tables=\count339
+\c@LT@chunks=\count340
+\LT@p@ftn=\toks48
+)) (c:/texlive/2025/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/lmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 ) (c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty (c:/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (c:/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2025-03-26 L3 programming layer (loader) 
  (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2025-03-14 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count334
+\l__color_backend_stack_int=\count341
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xparse 2024-08-16 L3 Experimental document command parser
 )
 Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
 Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX (c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
 Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-\l__fontspec_script_int=\count335
-\l__fontspec_language_int=\count336
-\l__fontspec_strnum_int=\count337
-\l__fontspec_tmp_int=\count338
-\l__fontspec_tmpa_int=\count339
-\l__fontspec_tmpb_int=\count340
-\l__fontspec_tmpc_int=\count341
-\l__fontspec_em_int=\count342
-\l__fontspec_emdef_int=\count343
-\l__fontspec_strong_int=\count344
-\l__fontspec_strongdef_int=\count345
-\l__fontspec_tmpa_dim=\dimen195
-\l__fontspec_tmpb_dim=\dimen196
-\l__fontspec_tmpc_dim=\dimen197
+\l__fontspec_script_int=\count342
+\l__fontspec_language_int=\count343
+\l__fontspec_strnum_int=\count344
+\l__fontspec_tmp_int=\count345
+\l__fontspec_tmpa_int=\count346
+\l__fontspec_tmpb_int=\count347
+\l__fontspec_tmpc_int=\count348
+\l__fontspec_em_int=\count349
+\l__fontspec_emdef_int=\count350
+\l__fontspec_strong_int=\count351
+\l__fontspec_strongdef_int=\count352
+\l__fontspec_tmpa_dim=\dimen260
+\l__fontspec_tmpb_dim=\dimen261
+\l__fontspec_tmpc_dim=\dimen262
  (c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
@@ -555,7 +607,17 @@ Package fontspec Info:
 (fontspec)             <->"name:Times New
 (fontspec)             Roman/BI:mode=node;script=latn;language=dflt;+tlig;+smcp;"
 
- (./2026-Dissertation-HYP.aux)
+ (./2026-Dissertation-HYP.aux
+
+LaTeX Warning: Label `sec-conclusion' multiply defined.
+
+
+LaTeX Warning: Label `sec-discussion' multiply defined.
+
+
+LaTeX Warning: Label `sec-conclusion' multiply defined.
+
+)
 \openout1 = 2026-Dissertation-HYP.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
@@ -615,17 +677,17 @@ LaTeX Font Info:    ... okay on input line 124.
 
 (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen198
-\scratchbox=\box62
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen199
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count353
+\scratchdimen=\dimen263
+\scratchbox=\box69
+\nofMPsegments=\count354
+\nofMParguments=\count355
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count356
+\MPscratchDim=\dimen264
+\MPnumerator=\count357
+\makeMPintoPDFobject=\count358
+\everyMPtoPDFconversion=\toks50
 ) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -635,6 +697,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+ (c:/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 124.
  (./2026-Dissertation-HYP.out) (./2026-Dissertation-HYP.out)
@@ -675,7 +741,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [0
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<00-front-material/frontispiece.png, id=123, 1284.8pt x 926.46124pt>
+<00-front-material/frontispiece.png, id=159, 1284.8pt x 926.46124pt>
 File: 00-front-material/frontispiece.png Graphic file (type png)
 <use 00-front-material/frontispiece.png>
 Package luatex.def Info: 00-front-material/frontispiece.png  used on input line 124.
@@ -700,50 +766,56 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.0'
 \openout4 = 2026-Dissertation-HYP.toc
 
 
-[6] (./2026-Dissertation-HYP.lof
+[6]
 
-[7])
+[7] (./2026-Dissertation-HYP.lof
+
+[8]
+
+[9]
+
+[10])
 \tf@lof=\write5
 
 \openout5 = 2026-Dissertation-HYP.lof
 
 
-[8] (./2026-Dissertation-HYP.lot)
+[11] (./2026-Dissertation-HYP.lot)
 \tf@lot=\write6
 
 \openout6 = 2026-Dissertation-HYP.lot
 
 
-[9] (./2026-Dissertation-HYP.lop)
+[12] (./2026-Dissertation-HYP.lop)
 \tf@lop=\write7
 
 \openout7 = 2026-Dissertation-HYP.lop
 
 
-[10] (./2026-Dissertation-HYP.loapp)
+[13] (./2026-Dissertation-HYP.loapp)
 \tf@loapp=\write8
 
 \openout8 = 2026-Dissertation-HYP.loapp
 
 
-[11]
+[14]
 
-LaTeX Warning: Hyper reference `acro:TLA' on page xii undefined on input line 124.
-
-
-LaTeX Warning: Hyper reference `acro:TLA' on page xii undefined on input line 124.
+LaTeX Warning: Hyper reference `acro:TLA' on page xv undefined on input line 124.
 
 
-LaTeX Warning: Hyper reference `acro:SOA' on page xii undefined on input line 124.
+LaTeX Warning: Hyper reference `acro:TLA' on page xv undefined on input line 124.
 
 
-LaTeX Warning: Hyper reference `acro:SOA' on page xii undefined on input line 124.
+LaTeX Warning: Hyper reference `acro:SOA' on page xv undefined on input line 124.
+
+
+LaTeX Warning: Hyper reference `acro:SOA' on page xv undefined on input line 124.
 
 
 
-[12] (./00-front-material/abstract.tex)
+[15] (./00-front-material/abstract.tex)
 
-[13] (./02-chapters/01-chapter.tex
+[16] (./02-chapters/01-chapter.tex
 CHAPTER 1.
 ) (./02-chapters/02-chapter.tex
 
@@ -757,155 +829,383 @@ CHAPTER 2.
 
 ]
 
-LaTeX Warning: Reference `sec-data' on page 3 undefined on input line 9.
-
-
-
 [3]
+
+LaTeX Warning: Reference `sec-data' on page 4 undefined on input line 9.
+
+
 
 [4]
 
 [5]
-<01-figures/01-01-node-intro-rules-190mm.jpg, id=428, 540.5796pt x 312.9291pt>
-File: 01-figures/01-01-node-intro-rules-190mm.jpg Graphic file (type jpg)
-<use 01-figures/01-01-node-intro-rules-190mm.jpg>
-Package luatex.def Info: 01-figures/01-01-node-intro-rules-190mm.jpg  used on input line 30.
+
+[6]
+<01-figures/02-01-node-intro-rules-190mm.jpg, id=617, 540.5796pt x 312.9291pt>
+File: 01-figures/02-01-node-intro-rules-190mm.jpg Graphic file (type jpg)
+<use 01-figures/02-01-node-intro-rules-190mm.jpg>
+Package luatex.def Info: 01-figures/02-01-node-intro-rules-190mm.jpg  used on input line 30.
 (luatex.def)             Requested size: 469.75502pt x 271.93573pt.
 
 
-[6<./01-figures/01-01-node-intro-rules-190mm.jpg>]
-
 [7]
-<01-figures/01-02-node-intro-algo-190mm.jpg, id=446, 540.5796pt x 273.1806pt>
-File: 01-figures/01-02-node-intro-algo-190mm.jpg Graphic file (type jpg)
-<use 01-figures/01-02-node-intro-algo-190mm.jpg>
-Package luatex.def Info: 01-figures/01-02-node-intro-algo-190mm.jpg  used on input line 58.
+
+[8<./01-figures/02-01-node-intro-rules-190mm.jpg>]
+<01-figures/02-02-node-intro-algo-190mm.jpg, id=633, 540.5796pt x 273.1806pt>
+File: 01-figures/02-02-node-intro-algo-190mm.jpg Graphic file (type jpg)
+<use 01-figures/02-02-node-intro-algo-190mm.jpg>
+Package luatex.def Info: 01-figures/02-02-node-intro-algo-190mm.jpg  used on input line 58.
 (luatex.def)             Requested size: 469.75502pt x 237.39424pt.
 
 
-[8<./01-figures/01-02-node-intro-algo-190mm.jpg>]
-
 [9]
 
-LaTeX Warning: Reference `appx-subsec-actuation' on page 10 undefined on input line 80.
+[10<./01-figures/02-02-node-intro-algo-190mm.jpg>]
 
-<01-figures/01-03-traditional-truss-190mm.jpg, id=461, 540.5796pt x 270.2898pt>
-File: 01-figures/01-03-traditional-truss-190mm.jpg Graphic file (type jpg)
-<use 01-figures/01-03-traditional-truss-190mm.jpg>
-Package luatex.def Info: 01-figures/01-03-traditional-truss-190mm.jpg  used on input line 89.
+[11]
+
+LaTeX Warning: Reference `appx-subsec-actuation' on page 12 undefined on input line 80.
+
+
+
+[12]
+<01-figures/02-03-traditional-truss-190mm.jpg, id=657, 540.5796pt x 270.2898pt>
+File: 01-figures/02-03-traditional-truss-190mm.jpg Graphic file (type jpg)
+<use 01-figures/02-03-traditional-truss-190mm.jpg>
+Package luatex.def Info: 01-figures/02-03-traditional-truss-190mm.jpg  used on input line 89.
 (luatex.def)             Requested size: 469.75502pt x 234.88214pt.
 
 
-[10]
+[13<./01-figures/02-03-traditional-truss-190mm.jpg>]
 
-[11<./01-figures/01-03-traditional-truss-190mm.jpg>]
-
-[12]
-
-[13]
-<01-figures/01-04-arbitrary-truss-190mm.jpg, id=492, 540.5796pt x 341.40347pt>
-File: 01-figures/01-04-arbitrary-truss-190mm.jpg Graphic file (type jpg)
-<use 01-figures/01-04-arbitrary-truss-190mm.jpg>
-Package luatex.def Info: 01-figures/01-04-arbitrary-truss-190mm.jpg  used on input line 115.
-(luatex.def)             Requested size: 469.75502pt x 296.68001pt.
-
-
-[14<./01-figures/01-04-arbitrary-truss-190mm.jpg>]
+[14]
 
 [15]
 
 [16]
-<01-figures/01-05-out-of-plane-assembly.jpg, id=521, 540.5796pt x 168.3891pt>
-File: 01-figures/01-05-out-of-plane-assembly.jpg Graphic file (type jpg)
-<use 01-figures/01-05-out-of-plane-assembly.jpg>
-Package luatex.def Info: 01-figures/01-05-out-of-plane-assembly.jpg  used on input line 138.
+<01-figures/02-04-arbitrary-truss-190mm.jpg, id=687, 540.5796pt x 341.40347pt>
+File: 01-figures/02-04-arbitrary-truss-190mm.jpg Graphic file (type jpg)
+<use 01-figures/02-04-arbitrary-truss-190mm.jpg>
+Package luatex.def Info: 01-figures/02-04-arbitrary-truss-190mm.jpg  used on input line 115.
+(luatex.def)             Requested size: 469.75502pt x 296.68001pt.
+
+
+[17]
+
+[18<./01-figures/02-04-arbitrary-truss-190mm.jpg>]
+
+[19]
+
+[20]
+<01-figures/02-05-out-of-plane-assembly.jpg, id=721, 540.5796pt x 168.3891pt>
+File: 01-figures/02-05-out-of-plane-assembly.jpg Graphic file (type jpg)
+<use 01-figures/02-05-out-of-plane-assembly.jpg>
+Package luatex.def Info: 01-figures/02-05-out-of-plane-assembly.jpg  used on input line 138.
 (luatex.def)             Requested size: 469.75502pt x 146.3303pt.
 
 
-[17<./01-figures/01-05-out-of-plane-assembly.jpg>]
-
-[18]
-<01-figures/01-06-cantilever-testing.jpg, id=541, 540.5796pt x 284.59926pt>
-File: 01-figures/01-06-cantilever-testing.jpg Graphic file (type jpg)
-<use 01-figures/01-06-cantilever-testing.jpg>
-Package luatex.def Info: 01-figures/01-06-cantilever-testing.jpg  used on input line 151.
-(luatex.def)             Requested size: 469.75502pt x 247.31708pt.
-
-
-[19<./01-figures/01-06-cantilever-testing.jpg>]
-
-[20]
-
 [21]
-<01-figures/01-07-warren-truss-testing.jpg, id=577, 540.5796pt x 284.59926pt>
-File: 01-figures/01-07-warren-truss-testing.jpg Graphic file (type jpg)
-<use 01-figures/01-07-warren-truss-testing.jpg>
-Package luatex.def Info: 01-figures/01-07-warren-truss-testing.jpg  used on input line 170.
+
+[22<./01-figures/02-05-out-of-plane-assembly.jpg>]
+<01-figures/02-06-cantilever-testing.jpg, id=741, 540.5796pt x 284.59926pt>
+File: 01-figures/02-06-cantilever-testing.jpg Graphic file (type jpg)
+<use 01-figures/02-06-cantilever-testing.jpg>
+Package luatex.def Info: 01-figures/02-06-cantilever-testing.jpg  used on input line 151.
 (luatex.def)             Requested size: 469.75502pt x 247.31708pt.
 
-
-[22<./01-figures/01-07-warren-truss-testing.jpg>]
 
 [23]
 
-[24]) (./02-chapters/03-chapter.tex
+[24<./01-figures/02-06-cantilever-testing.jpg>]
 
 [25]
 
 [26]
-CHAPTER 3.
-) (./02-chapters/04-chapter.tex
+<01-figures/02-07-warren-truss-testing.jpg, id=782, 540.5796pt x 284.59926pt>
+File: 01-figures/02-07-warren-truss-testing.jpg Graphic file (type jpg)
+<use 01-figures/02-07-warren-truss-testing.jpg>
+Package luatex.def Info: 01-figures/02-07-warren-truss-testing.jpg  used on input line 170.
+(luatex.def)             Requested size: 469.75502pt x 247.31708pt.
 
-[27
+
+[27]
+
+[28<./01-figures/02-07-warren-truss-testing.jpg>]
+
+[29]
+
+[30]
+
+[31]) (./02-chapters/03-chapter.tex
+
+[32]
+
+[33]
+CHAPTER 3.
+
+
+[34
 
 ]
+
+[35]
+<01-figures/03-01-spring-stiffness-80mm.jpg, id=878, 223.91655pt x 108.04366pt>
+File: 01-figures/03-01-spring-stiffness-80mm.jpg Graphic file (type jpg)
+<use 01-figures/03-01-spring-stiffness-80mm.jpg>
+Package luatex.def Info: 01-figures/03-01-spring-stiffness-80mm.jpg  used on input line 20.
+(luatex.def)             Requested size: 223.916pt x 108.04338pt.
+
+
+[36<./01-figures/03-01-spring-stiffness-80mm.jpg>]
+
+[37]
+
+[38]
+Overfull \hbox (17.7847pt too wide) detected at line 96
+[]
+ []
+
+
+
+[39]
+
+[40]
+
+[41]
+<01-figures/03-02-validation-160mm.jpg, id=935, 455.301pt x 247.52475pt>
+File: 01-figures/03-02-validation-160mm.jpg Graphic file (type jpg)
+<use 01-figures/03-02-validation-160mm.jpg>
+Package luatex.def Info: 01-figures/03-02-validation-160mm.jpg  used on input line 132.
+(luatex.def)             Requested size: 455.29988pt x 247.52414pt.
+
+
+[42]
+
+[43<./01-figures/03-02-validation-160mm.jpg>]
+
+[44]
+<01-figures/03-03-reconfigurable-truss-80mm.jpg, id=959, 227.6505pt x 204.88545pt>
+File: 01-figures/03-03-reconfigurable-truss-80mm.jpg Graphic file (type jpg)
+<use 01-figures/03-03-reconfigurable-truss-80mm.jpg>
+Package luatex.def Info: 01-figures/03-03-reconfigurable-truss-80mm.jpg  used on input line 152.
+(luatex.def)             Requested size: 227.64993pt x 204.88495pt.
+
+
+[45]) (./02-chapters/04-chapter.tex
+
+[46<./01-figures/03-03-reconfigurable-truss-80mm.jpg>]
+
+[47]
 CHAPTER 4.
 ) (./02-chapters/05-chapter.tex
 
-[28
+[48
 
 ]
 CHAPTER 5.
-) (./02-chapters/06-chapter.tex
 
-[29
+
+[49
 
 ]
+
+[50]
+
+[51]
+
+[52]
+<01-figures/05-01-geometry-and-hull-folding-190mm.jpg, id=1045, 3738.96875pt x 838.13126pt>
+File: 01-figures/05-01-geometry-and-hull-folding-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-01-geometry-and-hull-folding-190mm.jpg>
+Package luatex.def Info: 01-figures/05-01-geometry-and-hull-folding-190mm.jpg  used on input line 26.
+(luatex.def)             Requested size: 469.75502pt x 105.29048pt.
+
+
+[53<./01-figures/05-01-geometry-and-hull-folding-190mm.jpg>]
+
+[54]
+<01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg, id=1070, 3700.82625pt x 2157.05875pt>
+File: 01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg>
+Package luatex.def Info: 01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg  used on input line 44.
+(luatex.def)             Requested size: 469.75502pt x 273.77884pt.
+
+
+[55<./01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg>]
+<01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg, id=1081, 3757.03625pt x 1481.535pt>
+File: 01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg>
+Package luatex.def Info: 01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg  used on input line 58.
+(luatex.def)             Requested size: 469.75502pt x 185.23663pt.
+
+
+[56]
+
+[57<./01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg>]
+
+[58]
+<01-figures/05-04-powersea-190mm.jpg, id=1101, 3605.47pt x 851.18pt>
+File: 01-figures/05-04-powersea-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-04-powersea-190mm.jpg>
+Package luatex.def Info: 01-figures/05-04-powersea-190mm.jpg  used on input line 79.
+(luatex.def)             Requested size: 469.75502pt x 110.89105pt.
+
+
+[59<./01-figures/05-04-powersea-190mm.jpg>]
+
+[60]
+Overfull \hbox (153.81612pt too wide) in paragraph at lines 104--104
+[]|[]|  
+ []
+
+
+Overfull \hbox (7.96838pt too wide) in paragraph at lines 104--104
+ []|\TU/TimesNewRoman(0)/m/n/12 62\TU/TimesNewRoman(0)/m/n/10.95 (%$\OML/lmm/m/it/10.95 L[]$\TU/TimesNewRoman(0)/m/n/10.95 )| 
+ []
+
+
+Overfull \hbox (7.96838pt too wide) in paragraph at lines 104--104
+ []|\TU/TimesNewRoman(0)/m/n/12 25\TU/TimesNewRoman(0)/m/n/10.95 (%$\OML/lmm/m/it/10.95 L[]$\TU/TimesNewRoman(0)/m/n/10.95 )| 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+
+[61]
+<01-figures/05-05-calm-cco-eval-190mm.jpg, id=1140, 3790.16pt x 2551.5325pt>
+File: 01-figures/05-05-calm-cco-eval-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-05-calm-cco-eval-190mm.jpg>
+Package luatex.def Info: 01-figures/05-05-calm-cco-eval-190mm.jpg  used on input line 117.
+(luatex.def)             Requested size: 469.75502pt x 316.21545pt.
+
+
+[62]
+
+[63<./01-figures/05-05-calm-cco-eval-190mm.jpg>]
+<01-figures/05-06-wavy-cco-eval-190mm.jpg, id=1162, 3631.5675pt x 2542.49875pt>
+File: 01-figures/05-06-wavy-cco-eval-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-06-wavy-cco-eval-190mm.jpg>
+Package luatex.def Info: 01-figures/05-06-wavy-cco-eval-190mm.jpg  used on input line 126.
+(luatex.def)             Requested size: 469.75502pt x 328.86824pt.
+
+
+[64]
+
+[65<./01-figures/05-06-wavy-cco-eval-190mm.jpg>]
+Overfull \hbox (59.99992pt too wide) in paragraph at lines 147--147
+[]|[]|  
+ []
+
+
+
+[66]
+
+[67]
+Overfull \hbox (161.04247pt too wide) in paragraph at lines 175--175
+[]|[]|  
+ []
+
+
+
+[68]
+
+[69]
+<01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg, id=1211, 3740.97626pt x 2558.55875pt>
+File: 01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg>
+Package luatex.def Info: 01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg  used on input line 186.
+(luatex.def)             Requested size: 469.75502pt x 321.26355pt.
+
+
+[70<./01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg>]
+<01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg, id=1217, 3733.95pt x 3031.325pt>
+File: 01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg>
+Package luatex.def Info: 01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg  used on input line 198.
+(luatex.def)             Requested size: 469.75502pt x 381.31992pt.
+
+
+[71]
+
+[72<./01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg>]
+
+[73]
+<01-figures/05-09-prototype-scaling-up-190mm.jpg, id=1232, 3754.025pt x 1848.9075pt>
+File: 01-figures/05-09-prototype-scaling-up-190mm.jpg Graphic file (type jpg)
+<use 01-figures/05-09-prototype-scaling-up-190mm.jpg>
+Package luatex.def Info: 01-figures/05-09-prototype-scaling-up-190mm.jpg  used on input line 216.
+(luatex.def)             Requested size: 469.75502pt x 231.33856pt.
+
+
+[74]
+
+[75<./01-figures/05-09-prototype-scaling-up-190mm.jpg>]
+
+[76]
+
+[77]
+
+[78]) (./02-chapters/06-chapter.tex
+
+[79]
+
+[80]
 CHAPTER 6.
 )
 
-[30
+[81
 
 ] (./03-appendices/01-appendix.tex
 APPENDIX A.
-<01-figures/a1-linkage-kinematics-190mm.jpg, id=622, 540.5796pt x 241.81541pt>
+<01-figures/a1-linkage-kinematics-190mm.jpg, id=1287, 540.5796pt x 241.81541pt>
 File: 01-figures/a1-linkage-kinematics-190mm.jpg Graphic file (type jpg)
 <use 01-figures/a1-linkage-kinematics-190mm.jpg>
 Package luatex.def Info: 01-figures/a1-linkage-kinematics-190mm.jpg  used on input line 6.
 (luatex.def)             Requested size: 469.75502pt x 210.13786pt.
 
 
-[31
-
-
-<./01-figures/a1-linkage-kinematics-190mm.jpg>]
-
-[32]
-
-[33])
-
-[34] (./2026-Dissertation-HYP.bbl
-
-[35
+[82
 
 
 ]
 
-[36]
+[83<./01-figures/a1-linkage-kinematics-190mm.jpg>]
 
-[37])
+[84]
 
-[38] (./2026-Dissertation-HYP.aux)
+[85])
+
+[86] (./2026-Dissertation-HYP.bbl
+Underfull \hbox (badness 4792) in paragraph at lines 54--57
+[]\TU/TimesNewRoman(0)/m/n/12 Yan Chen and Zhong You.  Mo-bile as-sem-blies based on the ben-nett link-age.
+ []
+
+
+
+[87
+
+
+]
+
+[88]
+
+[89]
+Underfull \hbox (badness 1122) in paragraph at lines 239--242
+[]\TU/TimesNewRoman(0)/m/n/12 Kaori Kurib-ayashi, Koichi Tsuchiya, Zhong You, Da-cian To-mus, Mi-noru Umem-oto,
+ []
+
+
+
+[90]
+
+[91]
+
+[92]
+
+[93])
+
+[94] (./2026-Dissertation-HYP.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
@@ -914,24 +1214,27 @@ L3 programming layer <2025-03-26>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `2026-Dissertation-HYP.out' has not changed.
-(rerunfilecheck)             Checksum: D1DA4914DF0E98E302C9EEFBF0756B0F;6399.
+(rerunfilecheck)             Checksum: 36A22943583C1A50A6F2DC8D341B418E;9474.
 )
 
 Here is how much of LuaTeX's memory you used:
- 18981 strings out of 471941
+ 19990 strings out of 471941
  100000,953878 words of node,token memory allocated
- 664 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 21 attribute, 61 glue_spec, 21 attribute_list, 1 write, 11 pdf_action nodes
-   avail lists: 1:1,2:1159,3:410,4:200,5:609,6:75,7:8779,8:26,9:910,10:32,11:841
- 44863 multiletter control sequences out of 65536+600000
- 53 fonts using 15776183 bytes
- 87i,12n,89p,2823b,688s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 2026-Dissertation-HYP.pdf (53 pages, 9470095 bytes).
+ 837 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 37 attribute, 66 glue_spec, 37 attribute_list, 1 write, 25 pdf_action nodes
+   avail lists: 1:1,2:1195,3:428,4:296,5:711,6:135,7:8530,8:93,9:1308,10:32,11:688
+ 45628 multiletter control sequences out of 65536+600000
+ 78 fonts using 20551695 bytes
+ 87i,15n,89p,2947b,904s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf>{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf><c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on 2026-Dissertation-HYP.pdf (112 pages, 47047230 bytes).
 
-PDF statistics: 749 PDF objects out of 1000 (max. 8388607)
- 660 compressed objects within 7 object streams
- 170 named destinations out of 1000 (max. 131072)
- 225 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1467 PDF objects out of 1728 (max. 8388607)
+ 1289 compressed objects within 13 object streams
+ 348 named destinations out of 1000 (max. 131072)
+ 297 words of extra memory for PDF output out of 10000 (max. 100000000)
 

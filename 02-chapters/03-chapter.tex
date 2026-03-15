@@ -1,2 +1,162 @@
-\chapter{Torsional springs}
+\chapter{Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}
 \label{chpt-torsional-springs}
+
+Over the past century, structural element formulations have evolved to capture nonlinearity and connection flexibility, enabling accurate modeling of practical structures~\cite{felippa2001history}. However, the support for modeling joint rotational stiffness within truss-like structures using a torsional (or coil) spring remains limited, especially in formulations with minimal degrees of freedom (DOF) and high computational efficiency.
+
+Joint rotational stiffness is crucial in applications where controlled joint rotation influences the global structural behavior. Some examples include reconfigurable linkages and robotic arms that rely on programmed hinge stiffnesses~\cite{kim2014design,franco2021static,knox2009unidirectional,dumas2012joint}, biomechanics where joint stiffness affects function~\cite{edwards2007effect,fang2017online}, origami-inspired mechanisms where crease stiffness governs panel folding~\cite{gillman2018truss,zhu2022review,lu2023origami}, and semi-rigid connections in lattice structures and metamaterials that store and release energy to achieve functional reconfiguration~\cite{zhang2019energy,zhang2021architected,zhu2020quasi}.
+
+A typical workaround for joint rotational stiffness in two-dimensional bar-linked structures involves the use of semi-rigid joints. These semi-rigid joints introduce a short beam element (3 DOFs per node) at the joint and impose rotational stiffness by assigning ad-hoc stiffness values to the node's rotational degree of freedom~\cite{wasfy1996torsional,kartal2010effects, yao2023dynamic,molina2023closed}. While serviceable, this approach may yield spurious results if the user-chosen stiffness value is not representative of the structural behavior~\cite{mohammed2019effect}. Furthermore, it increases the computational complexity by inflating the model, as representing a single joint by a beam segment requires six DOFs over the two required for a bar-bar joint in two-dimensional space.
+
+We address this gap by introducing a \emph{three-node torsional spring (3NTS)} element to model a joint's rotational resistance within bar-linked structures. The 3NTS element consists of two elastic axial force members (bars) joined at an intermediate node, which hosts a torsional spring of lumped rotational stiffness \(K_T\) [Nm/rad] (Fig.~\ref{fig-spring-stiffness}). When the relative angle between the bars (\(\alpha{}\)) changes, the spring develops a resisting moment that is recast as equivalent nodal forces consistent with global equilibrium. Since \(\alpha{}\) is a function of the coordinates of the three nodes, the 3NTS requires only six translational DOFs for its representation in a two-dimensional space. Consequently, a two-dimensional bar-linked assembly using the 3NTS elements has the \emph{same} global DOF count as an equivalent spring-less truss structure. Thus, by avoiding rotational DOFs, this formulation yields a compact model with improved computational efficiency over ad-hoc joint rotational stiffness workarounds.
+
+The proposed 3NTS element provides a minimal, first-principles representation of a joint with rotational stiffness, which the current literature lacks. Furthermore, it decouples the joint's moment-rotation behavior from axial force-displacement effects by allowing standard bar elements to handle the axial and positional effects. This concept draws on the bar and hinge origami models~\cite{schenk2011origami,liu2017merlin,filipov2017bar,woodruff2020bar} where three-dimensional rotational hinges capture crease folding and sheet bending. Here, we distill that concept and apply it to a two-dimensional case to assess the global structural behavior of bar-linked reconfigurable structures with torsional springs. We believe that this reduced-order formulation will aid in the exploration and efficient simulation of system behaviors in biomechanics, robotics, compliant mechanisms, planar metamaterials, and kirigami lattices.
+
+The remainder of the note is organized as follows. Section~\ref{sec-spring-stiffness} derives the torsional spring stiffness matrix. Section~\ref{sec-validation} validates the simulated response of the torsional spring against analytical solutions of benchmark examples. Section~\ref{sec-application} illustrates the potential application of the developed analysis program to reconfigurable bar-linked structures. Finally, Section~\ref{sec-conclusion} summarizes the contributions of this work.
+
+\section{Stiffness matrix of a three-node torsional spring element}\label{sec-spring-stiffness}
+The stiffness matrix of a two-dimensional three-node torsional spring is derived from constitutive law by evaluating the Jacobian and Hessian of its strain energy. The torsional spring unit shown in Fig.~\ref{fig-spring-stiffness} consists of three nodes 1, 2, and 3 with undeformed coordinates (\(X_1, Y_1\)), (\(X_2, Y_2\)), and (\(X_3, Y_3\)), respectively. Bar 1 connects nodes 1 and 2, and bar 2 connects nodes 2 and 3. Each bar behaves as an axial-force member. A torsional spring of stiffness \(K_T\) is located at node 2, producing a moment only when the relative angle between bars 1 and 2 changes. The nodal coordinates in the deformed configuration are (\(x_1, y_1\)), (\(x_2, y_2\)) and (\(x_3, y_3\)).
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics{01-figures/03-01-spring-stiffness-80mm.jpg}
+  \caption{A schematic representation of the three-node rotational spring unit depicting the nodal displacements.}
+  \label{fig-spring-stiffness}
+\end{figure}
+
+Let the position vectors in the undeformed and deformed configurations be \(R_1 = [X_1, \: Y_1]^{\top}\), \(R_2 = [X_2, \: Y_2]^{\top}\), \(R_3 = [X_3, \: Y_3]^{\top}\), and \(r_1 = [x_1, \: y_1]^{\top}\), \(r_2 = [x_2, \: y_2]^{\top}\), \(r_3 = [x_3, \: y_3]^{\top}\), respectively. The global nodal coordinate vectors are expressed as \(R = [R_1^{\top{}},\: R_2^{\top{}},\: R_3^{\top{}}]^{\top{}}\) and \(r = [r_1^{\top{}},\: r_2^{\top{}},\: r_3^{\top{}}]^{\top{}}\), and the corresponding displacement vector is defined as \(u = r - R\).
+
+\subsection{Torsional spring constitutive law}
+The strain energy of a linearly elastic three-node torsional spring is expressed as
+\begin{flalign}
+  \quad U(\alpha{}) &= \frac{1}{2} K_T (\alpha{} - \alpha{}_o)^2 ~, &\label{eq-spring-energy}
+\end{flalign}
+where \(K_T\) is the spring's rotational stiffness, \(\alpha{} = \alpha{}(r)\) denotes the relative angle between the two connected bars as a function of the global nodal coordinate vector \(r\), and \(\alpha{}_o = \alpha{}(R)\) represents the undeformed (rest) angle of the spring, defined with respect to the undeformed global nodal coordinate vector \(R\).
+
+The internal nodal force vector is obtained by differentiating the strain energy with respect to the displacement vector:
+\begin{flalign}
+  \quad F_\mathrm{int} &= \frac{\partial{}U}{\partial{}u} = \frac{\partial{}U}{\partial{}\alpha{}} \frac{\partial{}\alpha{}}{\partial{}u}~.&\label{eq-internal-force} 
+\end{flalign}
+Recalling that the reference configuration of the spring \(R\) is constant, gradients with respect to the displacement vector are equivalent to those with respect to the deformed coordinates, i.e., \(\partial{}u = \partial{}r\). Definining the gradient of the relative angle as \(\nabla{} \alpha{} = \partial{}\alpha{} / \partial{}u = \partial{}\alpha{} / \partial{}r\) and the moment generated by the spring as \(M = \partial{}U / \partial{}\alpha{} = K_T (\alpha{}-\alpha{}_o)\), the internal force can be expressed as
+\begin{flalign}
+  \quad F_\mathrm{int} &= M \nabla{}\alpha{} = K_T (\alpha{}-\alpha{}_o) \nabla{}\alpha{} ~. &\label{eq-int-force-simplified} 
+\end{flalign}
+
+The tangent stiffness matrix is obtained by differentiating the internal force with respect to the deformed global nodal coordinates:
+\begin{flalign}
+  \quad K_\mathrm{spr} &= \frac{\partial{}F_\mathrm{int}}{\partial{}r} = \frac{\partial{}}{\partial{}r} \left(M(r) \nabla{}\alpha{}(r)\right) = M(r) \nabla{}^2\alpha{}(r) + \nabla{} M(r) \nabla{} \alpha{}(r)^{\top{}} ~. &\label{eq-spring-stiffness} 
+\end{flalign}
+Because \(M = K_T(\alpha{}-\alpha{}_o\)), it follows that \(\nabla{} M = K_T \nabla{} \alpha{}\). Substituting these relations into Eq.~\ref{eq-spring-stiffness} yields the final expression for the spring element stiffness matrix:
+\begin{flalign}
+  \quad K_\mathrm{spr} &= K_T\left[(\nabla{}\alpha{})(\nabla{}\alpha{})^{\top{}} + (\alpha{}-\alpha{}_o)\nabla{}^2\alpha{} \right] ~. &\label{eq-spring-stiffness-simplified}
+\end{flalign}
+
+\subsection{Relative angle between the bars}
+Let the vectors along bars 1 and 2 be defined as \(a = r_1 - r_2\) and \(b = r_3 - r_2\), where \(r_i = [x_i, y_i]^{\top{}}\) are the nodal position vectors in the deformed configuration. Define the 90\(^{\circ{}}\) counterclockwise rotation matrix N such that, for any vector \(v\) , the product \(Nv\) represents a rotation of \(v\) by \(+90^\circ{}\). Furthermore, the property \(N = -N^{\top{}}\) holds true.
+\begin{flalign}
+  \quad N &= \begin{bmatrix}
+                0 & -1\\
+                1 &  0\\
+              \end{bmatrix} &\label{eq-N-mat}
+\end{flalign}
+
+The cosine and sine of the relative angle \(\alpha\) between bars 1 and 2 are then expressed as
+\begin{flalign}
+  \quad C &= a \cdot b = \|a\| \, \|b\| \, cos{}(\alpha{}) ~, &\notag{}\\
+  \quad S &= a^{\top{}} N b = \|a\| \, \|b\| \, sin{}(\alpha{}) ~. &\label{eq-sin-cos}
+\end{flalign}
+Hence, the relative angle \(\alpha{}\) is obtained as 
+\begin{flalign}
+  \quad \alpha{} &= \tan{}^{-1}\left(\frac{S}{C}\right) ~. &\label{eq-alpha}
+\end{flalign}
+It is important to note that this expression when programmed into \textsc{Matlab} does not capture the spring's full range of rotation, as the \texttt{atan2} function returns values in the interval [\(-\pi\), \(\pi\)]. To obtain a continuous measure of rotation in the range [0, 2\(\pi\)), the computed angle in \textsc{Matlab} is modified as
+\begin{flalign}
+  \quad \alpha{} = \mathrm{mod}\left(\alpha{}, 2\pi\right)~,\label{eq-mod-alpha}
+\end{flalign}
+where \texttt{mod} function returns the remainder after dividing \(\alpha{}\) by \(2\pi{}\). This treatment assumes that the torsional spring does not undergo self-overlapping deformations.
+
+\subsection{Derivatives of bar vectors and auxiliary quantities}
+The gradient of \(\alpha{}\) with respect to the global nodal coordinates can be derived by differentiating Eq.~\ref{eq-alpha}. Using the chain rule, we have
+\begin{flalign}
+  \quad \nabla{} \alpha{} &= \frac{1}{1 + \left(S/C\right)^2} \left(\frac{C\nabla{}S - S\nabla{}C}{C^2}\right) = \frac{C\nabla{}S - S\nabla{}C}{C^2 + S^2} = \frac{C\nabla{}S - S\nabla{}C}{\|a\|^2 \|b\|^2} ~. &\label{eq-grad-alpha}
+\end{flalign}
+
+To evaluate Eq.~\ref{eq-grad-alpha}, the derivatives of vectors \(a\), \(b\), and the scalar quantities \(C\) and \(S\) with respect to the nodal coordinates are required. These are given by
+\begin{flalign}
+  \quad \frac{\partial{}a}{\partial{}r_1} &= \mathbf{I} & \frac{\partial{}a}{\partial{}r_2} &= -\mathbf{I}  & \frac{\partial{}a}{\partial{}r_3} &= \mathbf{0} &\notag{}\\
+  \quad \frac{\partial{}b}{\partial{}r_1} &= \mathbf{0} & \frac{\partial{}b}{\partial{}r_2} &= -\mathbf{I}  & \frac{\partial{}b}{\partial{}r_3} &= \mathbf{I} &\notag{}\\
+  \quad \frac{\partial{}C}{\partial{}r_1} &= b & \frac{\partial{}C}{\partial{}r_2} &= -(a+b)  & \frac{\partial{}C}{\partial{}r_3} &= a &\notag{}\\
+  \quad \frac{\partial{}S}{\partial{}r_1} &= Nb & \frac{\partial{}S}{\partial{}r_2} &= N(a-b)  & \frac{\partial{}S}{\partial{}r_3} &= -Na &\label{eq-vector-derivatives}
+\end{flalign}
+
+\subsection{Closed-form expression for gradient of relative angle}
+Substituting Eq.~\ref{eq-vector-derivatives} into Eq.~\ref{eq-grad-alpha} and applying the vector identity \((x\cdot{}y)Ny - (x^{\top{}}Ny)y = \|y\|^2Nx\) the gradient components of \(\alpha{}\) can be expressed in compact form as:
+\begin{flalign}
+  \quad \nabla{}\alpha{}_{11} &= \frac{\partial{}\alpha{}}{\partial{}r_1} = \frac{C (\partial{}S/\partial{}r_1)-S(\partial{}C/\partial{}r_1)}{\|a\|^2 \|b\|^2} = \frac{(a\cdot{}b)Nb - (a^{\top{}}Nb)b}{\|a\|^2 \|b\|^2} = \frac{Na}{\|a\|^2} &\notag{}\\
+  \quad \nabla{}\alpha{}_{21} &= \frac{\partial{}\alpha{}}{\partial{}r_2} = \frac{C (\partial{}S/\partial{}r_2)-S(\partial{}C/\partial{}r_2)}{\|a\|^2 \|b\|^2} = \frac{(a\cdot{}b)N(a-b) + (a^{\top{}}Nb)(a+b)}{\|a\|^2 \|b\|^2}= \frac{Nb}{\|b\|^2} - \frac{Na}{\|a\|^2}&\notag{}\\
+  \quad \nabla{}\alpha{}_{31} &= \frac{\partial{}\alpha{}}{\partial{}r_3} = \frac{C (\partial{}S/\partial{}r_3)-S(\partial{}C/\partial{}r_3)}{\|a\|^2 \|b\|^2} = \frac{(a\cdot{}b)(-Na) - (a^{\top{}}Nb)a}{\|a\|^2 \|b\|^2} = -\frac{Nb}{\|b\|^2}&\label{eq-grad-alpha-blocks}\\
+\end{flalign}
+These three 2\(\times{}\)1 vectors together form the full 6\(\times{}\)1 gradient vector \(\nabla{}\alpha{}\).
+
+\subsection{Hessian of the relative angle}
+The Hessian matrix \(\nabla{}^2\alpha{}\) is of size 6\(\times\)6 and consists of nine 2\(\times\)2 sub-blocks corresponding to the second derivatives of \(\alpha{}\) with respect to the nodal coordinates. The sub-blocks are expressed as
+\begin{flalign}
+  \quad \mathbf{H}_{11} &= \frac{1}{\|a\|^2}N - \frac{2}{\|a\|^4}(Na)a^{\top{}} &\notag{}\\
+  \quad \mathbf{H}_{22} &= \frac{1}{\|a\|^2}N - \frac{2}{\|a\|^4}(Na)a^{\top{}} + \frac{2}{\|b\|^4}(Nb)b^{\top{}} - \frac{1}{\|b\|^2}N &\notag{}\\
+  \quad \mathbf{H}_{33} &= \frac{2}{\|b\|^4}(Nb)b^{\top{}} - \frac{1}{\|b\|^2}N &\notag{}\\
+  \quad \mathbf{H}_{12} &= \mathbf{H}_{21}^{\top{}} = \frac{2}{\|a\|^4}(Na)a^{\top{}} - \frac{1}{\|a\|^2}N &\notag{}\\
+  \quad \mathbf{H}_{13} &= \mathbf{H}_{31}^{\top{}} = \mathbf{0} &\notag{}\\
+  \quad \mathbf{H}_{23} &= \mathbf{H}_{32}^{\top{}} = \frac{1}{\|b\|^2}N - \frac{2}{\|b\|^4}(Nb)b^{\top{}} &\label{eq-hessian-blocks}
+\end{flalign}
+Thus, we have all the necessary information to form the stiffness matrix for a three-node torsional spring and use it in matrix structural analysis solvers.
+
+\section{Validation of the three-node torsional spring element}\label{sec-validation}
+In this section, we validate the derived stiffness matrix of the torsional spring element by comparing the simulated behavior of two torsional-spring fitted bar-linked structures with their respective analytical solutions. The torsional spring element is implemented alongside linearly elastic axial bar elements within non-linear structural analysis solvers~\cite{mcguire2000matrix} to facilitate large-deformation simulations of torsional-spring fitted bar-linked structures. The two examples presented herein demonstrate the element's capability to simulate large-deformation responses, evaluate strain energies stored in each structural element, and reproduce buckling behavior in collinear bar systems under compression.
+
+\subsection{Comparing analytical and simulated behavior of the simplest three-node torsional spring structure}\label{subsec-example-one}
+The simplest bar-linked structure with a three-node torsional spring is the element itself, as shown in Fig.~\ref{fig-validation-examples}\,(a). Nodes A and B are fixed supports, while node C is free. Bars connecting nodes A-B and B-C have a Young's modulus \(E = 3\times{}10^6\)~Pa, cross-sectional area \(A = 0.5\)~m\(^2\), and length \(L = 1\)~m. A torsional spring with stiffness \(K_T=50\)~Nm/rad is located at node B. A gradually increasing external load \(P\) is applied at node C in the positive Y-direction.
+
+The analytical response of this structure can be obtained using potential energy analysis. When subjected to the applied load \(P\), the bar connecting nodes B and C rotates by an angle \(\theta{}\) and elongates by \(\Delta{}L\). The elongation is induced by the component of the applied load along the bar's axis and is expressed as
+\(\Delta{}L = (PL/EA)\sin{}(\theta{})\). In this deformed state, the total potential energy of the structure is
+\begin{flalign}
+  \quad U &= \frac{1}{2}K_T\theta{}^2 - PL\sin{}(\theta{}) - \frac{P^2L}{2EA}\sin{}^2(\theta{}) + \text{constant}~. &\label{eq-potential-energy}
+\end{flalign}
+The equilibrium condition is obtained by setting \(\partial{}U/\partial{}\theta{} = 0\), which yields the following expression for the applied load \(P\): 
+\begin{flalign}
+  \quad P &= \frac{-AEL\cos{}(\theta{}) \pm AE\sqrt{\frac{L\cos{}(\theta{})}{EA}\left(4K_T\theta{}\sin{}(\theta{}) + AEL\cos{}(\theta{})\right)}}{2L\sin{\theta{}}\cos{\theta{}}}~.&\label{eq-P}
+\end{flalign}
+The corresponding vertical displacement of node C due to the applied load becomes \(\Delta = (L+\Delta{}L)\sin{}(\theta{})\).
+
+Figure~\ref{fig-validation-examples}\,(b) compares the analytical and simulated load-displacement responses of the simple three-node torsional spring structure. The two curves show excellent agreement over the entire range of deformation. The load increases from zero and appears to approach infinity asymptotically as the bar rotates from 0\(^{\circ{}}\) to 90\(^{\circ{}}\). In reality, the load does not become infinite. Throughout the range of deformation, the applied load is primarily resisted by the torsional spring. As the angular rotation of the bar approaches 90\(^{\circ{}}\), however, the load begins to increase approximately in proportion to the axial stiffness of the bar, \(EA/L\), as both the bar and the spring resist the external load. Because this axial stiffness is several orders of magnitude greater than the torsional spring stiffness, the overall response visually appears to asymptote toward infinity in the load-displacement plot. Furthermore, as shown in Fig.~\ref{fig-validation-examples}\,(c), there is excellent alignment between the work done by the external load and the cumulative strain energy stored in each element type, which confirms energy balance and validates the correct implementation of the torsional spring element within the non-linear solver framework.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics{01-figures/03-02-validation-160mm.jpg}
+  \caption{Validation of the simulated behavior of bar-linked structures with torsional spring elements against their respective analytical solutions. (a) Simplest structure with a torsional spring element; (b) Comparison of analytical and simulated load–displacement responses for the structure in (a); (c) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (a); (d) Buckling of a bar-linked vertical column comprising of two bars and a torsional spring element at the central joint; (e) Comparison of analytical and simulated load–displacement responses for the structure in (d); (f) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (d).}
+  \label{fig-validation-examples}
+\end{figure}
+
+\subsection{Comparing analytical and simulated buckling behaviour of a vertical column structure}\label{subsec-example-two}
+The vertical column structure shown in Fig.~\ref{fig-validation-examples}\,(d) consists of two bars with a torsional spring element at the central joint. The bottom end of the column is fixed, while the top end is a roller support that restrains horizontal motion but allows vertical movement. The analytical relationship between the load, \(P\) and bar rotation \(\theta{}\) can be obtained using potential energy analysis as
+\begin{flalign}
+ \quad P &= \frac{2K\theta{}}{L\sin{}(\theta{})}~.&\label{eq-p-buckle}
+\end{flalign}
+The structure becomes unstable when the applied load reaches the critical value \(P = 2K/L\). Thereafter, the column undergoes progressive deformation until each bar rotates by \(\theta{}=\pi{}/2\), at which stage the load reaches \(P = \pi{}K/L\), representing a fully folded configuration. The vertical displacement of the roller end beyond instability can be expressed as \(\Delta{} = 2L(1-\cos{}(\theta{}))\). It should be noted that the potential energy analysis assumes rigid bars, while the non-linear solver models the bars as linearly elastic. Consequently, slight differences are expected in the analytical and simulated buckling behavior of the vertical column. 
+
+In the simulation, the bars have a Young's modulus \(E=3\times{}10^9\)~Pa, cross-sectional area \(A=1\)~m\(^2\), bar lengths \(L=1\)~m, and torsional spring stiffness \(K_T=1000\)~Nm/rad. A minor geometric imperfection is introduced at the free node to trigger the buckling behaviour. As shown in Fig.~\ref{fig-validation-examples}\,(e), the simulated structure exhibits instability at a load slightly lower than predicted analytically, due to elastic bar deformations and non-ideal buckling triggered with a geometric imperfection. After the onset of buckling, the load continues to increase till the bars rotate by \(\theta{}=\pi{}/2\). Overall, the simulated load-displacement curve agrees well with the analytical prediction, capturing the same deformation trend and load magnitude, with minor deviations attributed to elastic bar effects and accumulated numerical drift at large displacements. Moreover, the close agreement between the work done by external loads and internal strain energies shown in Fig.~\ref{fig-validation-examples}\,(f) validates the torsional spring element behaviour within the non-linear solvers.
+
+\section{Application to reconfigurable bar-linked structures}\label{sec-application}
+With the torsional spring element validated, the developed analysis program can now be extended to study load requirements for actuation and functional applications of reconfigurable bar-linked structures. Previous work by the authors introduced a systematic method to generate reconfigurable trusses from existing static truss designs and demonstrated their stability under design loading conditions~\cite{patil2025truss}. These reconfigurable trusses can be fitted with torsional springs at their reconfigurable joints, enabling them to serve as functional systems capable of storing and releasing energy during load reversals.
+
+The torsional spring implementation within the non-linear solver facilitates the simulation of load-displacement responses in such reconfigurable bar-linked systems. Incorporating torsional springs into these structures allows for the study of impact energy storage through spring strain energy, provided that the springs are locked after reaching their maximum deformation. This configuration also enables the evaluation of the stiffness associated with rotational joints and the estimation of actuation forces required to deploy or reconfigure the structure.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics{01-figures/03-03-reconfigurable-truss-80mm.jpg}
+  \caption{Load analysis of the actuation of a reconfigurable cantilever truss}
+  \label{fig-reconfigurable-truss}
+\end{figure}
+
+As a preliminary demonstration, a reconfigurable truss structure from our earlier work~\cite{patil2025truss} is analyzed here to illustrate the potential application of the developed analysis program. The reconfigurable cantilever truss shown in Fig.~\ref{fig-reconfigurable-truss} consists of bars with Young's modulus \(E=3\times{}10^6\)~Pa, cross-sectional area \(A=0.5\)~m\(^2\), and torsional springs of stiffness \(K_T=50\)~Nm/rad. The bar lengths are indicated in Fig.~\ref{fig-reconfigurable-truss}, and the reader is referred to Ref.~\cite{patil2025truss} for the exact locations of the torsional springs.
+
+This truss remains force-stable when loaded in the negative-Y direction. When the direction of loading is reversed to induce reconfiguration, the analysis program can be used to evaluate the load-displacement response of the structure for various spring stiffnesses. Between the two orientations shown in Fig.~\ref{fig-reconfigurable-truss}, an actuation force of approximately 600~N was required to achieve reconfiguration. The resulting load-displacement curve reflects characteristics similar to those observed in the validation examples, exhibiting both spring deformation and buckling behavior, and also illustrates the amount of energy stored within the system due to the applied load. This stored energy can be harnessed for functional purposes when the structure is constrained from returning to its original configuration. With further development, the analysis framework may also enable sequential release of individual torsional springs, providing a mechanism for controlled or rapid deployment of reconfigurable structures.
+
+\section{Concluding remarks}\label{sec-conclusion}
+This technical note presented the formulation of a three-node torsional spring element stiffness matrix and validated its accuracy through comparison with analytical solutions of two benchmark examples. The torsional spring element successfully captured large-deformation responses and the onset of buckling in spring-fitted bar-linked structures. Finally, an example was included to demonstrate the capability of the developed analysis program to simulate actuation in reconfigurable bar-linked structures equipped with torsional springs. This example previews the potential of the model for the exploration of functional use cases of reconfigurable bar-linked structures. The solver implementation is made available as a matrix structural analysis program accompanying this note.

@@ -3,46 +3,49 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: 2026-Dissertation-HYP.aux
 The style file: plain.bst
 Database file #1: references.bib
+Warning--there's a number but no series in barry_implementation_2002
+Warning--empty institution in doctors_hydrodynamics_1985
 Warning--empty institution in giersch2010deployment
-You've used 45 entries,
+Warning--empty journal in halswell_rhib_2011
+You've used 101 entries,
             2118 wiz_defined-function locations,
-            782 strings with 11147 characters,
-and the built_in function-call counts, 14133 in all, are:
-= -- 1386
-> -- 671
-< -- 1
-+ -- 272
-- -- 220
-* -- 1039
-:= -- 2442
-add.period$ -- 135
-call.type$ -- 45
-change.case$ -- 240
+            1091 strings with 22072 characters,
+and the built_in function-call counts, 34208 in all, are:
+= -- 3340
+> -- 1758
+< -- 12
++ -- 711
+- -- 592
+* -- 2585
+:= -- 5846
+add.period$ -- 306
+call.type$ -- 101
+change.case$ -- 592
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 485
-empty$ -- 1098
-format.name$ -- 220
-if$ -- 2851
+cite$ -- 105
+duplicate$ -- 1171
+empty$ -- 2549
+format.name$ -- 592
+if$ -- 6931
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 45
-newline$ -- 228
-num.names$ -- 90
-pop$ -- 202
+int.to.str$ -- 101
+missing$ -- 99
+newline$ -- 508
+num.names$ -- 202
+pop$ -- 505
 preamble$ -- 1
-purify$ -- 199
+purify$ -- 495
 quote$ -- 0
-skip$ -- 327
+skip$ -- 792
 stack$ -- 0
-substring$ -- 946
-swap$ -- 46
-text.length$ -- 1
+substring$ -- 2201
+swap$ -- 163
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 172
-warning$ -- 1
-while$ -- 143
-width$ -- 47
-write$ -- 489
-(There was 1 warning)
+type$ -- 394
+warning$ -- 4
+while$ -- 329
+width$ -- 104
+write$ -- 1107
+(There were 4 warnings)
