@@ -9,24 +9,24 @@ Warning--empty institution in giersch2010deployment
 Warning--empty journal in halswell_rhib_2011
 You've used 101 entries,
             2118 wiz_defined-function locations,
-            1091 strings with 22072 characters,
-and the built_in function-call counts, 34208 in all, are:
+            1092 strings with 22081 characters,
+and the built_in function-call counts, 34214 in all, are:
 = -- 3340
 > -- 1758
-< -- 12
+< -- 13
 + -- 711
 - -- 592
-* -- 2585
+* -- 2587
 := -- 5846
 add.period$ -- 306
 call.type$ -- 101
-change.case$ -- 592
+change.case$ -- 591
 chr.to.int$ -- 0
 cite$ -- 105
-duplicate$ -- 1171
+duplicate$ -- 1172
 empty$ -- 2549
 format.name$ -- 592
-if$ -- 6931
+if$ -- 6932
 int.to.chr$ -- 0
 int.to.str$ -- 101
 missing$ -- 99
@@ -39,8 +39,8 @@ quote$ -- 0
 skip$ -- 792
 stack$ -- 0
 substring$ -- 2201
-swap$ -- 163
-text.length$ -- 12
+swap$ -- 164
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 394

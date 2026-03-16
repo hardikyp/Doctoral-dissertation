@@ -23,7 +23,7 @@ It is important to note that the planing hulls discussed in this paper are hard-
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-01-geometry-and-hull-folding-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-01-geometry-and-hull-folding.jpg}
   \caption{(a) Geometric features of a typical planing hull: specifically a deep V-shape, Planing hull with a Straight planing surface (VPS); (b) Sequential deployment of curved-crease origami hull designed to match the shape of a VPS hull: paper model (top) compared with Bar and Hinge simulation (bottom). A transom is not included in the simulation.}
   \label{fig-planing-geometry}
 \end{figure}
@@ -41,7 +41,7 @@ A curved crease pattern presented in Fig.~\ref{fig-crease-bnh}\,(a) is developed
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-02-crease-pattern-and-bar-hinge-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-02-crease-pattern-and-bar-hinge.jpg}
   \caption{(a) Geometric parameters defining the curved crease pattern for a planing hull shape; (b) Folded curved-crease origami hull shape viewed from starboard side; (c) Flat, intermediate, and fully folded (clockwise from top) curved-crease origami hull shape viewed from the Transom (also known as Stern) side; and (d) Decomposition of the Bar and Hinge model into its components: in-plane bars, bending hinges, and folding hinges.}
     \label{fig-crease-bnh}
 \end{figure}
@@ -55,7 +55,7 @@ The geometric design parameters presented in Fig.~\ref{fig-crease-bnh}\,(a) can 
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-03-hausdorff-shape-matching-optimization-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-03-hausdorff-shape-matching-optimization.jpg}
   \caption{Color heat map showing the Hausdorff distance as a percentage of the overall hull length (\(L_{OA}\)) for the planing surface of two different CCO hull designs compared with: (a) 0.94 m long VPS hull and (b) 2.26 m long GPPH, respectively; (c) Hausdorff distance distribution statistics for CCO hull designs' planing surface compared with corresponding VPS and GPPH designs; (d) Port side view depicting the location of forward perpendicular (FP), aft perpendicular (AP) and the length between the two perpendiculars (\(L_{PP}\)); and (e) Bow view when looked along the keel of the VPS and GPPH showing the difference in the chine and keel configuration.}
   \label{fig-shape-matching}
 \end{figure}
@@ -70,20 +70,6 @@ Despite the minor dissimilarities observed near the bow of the hull in the cases
 
 \section{Hydrodynamic analysis}\label{sec-hydrodynamic-analysis}
 The primary purpose of this section is to introduce a hydrodynamic analysis tool, Powersea, capable of carrying out low-cost analyses of various hull shapes. In addition, this section also demonstrates the ability of CCO hulls to match the hydrodynamics of their target shapes (expected because of their highly similar shapes) by explicitly comparing and verifying the Powersea simulation results.
-
-\subsection{Powersea: low aspect-ratio strip theory for hull hydrodynamics}\label{subsec-powersea}
-The hydrodynamic performance of planing hulls discussed in this study is evaluated using Powersea, a simplified computational tool for rapidly estimating the motion and forces experienced by a hull. Powersea can estimate the heave, pitch, and surge motions of a hull shape, given a forward speed and water conditions, whether still or wavy. Therefore, it enables the investigation of the hull's porpoising behavior for seakeeping ability, effective power requirements, and dynamic natural frequencies in regular and irregular seas. This section explains the theoretical framework behind the low aspect-ratio strip theory algorithm and the underlying assumptions that make Powersea suitable for analyzing CCO planing hulls.
-
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=\textwidth]{01-figures/05-04-powersea-190mm.jpg}
-  \caption{Graphical representation of the assumptions of Powersea theory: (a) Observation plane indicating the section of the planing hull interacting with the water surface with the progression of time; (b) A single wedge impacting vertically on the water surface; (a) \& (b) adapted from~\cite{barry_implementation_2002}; (c) Significant DOFs: Heave (\(\eta_3\)) \textemdash{} translation along the Z-axis, Pitch (\(\eta_5\)) \textemdash{} rotation about the Y-axis, and Surge (\(\eta_1\)) \textemdash{} translation along the X-axis.}
-  \label{fig-powersea}
-\end{figure}
-
-The theoretical framework of Powersea is based on the Low-aspect-ratio strip theory for planing hulls developed by~\cite{zarnick_nonlinear_1978, zarnick_nonlinear_1979}. This theory models the hull motion by discretizing the hull into a series of 2-D strips or wedges. In a water-fixed frame of observation, as illustrated in Fig.~\ref{fig-powersea}\,(a), these wedges impact the water surface with the progression of time. Figure~\ref{fig-powersea}\,(b) depicts a single wedge impacting the water surface and the assumptions used to calculate its hydrodynamic force per unit length. The total hydrodynamic forces acting on the hull body are then obtained by integrating the strip-wise hydrodynamic forces over the instantaneous wetted length of the hull. The 2-D strip theory makes three simplifying assumptions to reduce the number of active degrees of freedom of the hull and the total computational time as compared to a traditional full-scale computational fluid dynamics diffraction-radiation model. First, it is assumed that the perturbation velocities due to straight-line motion are considerably smaller in comparison to the velocity of the hull. Therefore, simplifying the equations of motion by setting the forward velocity of the hull to a constant. Second, only the vertical plane's force and pitch moment excitation are considered while formulating the equations of motion for each wedge, thereby reducing the total number of degrees of freedom. Third, the mathematical formulation of fluid flow is an empirical synthesis of theoretically derived flows. While this formulation is not explicit, there is sufficient confidence to expect promising results~\cite{faltinsen_numerical_1991,sun_planing_2007, korobkin_hydro_2017}. In addition to predicting hull motion and resistance in still water and waves, Powersea generates a longitudinal distribution of forces on the wedges and can be used to estimate pressures acting on the hull surface for the hull's structural integrity analysis.~\cite{akers_dynamic_1999} outlines the details of the analysis procedure, strip-wise integration, solution of equations for Powersea, and a process to estimate sea loads on the planing surface based on Zarnick's formulation.
-
-The assumptions of strip theory impose certain limitations on the hull geometry and hydrodynamics that powersea can simulate. Powersea assumes that the planing hull is hard-chined and has vertically extended sides. Furthermore, although Powersea predicts the heave motion, pitch motion, and calm water resistance accurately, the vertical acceleration of the hull is underpredicted by about 30\% in regular and random seas~\cite{akers_dynamic_1999} and the total resistance is underpredicted by about 15\% due to not considering the whisker spray~\cite{whisker_savitsky_2007}. Nonetheless, the hydrodynamic properties are repeatable and can be tuned for engineering purposes. The above limitations are not of concern for our study, and in fact, the low aspect ratio strip theory is well suited for simulating origami-inspired planing hulls for the following three reasons. First, curved origami structures exhibit a distinctive change in topology or curved surface at the curved fold line, resembling the characteristics of a hard-chined vessel. Second, since the planing surface is the dominant geometric feature that influences the planing behavior of a hull, the shape or orientation of the side panels becomes less significant. Lastly, the computational simplicity facilitates rapid hydrodynamic simulation of various hull geometries within a short time frame. This capability is beneficial for investigating the relative change in hydrodynamic properties due to the effects of shape change resulting from origami folding. Powersea also assumes that the wavelengths encountered by the hull will be significantly larger than its length (wave slopes will be relatively small), and the hull speeds correspond to beam Froude numbers greater than 1 (that is, the vessel is advancing in semi-planing/planing regimes). These assumptions provide a reasonable approximation for many practical scenarios and ensure the applicability of Powersea for studying planing hulls in realistic water conditions.
 
 \subsection{Performance evaluation of curved-crease origami hulls}\label{subsec-cco-evaluation}
 The ability of curved-crease origami (CCO) hulls to align congruently with target hull shapes motivates a comparative investigation to evaluate whether their hydrodynamic characteristics also match those of the conventional hulls. This section compares the hydrodynamic performance of the two distinct CCO hull variants, CCO\(^\textrm{VPS}\) and CCO\(^\textrm{GPPH}\) as introduced in Section~\ref{subsec-shape-matching}, with their corresponding target hull forms, namely the VPS and the GPPH. The hydrodynamic evaluation for all four hull geometries is facilitated by the Powersea tool and encompasses the simulation of hull motion in both still and wavy water (head sea) conditions. The geometric and physical characteristics of the hulls passed as input to Powersea can be found in Table~\ref{tab-cco-hull-geom}.
@@ -114,7 +100,7 @@ where \(D\) is the friction drag, \(W\) is the weight of the hull, and \(\eta_5\
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-05-calm-cco-eval-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-04-calm-cco-eval.jpg}
   \caption{Comparison of VPS and GPPH hydrodynamics with their CCO counterparts in calm water: (a) Weight normalized friction drag; (b) Weight normalized total resistance; (c) Beam normalized rise of CG; and (d) Trim angle (positive bow up)}
   \label{fig-calm-cco-eval}
 \end{figure}
@@ -123,7 +109,7 @@ It is essential to note that the comparative analysis of CCO hulls with counterp
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-06-wavy-cco-eval-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-05-wavy-cco-eval.jpg}
   \caption{(a) Regular wave characteristics from a nominal Sea Water Level (SWL); (b) Overall length of the boat; Comparison of mean subtracted VPS and GPPH hull motion time histories with their CCO counterparts in head seas: (c) Six seconds of steady state time history for \(\lambda\)/\(L_{OA}\) = 4; (d) Phase shifted steady state time history over 2 second interval for \(\lambda\)/\(L_{OA}\) = 4; (e) Six seconds of steady state time history for \(\lambda\)/\(L_{OA}\) = 10; and (f) Phase shifted steady state time history over two second interval for \(\lambda\)/\(L_{OA}\) = 10. \(\eta_3 / \textrm{\sffamily{A}}\) is heave normalized by wave amplitude.\,\(\eta_5 / \textrm{\sffamily{kA}}\) is pitch normalized by wave slope.}
   \label{fig-wavy-cco-eval}
 \end{figure}
@@ -176,14 +162,15 @@ Here, we first discuss the influence of the rest angle of the fold lines on the 
   \end{center}\label{tab-cco-deadrise-geom}
   \vspace{-1em}
 \end{table}
+
 \subsection{Calm water hydrodynamics}\label{subsec-calm-hydro}
-The simulations in still water for all three curved-crease origami hull configurations are conducted for various constant speed cases. The speeds (2 to 15.5~m/s) correspond to beam Froude numbers, \(F_B\) ranging from 1 to 9 for each of the three hull geometries. All simulation parameters adhere to the default values specified by Powersea, and the hydrodynamic characteristics are presented in Fig.~\ref{fig-calm-hydro}. Similar to the preceding hydrodynamic investigation conducted in calm water, the attributes studied within this context include: (\textit{i}\,)friction drag normalized by the hull weight, (\textit{ii}\,)total resistance normalized by the hull weight, (\textit{iii}\,)rise of CG normalized by the beam width, and (\textit{iv}\,)trim angle of the hull.
+The simulations in still water for all three curved-crease origami hull configurations are conducted for various constant speed cases. The speeds (2 to 15.5~m/s) correspond to beam Froude numbers, \(F_B\) ranging from 1 to 9 for each of the three hull geometries. All simulation parameters adhere to the default values specified by Powersea, and the hydrodynamic characteristics are presented in Fig.~\ref{fig-calm-hydro}. Similar to the preceding hydrodynamic investigation conducted in calm water, the attributes studied within this context include: (\textit{i}\,) friction drag normalized by the hull weight, (\textit{ii}\,) total resistance normalized by the hull weight, (\textit{iii}\,)rise of CG normalized by the beam width, and (\textit{iv}\,) trim angle of the hull.
 
 The influence of shape change on the weight-normalized friction drag experienced by the hull across all deadrise variations is insignificant, except at very high speeds. As illustrated in Fig.~\ref{fig-calm-hydro}\,(a), the 20\(^\circ\) deadrise hull exhibits slightly higher frictional resistance than 10\(^\circ\) and 30\(^\circ\) deadrise configurations at \(F_B\) close to 9. For a lower deadrise configuration, there is an increase in the total resistance at lower speeds, but an interesting reversal of trends emerges at higher speeds. As seen in Fig.~\ref{fig-calm-hydro}\,(b), the lower deadrise configuration now exhibits lower total resistance. A similar trend is also observed for the trim angle of the hull, as shown in Fig.~\ref{fig-calm-hydro}\,(d). This change in trends for total resistance is expected because it is a derived quantity that depends upon the friction drag and trim angle. Since friction drag shows little variation across deadrise configurations, the trend of trim angle contributes to that of the total resistance. In the case of rise of CG, the low deadrise configuration tends to rise higher than the high deadrise configurations for \(F_B\) up to 4, as shown in Fig.~\ref{fig-calm-hydro}\,(c). A noticeable reversal in the hull rise trend emerges at high speeds. The variation in hull rise remains negligible across all deadrise configurations for practical considerations with the exception of the 30\(^\circ\) deadrise configuration. These results can be interpreted in the following ways. In the case of a curved-crease origami hull configured with a lower deadrise, the planing surface typically takes on a flatter and broader profile. Consequently, with increasing surge speed, the hull tends to rise and glide over the water's surface. This phenomenon results in a reduced trim angle as the hull does not have to plow through the water, thereby leading to lower total resistance. In contrast, for a curved-crease origami hull configured with a higher deadrise, the planing surface is generally a shaper V shape with a narrower profile. This hull tends to sink deeper into the water. Consequently, this hull has to overcome greater total resistance and exhibits increased trim angle at higher surge speeds.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-07-tunable-calm-hydrodynamics-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-06-tunable-calm-hydrodynamics.jpg}
   \caption[]{Effect of varying the CCO hull's deadrise on hydrodynamic performance in calm water: (a) Weight normalized friction drag; (b) Weight normalized total resistance; (c) Beam normalized rise of CG; (d) Trim angle (positive bow up).}
   \label{fig-calm-hydro}
 \end{figure}
@@ -195,7 +182,7 @@ The objective here is to understand the effects of varying deadrise configuratio
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-08-tunable-wavy-hydrodynamics-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-07-tunable-wavy-hydrodynamics.jpg}
   \caption{Effect of varying the CCO hull's deadrise on steady state hull motion in head seas for: (a) \(\lambda/L_{OA}\) = 4; (b) \(\lambda/L_{OA}\) = 8; (c) \(\lambda/L_{OA}\) = 12.
   Surge speed is 4.04~m/s, wave amplitude is 0.02~m and the last 10 seconds of the mean subtracted hull motion time history is shown.\,\(\eta_3 / \textrm{A}\) is heave normalized by wave amplitude.\,\(\eta_5 / \textrm{kA}\) is pitch normalized by wave slope.}
   \label{fig-wavy-hydro}
@@ -213,7 +200,7 @@ Using reduced-order numerical simulations for curved origami folding and hydrody
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/05-09-prototype-scaling-up-190mm.jpg}
+  \includegraphics[width=\textwidth]{01-figures/05-08-prototype-scaling-up.jpg}
   \caption{(a) Scalability analysis demonstrating the elastic limit (maximum thickness) for curved-crease origami hulls for different materials; (b) A 91 cm (36 in.) long curved-crease origami hull prototype fabricated using 1.5mm thick aluminium sheets, joined together with duct tape for flexible joints \textemdash{} displaying the stowed (left) to deployed (right) configuration; (c) Aluminium CCO hull configured with deadrise configurations 10\(^\circ\) and 20\(^\circ\) strengthened with lateral stiffeners that snap onto the side of the hull; (d) Aluminium CCO hulls fitted with solid bulkhead.}
   \label{fig-prototype}
 \end{figure}

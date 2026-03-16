@@ -1,12 +1,12 @@
 \contentsline {frontchapter}{Dedication}{ii}{section*.1}%
 \contentsline {frontchapter}{Acknowledgements}{iii}{section*.2}%
 \contentsline {frontchapter}{Preface}{iv}{section*.3}%
-\contentsline {frontchapter}{List of Figures}{viii}{section*.5}%
-\contentsline {frontchapter}{List of Tables}{xii}{section*.6}%
-\contentsline {frontchapter}{List of Programs}{xiii}{section*.7}%
-\contentsline {frontchapter}{List of Appendices}{xiv}{section*.9}%
-\contentsline {frontchapter}{List of Acronyms}{xv}{section*.11}%
-\contentsline {frontchapter}{Abstract}{xvi}{section*.12}%
+\contentsline {frontchapter}{List of Figures}{vii}{section*.5}%
+\contentsline {frontchapter}{List of Tables}{xi}{section*.6}%
+\contentsline {frontchapter}{List of Programs}{xii}{section*.7}%
+\contentsline {frontchapter}{List of Appendices}{xiii}{section*.9}%
+\contentsline {frontchapter}{List of Acronyms}{xiv}{section*.11}%
+\contentsline {frontchapter}{Abstract}{xv}{section*.12}%
 \vspace {3.9ex}\noindent {\uppercase {Chapter}}\vspace {1.3ex}
 \contentsline {chapter}{\numberline {1}Background on static systems}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Transforming static trusses into shape morphing systems using principles of quadrilateral linkages}{2}{chapter.2}%
@@ -45,23 +45,22 @@
 \contentsline {subsection}{\numberline {5.1.2}Crease geometry and Bar and Hinge model for curved folding}{54}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Shape matching and optimization}{56}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}Hydrodynamic analysis}{59}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Powersea: low aspect-ratio strip theory for hull hydrodynamics}{59}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Performance evaluation of curved-crease origami hulls}{61}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Tunable hydrodynamics with shape morphing curved-origami hulls}{67}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Calm water hydrodynamics}{68}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Wavy water hydrodynamics}{70}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Discussion}{71}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Key findings}{71}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Physical implementation}{74}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Considerations for future work}{77}{subsection.5.4.3}%
-\contentsline {section}{\numberline {5.5}Concluding remarks}{80}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Concluding Remarks and Future Work}{81}{chapter.6}%
+\contentsline {subsection}{\numberline {5.2.1}Performance evaluation of curved-crease origami hulls}{59}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Tunable hydrodynamics with shape morphing curved-origami hulls}{65}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Calm water hydrodynamics}{66}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Wavy water hydrodynamics}{67}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Discussion}{69}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Key findings}{69}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Physical implementation}{72}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Considerations for future work}{75}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Concluding remarks}{78}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Concluding Remarks and Future Work}{79}{chapter.6}%
 \vspace {3.9ex}
-\contentsline {backchapter}{Appendices}{82}{section*.35}%
+\contentsline {backchapter}{Appendices}{80}{section*.34}%
 \global \c@tocdepth 0\relax 
-\contentsline {section}{\numberline {A.1}Position analysis of a general quadrilateral linkage}{82}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Position analysis of 6 bar linkage with a single degree of freedom}{85}{section.A.2}%
-\contentsline {section}{\numberline {A.3}A note on the extent of actuation of a quadrilateral linkage}{86}{section.A.3}%
+\contentsline {section}{\numberline {A.1}Position analysis of a general quadrilateral linkage}{80}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Position analysis of 6 bar linkage with a single degree of freedom}{83}{section.A.2}%
+\contentsline {section}{\numberline {A.3}A note on the extent of actuation of a quadrilateral linkage}{84}{section.A.3}%
 \global \c@tocdepth 1\relax 
 \vspace {1.3ex}
-\contentsline {backchapter}{Bibliography}{87}{section*.41}%
+\contentsline {backchapter}{Bibliography}{88}{section*.42}%

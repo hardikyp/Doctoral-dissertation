@@ -17,7 +17,7 @@ The remainder of the note is organized as follows. Section~\ref{sec-spring-stiff
 The stiffness matrix of a two-dimensional three-node torsional spring is derived from constitutive law by evaluating the Jacobian and Hessian of its strain energy. The torsional spring unit shown in Fig.~\ref{fig-spring-stiffness} consists of three nodes 1, 2, and 3 with undeformed coordinates (\(X_1, Y_1\)), (\(X_2, Y_2\)), and (\(X_3, Y_3\)), respectively. Bar 1 connects nodes 1 and 2, and bar 2 connects nodes 2 and 3. Each bar behaves as an axial-force member. A torsional spring of stiffness \(K_T\) is located at node 2, producing a moment only when the relative angle between bars 1 and 2 changes. The nodal coordinates in the deformed configuration are (\(x_1, y_1\)), (\(x_2, y_2\)) and (\(x_3, y_3\)).
 \begin{figure}[!htbp]
   \centering
-  \includegraphics{01-figures/03-01-spring-stiffness-80mm.jpg}
+  \includegraphics{01-figures/03-01-spring-stiffness.jpg}
   \caption{A schematic representation of the three-node rotational spring unit depicting the nodal displacements.}
   \label{fig-spring-stiffness}
 \end{figure}
@@ -129,7 +129,7 @@ Figure~\ref{fig-validation-examples}\,(b) compares the analytical and simulated 
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics{01-figures/03-02-validation-160mm.jpg}
+  \includegraphics{01-figures/03-02-validation.jpg}
   \caption{Validation of the simulated behavior of bar-linked structures with torsional spring elements against their respective analytical solutions. (a) Simplest structure with a torsional spring element; (b) Comparison of analytical and simulated load–displacement responses for the structure in (a); (c) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (a); (d) Buckling of a bar-linked vertical column comprising of two bars and a torsional spring element at the central joint; (e) Comparison of analytical and simulated load–displacement responses for the structure in (d); (f) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (d).}
   \label{fig-validation-examples}
 \end{figure}
@@ -149,7 +149,7 @@ With the torsional spring element validated, the developed analysis program can 
 The torsional spring implementation within the non-linear solver facilitates the simulation of load-displacement responses in such reconfigurable bar-linked systems. Incorporating torsional springs into these structures allows for the study of impact energy storage through spring strain energy, provided that the springs are locked after reaching their maximum deformation. This configuration also enables the evaluation of the stiffness associated with rotational joints and the estimation of actuation forces required to deploy or reconfigure the structure.
 \begin{figure}[!htbp]
   \centering
-  \includegraphics{01-figures/03-03-reconfigurable-truss-80mm.jpg}
+  \includegraphics{01-figures/03-03-reconfigurable-truss.jpg}
   \caption{Load analysis of the actuation of a reconfigurable cantilever truss}
   \label{fig-reconfigurable-truss}
 \end{figure}
