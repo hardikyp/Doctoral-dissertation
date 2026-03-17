@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  16 MAR 2026 18:44
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  17 MAR 2026 18:09
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/University of Michigan Dropbox/Hardik Patil/01-Projects/01-Dissertation/02-Manuscript/2026-Dissertation-HYP"
@@ -1011,29 +1011,29 @@ CHAPTER 5.
 [51]
 
 [52]
-<01-figures/05-01-geometry-and-hull-folding.jpg, id=1044, 3738.96875pt x 838.13126pt>
+<01-figures/05-01-geometry-and-hull-folding.jpg, id=1044, 469.755pt x 113.4639pt>
 File: 01-figures/05-01-geometry-and-hull-folding.jpg Graphic file (type jpg)
 <use 01-figures/05-01-geometry-and-hull-folding.jpg>
 Package luatex.def Info: 01-figures/05-01-geometry-and-hull-folding.jpg  used on input line 26.
-(luatex.def)             Requested size: 469.75502pt x 105.29048pt.
+(luatex.def)             Requested size: 469.75502pt x 113.46361pt.
 
 
 [53<./01-figures/05-01-geometry-and-hull-folding.jpg>]
 
 [54]
-<01-figures/05-02-crease-pattern-and-bar-hinge.jpg, id=1069, 3700.82625pt x 2157.05875pt>
+<01-figures/05-02-crease-pattern-and-bar-hinge.jpg, id=1069, 469.755pt x 287.8755pt>
 File: 01-figures/05-02-crease-pattern-and-bar-hinge.jpg Graphic file (type jpg)
 <use 01-figures/05-02-crease-pattern-and-bar-hinge.jpg>
 Package luatex.def Info: 01-figures/05-02-crease-pattern-and-bar-hinge.jpg  used on input line 44.
-(luatex.def)             Requested size: 469.75502pt x 273.77884pt.
+(luatex.def)             Requested size: 469.75502pt x 287.87479pt.
 
 
 [55<./01-figures/05-02-crease-pattern-and-bar-hinge.jpg>]
-<01-figures/05-03-hausdorff-shape-matching-optimization.jpg, id=1080, 3757.03625pt x 1481.535pt>
+<01-figures/05-03-hausdorff-shape-matching-optimization.jpg, id=1080, 469.755pt x 187.902pt>
 File: 01-figures/05-03-hausdorff-shape-matching-optimization.jpg Graphic file (type jpg)
 <use 01-figures/05-03-hausdorff-shape-matching-optimization.jpg>
 Package luatex.def Info: 01-figures/05-03-hausdorff-shape-matching-optimization.jpg  used on input line 58.
-(luatex.def)             Requested size: 469.75502pt x 185.23663pt.
+(luatex.def)             Requested size: 469.75502pt x 187.90154pt.
 
 
 [56]
@@ -1058,21 +1058,21 @@ Overfull \hbox (7.96838pt too wide) in paragraph at lines 90--90
 
 
 [59]
-<01-figures/05-04-calm-cco-eval.jpg, id=1110, 3790.16pt x 2551.5325pt>
+<01-figures/05-04-calm-cco-eval.jpg, id=1110, 469.755pt x 370.5042pt>
 File: 01-figures/05-04-calm-cco-eval.jpg Graphic file (type jpg)
 <use 01-figures/05-04-calm-cco-eval.jpg>
 Package luatex.def Info: 01-figures/05-04-calm-cco-eval.jpg  used on input line 103.
-(luatex.def)             Requested size: 469.75502pt x 316.21545pt.
+(luatex.def)             Requested size: 469.75502pt x 370.50328pt.
 
 
 [60]
 
 [61<./01-figures/05-04-calm-cco-eval.jpg>]
-<01-figures/05-05-wavy-cco-eval.jpg, id=1130, 3631.5675pt x 2542.49875pt>
+<01-figures/05-05-wavy-cco-eval.jpg, id=1130, 469.755pt x 365.4453pt>
 File: 01-figures/05-05-wavy-cco-eval.jpg Graphic file (type jpg)
 <use 01-figures/05-05-wavy-cco-eval.jpg>
 Package luatex.def Info: 01-figures/05-05-wavy-cco-eval.jpg  used on input line 112.
-(luatex.def)             Requested size: 469.75502pt x 328.86824pt.
+(luatex.def)             Requested size: 469.75502pt x 365.4444pt.
 
 
 [62]
@@ -1094,11 +1094,11 @@ Overfull \hbox (161.04247pt too wide) in paragraph at lines 161--161
 [65]
 
 [66]
-<01-figures/05-06-tunable-calm-hydrodynamics.jpg, id=1174, 3740.97626pt x 2558.55875pt>
+<01-figures/05-06-tunable-calm-hydrodynamics.jpg, id=1174, 469.755pt x 367.8543pt>
 File: 01-figures/05-06-tunable-calm-hydrodynamics.jpg Graphic file (type jpg)
 <use 01-figures/05-06-tunable-calm-hydrodynamics.jpg>
 Package luatex.def Info: 01-figures/05-06-tunable-calm-hydrodynamics.jpg  used on input line 173.
-(luatex.def)             Requested size: 469.75502pt x 321.26355pt.
+(luatex.def)             Requested size: 469.75502pt x 367.85338pt.
 
 
 [67]
@@ -1131,9 +1131,9 @@ Package luatex.def Info: 01-figures/05-08-prototype-scaling-up.jpg  used on inpu
 
 [75]
 
-[76]) (./02-chapters/06-chapter.tex
+[76]
 
-[77]
+[77]) (./02-chapters/06-chapter.tex
 
 [78]
 CHAPTER 6.
@@ -1143,7 +1143,7 @@ CHAPTER 6.
 
 ] (./03-appendices/01-appendix.tex
 APPENDIX A.
-<01-figures/A1-linkage-kinematics.jpg, id=1256, 469.755pt x 224.7597pt>
+<01-figures/A1-linkage-kinematics.jpg, id=1257, 469.755pt x 224.7597pt>
 File: 01-figures/A1-linkage-kinematics.jpg Graphic file (type jpg)
 <use 01-figures/A1-linkage-kinematics.jpg>
 Package luatex.def Info: 01-figures/A1-linkage-kinematics.jpg  used on input line 6.
@@ -1163,7 +1163,7 @@ Package luatex.def Info: 01-figures/A1-linkage-kinematics.jpg  used on input lin
 
 [84]
 APPENDIX B.
-<01-figures/B1-powersea.jpg, id=1314, 469.755pt x 122.3772pt>
+<01-figures/B1-powersea.jpg, id=1315, 469.755pt x 122.3772pt>
 File: 01-figures/B1-powersea.jpg Graphic file (type jpg)
 <use 01-figures/B1-powersea.jpg>
 Package luatex.def Info: 01-figures/B1-powersea.jpg  used on input line 6.
@@ -1226,15 +1226,15 @@ Here is how much of LuaTeX's memory you used:
  100000,953878 words of node,token memory allocated
  837 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 37 attribute, 66 glue_spec, 37 attribute_list, 1 write, 25 pdf_action nodes
-   avail lists: 1:1,2:1195,3:428,4:292,5:711,6:129,7:8534,8:93,9:1308,10:32,11:688
+   avail lists: 1:1,2:1195,3:428,4:292,5:711,6:128,7:8534,8:93,9:1308,10:32,11:688
  45635 multiletter control sequences out of 65536+600000
  78 fonts using 20551695 bytes
  87i,15n,89p,2947b,904s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf>{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf><c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 2026-Dissertation-HYP.pdf (112 pages, 31805882 bytes).
+Output written on 2026-Dissertation-HYP.pdf (112 pages, 17936416 bytes).
 
-PDF statistics: 1472 PDF objects out of 1728 (max. 8388607)
- 1294 compressed objects within 13 object streams
+PDF statistics: 1473 PDF objects out of 1728 (max. 8388607)
+ 1295 compressed objects within 13 object streams
  350 named destinations out of 1000 (max. 131072)
  305 words of extra memory for PDF output out of 10000 (max. 100000000)
 
