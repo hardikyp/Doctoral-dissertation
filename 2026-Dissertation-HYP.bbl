@@ -1,99 +1,249 @@
 \begin{thebibliography}{100}
 
-\bibitem{akers_dynamic_1999}
-Richard~H. Akers.
-\newblock Dynamic analysis of planing hulls in the vertical plane.
-\newblock In {\em Proceedings of The Society of Naval Architects and Marine Engineers}, New England, 1999.
-
-\bibitem{ario2013bridge}
-Ichiro Ario, Masatoshi Nakazawa, Yoshikazu Tanaka, Izumi Tanikura, and Syuichi Ono.
-\newblock Development of a prototype deployable bridge based on origami skill.
-\newblock {\em Automation in construction}, 32:104--111, 2013.
-
-\bibitem{baker1980bricard}
-J~Eddie Baker.
-\newblock An analysis of the bricard linkages.
-\newblock {\em Mechanism and machine Theory}, 15(4):267--286, 1980.
-
-\bibitem{barker1985complete}
-Clark~R Barker.
-\newblock A complete classification of planar four-bar linkages.
-\newblock {\em Mechanism and Machine Theory}, 20(6):535--554, 1985.
+\bibitem{ullah2022topopt}
+Zahur Ullah, Baseer Ullah, and Wajid Khan.
+\newblock Proportional topology optimisation with maximum entropy-based meshless method for minimum compliance and stress constrained problems.
+\newblock {\em Engineering with Computers}, 38(6):5541--5561, 2022.
 
 \bibitem{barry_implementation_2002}
 Christopher~D Barry, Debabrata Ghosh, Richard Akers, and Andrew Ulak.
 \newblock Implementation, application and validation of the zarnick strip theory analysis technique for planing boats.
 \newblock In {\em Proceedings of High Performance Yacht Design Conference}, number P2002--7, Auckland, New Zealand, 2002.
 
-\bibitem{bowen_starshade_2016}
-Landen Bowen, Brian Trease, Mary Frecker, and Timothy Simpson.
-\newblock Dynamic modeling and analysis of an origami-inspired optical shield for the starshade spacecraft.
-\newblock In {\em Smart Materials, Adaptive Structures and Intelligent Systems}, volume 50480, page V001T01A012. American Society of Mechanical Engineers, 2016.
+\bibitem{farshad1978iranian}
+M.~Farshad and D.~Isfahanian.
+\newblock Iranian plateau - the homeland of original truss structures.
+\newblock {\em Journal of the American Oriental Society}, 98(3):248--250, 1978.
 
-\bibitem{brouwer2002arch}
-Greg Brouwer.
-\newblock Retractable arch will take center stage in salt lake.
-\newblock {\em Civil Engineering}, 72(1):15, 2002.
+\bibitem{thorne2017structural}
+Robert Thorne.
+\newblock {\em Structural Iron and Steel, 1850--1900}.
+\newblock Routledge, 2017.
 
-\bibitem{bruce_ship_2021}
-George Bruce.
-\newblock Ship construction.
-\newblock {\em Shipbuilding Management}, pages 153--162, 2021.
+\bibitem{gasparini1989early}
+Dario~A Gasparini and Caterina Provost.
+\newblock Early nineteenth century developments in truss design in britain, france and the united states.
+\newblock {\em Construction history}, 5:21--33, 1989.
 
-\bibitem{carter_boat_2006}
-Robert Carter.
-\newblock Boat remains and maritime trade in the persian gulf during the sixth and fifth millennia bc.
-\newblock {\em Antiquity}, 80(307):52--63, 2006.
+\bibitem{hibbeler2006structural}
+Russell~Charles Hibbeler and Kiang-Hwee Tan.
+\newblock {\em Structural analysis}.
+\newblock Pearson Prentice Hall Upper Saddle River, 2006.
 
-\bibitem{chen_drag_2023}
-Guanyu Chen, Dongsheng Chen, Jessica Weakly, and Cynthia Sung.
-\newblock Drag coefficient characterization of the origami magic ball.
-\newblock In {\em ASME International Design Engineering Technical Conferences and Computers and Information in Engineering Conference (IDETC/CIE)}, 2023.
-
-\bibitem{chen2005bennett}
-Yan Chen and Zhong You.
-\newblock Mobile assemblies based on the bennett linkage.
-\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 461(2056):1229--1245, 2005.
+\bibitem{turner1956stiffness}
+M~Jon Turner, Ray~W Clough, Harold~C Martin, and LJ~Topp.
+\newblock Stiffness and deflection analysis of complex structures.
+\newblock {\em journal of the Aeronautical Sciences}, 23(9):805--823, 1956.
 
 \bibitem{clough1960finite}
 Ray~W Clough.
 \newblock The finite element in plane stress analysis.
 \newblock {\em Proc. 2\^{}< nd> ASCE Confer. On Electric Computation, 1960}, 1960.
 
-\bibitem{constans2018introduction}
-Eric Constans and Karl~B Dyer.
-\newblock {\em Introduction to mechanism design: With computer applications}.
-\newblock CRC Press, 2018.
+\bibitem{stolpe2016truss}
+Mathias Stolpe.
+\newblock Truss optimization with discrete design variables: a critical review.
+\newblock {\em Structural and Multidisciplinary Optimization}, 53:349--374, 2016.
 
-\bibitem{bjorn_crew_2017}
-MP~de~Alwis, K~Garme, Riccardo Lo~Martire, JI~K{\aa}sin, and Bj{\"o}rn {\"A}ng.
-\newblock Crew acceleration exposure, health and performance in high-speed operations at sea.
-\newblock In {\em The 11th Symposium on High-Speed Marine Vehicles, Naples, Italy}, 2017.
+\bibitem{you1997scissor}
+Zhong You and Sergio Pellegrino.
+\newblock Foldable bar structures.
+\newblock {\em International Journal of Solids and Structures}, 34(15):1825--1847, 1997.
 
-\bibitem{deleo_composite_2018}
-A~Deleo, J~O'Neil, Hiromi Yasuda, Jinkyu Yang, and Marco Salviato.
-\newblock Composite origami: Foldable structures based on tachi-miura-polyhedron origami technique.
-\newblock {\em Proceedings of SAMPE}, 2018.
+\bibitem{kim2021scissor}
+Tae-Hyun Kim, Jong-Eun Suh, and Jae-Hung Han.
+\newblock Deployable truss structure with flat-form storability using scissor-like elements.
+\newblock {\em Mechanism and Machine Theory}, 159:104252, 2021.
 
-\bibitem{deleo_origami_2020}
-Antonio~Alessandro Deleo, James O'Neil, Hiromi Yasuda, Marco Salviato, and Jinkyu Yang.
-\newblock Origami-based deployable structures made of carbon fiber reinforced polymer composites.
-\newblock {\em Composites Science and Technology}, 191:108060, 2020.
+\bibitem{patel2007scissor}
+Jiten Patel and GK~Ananthasuresh.
+\newblock A kinematic theory for radially foldable planar linkages.
+\newblock {\em International journal of solids and structures}, 44(18-19):6279--6298, 2007.
 
-\bibitem{erik_demaine_curved_2011}
-Erik Demaine, Martin Demaine, Duks Koschitz, and Tomohiro Tachi.
-\newblock Curved crease folding a review on art, design and mathematics.
-\newblock In {\em Proceedings of 35th Annual Symposium of IABSE/52nd Annual Symposium of IASS/6th International Conference on Space Structures: Taller, Longer, Lighter --- Meeting growing demand with limited resources}, page~1, London, United Kingdom, September 2011.
+\bibitem{hoberman1991scissor}
+Charles Hoberman.
+\newblock Radial expansion/retraction truss structures, June~18 1991.
+\newblock US Patent 5,024,031.
 
-\bibitem{doctors_hydrodynamics_1985}
-Lawrence~J Doctors.
-\newblock Hydrodynamics of high-speed small craft.
-\newblock Technical report, 1985.
+\bibitem{ario2013bridge}
+Ichiro Ario, Masatoshi Nakazawa, Yoshikazu Tanaka, Izumi Tanikura, and Syuichi Ono.
+\newblock Development of a prototype deployable bridge based on origami skill.
+\newblock {\em Automation in construction}, 32:104--111, 2013.
 
-\bibitem{dudte_scale_2016}
-Levi~H Dudte, Etienne Vouga, Tomohiro Tachi, and Lakshminarayanan Mahadevan.
-\newblock Programming curvature using origami tessellations.
-\newblock {\em Nature Materials}, 15(5):583--588, 2016.
+\bibitem{brouwer2002arch}
+Greg Brouwer.
+\newblock Retractable arch will take center stage in salt lake.
+\newblock {\em Civil Engineering}, 72(1):15, 2002.
+
+\bibitem{mira2014arch}
+Lara~Alegria Mira, Ashley~P Thrall, and Niels De~Temmerman.
+\newblock Deployable scissor arch for transitional shelters.
+\newblock {\em Automation in Construction}, 43:123--131, 2014.
+
+\bibitem{kassabian1999roof}
+PE~Kassabian, Zhong You, and Sergio Pellegrino.
+\newblock Retractable roof structures.
+\newblock {\em Proceedings of the Institution of Civil Engineers-Structures and Buildings}, 134(1):45--56, 1999.
+
+\bibitem{han2019antenna}
+Bo~Han, Yundou Xu, Jiantao Yao, Dong Zheng, Yongjie Li, and Yongsheng Zhao.
+\newblock Design and analysis of a scissors double-ring truss deployable mechanism for space antennas.
+\newblock {\em Aerospace Science and Technology}, 93:105357, 2019.
+
+\bibitem{baker1980bricard}
+J~Eddie Baker.
+\newblock An analysis of the bricard linkages.
+\newblock {\em Mechanism and machine Theory}, 15(4):267--286, 1980.
+
+\bibitem{liu2009myard}
+SY~Liu and Yan Chen.
+\newblock Myard linkage and its mobile assemblies.
+\newblock {\em Mechanism and Machine Theory}, 44(10):1950--1963, 2009.
+
+\bibitem{chen2005bennett}
+Yan Chen and Zhong You.
+\newblock Mobile assemblies based on the bennett linkage.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 461(2056):1229--1245, 2005.
+
+\bibitem{qi2017bricard}
+Xiaozhi Qi, Hailin Huang, Zhihuai Miao, Bing Li, and Zongquan Deng.
+\newblock Design and mobility analysis of large deployable mechanisms based on plane-symmetric bricard linkage.
+\newblock {\em Journal of Mechanical Design}, 139(2):022302, 2017.
+
+\bibitem{snelson1965tensegrity}
+Kenneth~D Snelson.
+\newblock Continuous tension, discontinuous compression structures, February~16 1965.
+\newblock US Patent 3,169,611.
+
+\bibitem{tibert2002tensegrity}
+Gunnar Tibert.
+\newblock {\em Deployable tensegrity structures for space applications}.
+\newblock PhD thesis, KTH, 2002.
+
+\bibitem{liu2022tensegrity}
+Yixiang Liu, Qing Bi, Xiaoming Yue, Jiang Wu, Bin Yang, and Yibin Li.
+\newblock A review on tensegrity structures-based robots.
+\newblock {\em Mechanism and Machine Theory}, 168:104571, 2022.
+
+\bibitem{kiper2008polyhedra}
+G{\"o}khan Kiper, Eres S{\"o}ylemez, and AU~{\"O}zg{\"u}r Ki{\c{s}}isel.
+\newblock A family of deployable polygons and polyhedra.
+\newblock {\em Mechanism and Machine Theory}, 43(5):627--640, 2008.
+
+\bibitem{li2023opt}
+Yaxin Li and Sudarshan Krishnan.
+\newblock Geometric design and optimization of scissor-type deployable structures.
+\newblock {\em Journal of Building Engineering}, 65:105724, 2023.
+
+\bibitem{kim2014opt}
+Suh~In Kim and Yoon~Young Kim.
+\newblock Topology optimization of planar linkage mechanisms.
+\newblock {\em International Journal for Numerical Methods in Engineering}, 98(4):265--286, 2014.
+
+\bibitem{garcia2021limitations}
+Carlos~Jos{\'e} Garc{\'\i}a-Mora and Jose S{\'a}nchez-S{\'a}nchez.
+\newblock Limitations in the design of deployable structures with straight scissors using identical elements.
+\newblock {\em International Journal of Solids and Structures}, 230:111171, 2021.
+
+\bibitem{miura1984design}
+Koryo Miura.
+\newblock Design and operation of a deployable truss structure.
+\newblock In {\em NASA. Goddard Space Flight Center The 18th Aerospace Mech. Symp.}, 1984.
+
+\bibitem{sofla2009shape}
+AYN Sofla, DM~Elzey, and HNG Wadley.
+\newblock Shape morphing hinged truss structures.
+\newblock {\em Smart Materials and Structures}, 18(6):065012, 2009.
+
+\bibitem{wang2015design}
+Yan Wang, Rongqiang Liu, Hui Yang, Qiang Cong, and Hongwei Guo.
+\newblock Design and deployment analysis of modular deployable structure for large antennas.
+\newblock {\em Journal of Spacecraft and Rockets}, 52(4):1101--1111, 2015.
+
+\bibitem{giersch2010deployment}
+Louis~R Giersch and Kevin Knarr.
+\newblock Deployment of a curved truss.
+\newblock Technical Report NPO-47269, 2010.
+
+\bibitem{yao2023dynamic}
+Huaibo Yao, Yixin Huang, Wenlai Ma, Lei Liang, and Yang Zhao.
+\newblock Dynamic analysis of a large deployable space truss structure considering semi-rigid joints.
+\newblock {\em Aerospace}, 10(9):821, 2023.
+
+\bibitem{studio2002rolling}
+Heatherwick Studio.
+\newblock Rolling bridge.
+\newblock {\em Retrieved May}, 30:2020, 2002.
+
+\bibitem{packman2005rolling}
+R~Packman.
+\newblock The rolling bridge, paddington basin.
+\newblock {\em Structural Engineer}, 83(2), 2005.
+
+\bibitem{barker1985complete}
+Clark~R Barker.
+\newblock A complete classification of planar four-bar linkages.
+\newblock {\em Mechanism and Machine Theory}, 20(6):535--554, 1985.
+
+\bibitem{grashof1883voss}
+Franz Grashof.
+\newblock {\em Theoretische Maschinenlehre: Theorie der Getriebe und der mechanischen Me{\ss}instrumente}, volume~2.
+\newblock Voss, 1883.
+
+\bibitem{tyrrell1970convex}
+R~Tyrrell~Rockafellar.
+\newblock Convex analysis.
+\newblock {\em Princeton mathematical series}, 28, 1970.
+
+\bibitem{zegard2014grand}
+Tom{\'a}s Zegard and Glaucio~H Paulino.
+\newblock Grand—ground structure based topology optimization for arbitrary 2d domains using matlab.
+\newblock {\em Structural and Multidisciplinary Optimization}, 50:861--882, 2014.
+
+\bibitem{sigmund2013topology}
+Ole Sigmund and Kurt Maute.
+\newblock Topology optimization approaches: A comparative review.
+\newblock {\em Structural and multidisciplinary optimization}, 48(6):1031--1055, 2013.
+
+\bibitem{zegard2020continuum}
+Tomas Zegard, Christian Hartz, Arek Mazurek, and William~F Baker.
+\newblock Advancing building engineering through structural and topology optimization.
+\newblock {\em Structural and Multidisciplinary Optimization}, 62(2):915--935, 2020.
+
+\bibitem{ross2010wood}
+Robert~J Ross et~al.
+\newblock Wood handbook: wood as an engineering material.
+\newblock {\em USDA Forest Service, Forest Products Laboratory, General Technical Report FPL-GTR-190, 2010: 509 p. 1 v.}, 190, 2010.
+
+\bibitem{lum2000laser}
+KCP Lum, SL~Ng, and I~Black.
+\newblock Co2 laser cutting of mdf: 1. determination of process parameter settings.
+\newblock {\em Optics \& laser technology}, 32(1):67--76, 2000.
+
+\bibitem{mushtaq2020laser}
+Ray~Tahir Mushtaq, Yanen Wang, Mudassar Rehman, Aqib~Mashood Khan, and Mozammel Mia.
+\newblock State-of-the-art and trends in co2 laser cutting of polymeric materials—a review.
+\newblock {\em Materials}, 13(17):3839, 2020.
+
+\bibitem{felippa2001history}
+Carlos~A Felippa.
+\newblock A historical outline of matrix structural analysis: a play in three acts.
+\newblock {\em Computers \& Structures}, 79(14):1313--1324, 2001.
+
+\bibitem{kim2014design}
+Bongsu Kim and Ashish~D Deshpande.
+\newblock Design of nonlinear rotational stiffness using a noncircular pulley-spring mechanism.
+\newblock {\em Journal of Mechanisms and Robotics}, 6(4):041009, 2014.
+
+\bibitem{franco2021static}
+Jorge~A Franco, Juan~A Gallego, and Just~L Herder.
+\newblock Static balancing of four-bar compliant mechanisms with torsion springs by exerting negative stiffness using linear spring at the instant center of rotation.
+\newblock {\em Journal of Mechanisms and Robotics}, 13(3):031010, 2021.
+
+\bibitem{knox2009unidirectional}
+Brian~T Knox and James~P Schmiedeler.
+\newblock A unidirectional series-elastic actuator design using a spiral torsion spring.
+\newblock {\em Journal of Mechanical Design}, 131(12), 2009.
 
 \bibitem{dumas2012joint}
 Claire Dumas, St{\'e}phane Caro, Mehdi Cherif, S{\'e}bastien Garnier, and Beno{\^\i}t Furet.
@@ -105,380 +255,25 @@ W~Thomas Edwards.
 \newblock Effect of joint stiffness on standing stability.
 \newblock {\em Gait \& posture}, 25(3):432--439, 2007.
 
-\bibitem{faltinsen_numerical_1991}
-O~Faltinsen and Rui Zhao.
-\newblock Numerical predictions of ship motions at high forward speed.
-\newblock {\em Philosophical Transactions of the Royal Society of London. Series A: Physical and Engineering Sciences}, 334(1634):241--252, 1991.
-
 \bibitem{fang2017online}
 Cheng Fang, Arash Ajoudani, Antonio Bicchi, and Nikos~G Tsagarakis.
 \newblock Online model based estimation of complete joint stiffness of human arm.
 \newblock {\em IEEE Robotics and Automation Letters}, 3(1):84--91, 2017.
-
-\bibitem{farshad1978iranian}
-M.~Farshad and D.~Isfahanian.
-\newblock Iranian plateau - the homeland of original truss structures.
-\newblock {\em Journal of the American Oriental Society}, 98(3):248--250, 1978.
-
-\bibitem{felippa2001history}
-Carlos~A Felippa.
-\newblock A historical outline of matrix structural analysis: a play in three acts.
-\newblock {\em Computers \& Structures}, 79(14):1313--1324, 2001.
-
-\bibitem{filipov2017bar}
-ET~Filipov, K~Liu, Tomohiro Tachi, Mark Schenk, and Glaucio~H Paulino.
-\newblock Bar and hinge models for scalable analysis of origami.
-\newblock {\em International Journal of Solids and Structures}, 124:26--45, 2017.
-
-\bibitem{franco2021static}
-Jorge~A Franco, Juan~A Gallego, and Just~L Herder.
-\newblock Static balancing of four-bar compliant mechanisms with torsion springs by exerting negative stiffness using linear spring at the instant center of rotation.
-\newblock {\em Journal of Mechanisms and Robotics}, 13(3):031010, 2021.
-
-\bibitem{garcia2021limitations}
-Carlos~Jos{\'e} Garc{\'\i}a-Mora and Jose S{\'a}nchez-S{\'a}nchez.
-\newblock Limitations in the design of deployable structures with straight scissors using identical elements.
-\newblock {\em International Journal of Solids and Structures}, 230:111171, 2021.
-
-\bibitem{gasparini1989early}
-Dario~A Gasparini and Caterina Provost.
-\newblock Early nineteenth century developments in truss design in britain, france and the united states.
-\newblock {\em Construction history}, 5:21--33, 1989.
-
-\bibitem{giersch2010deployment}
-Louis~R Giersch and Kevin Knarr.
-\newblock Deployment of a curved truss.
-\newblock Technical Report NPO-47269, 2010.
 
 \bibitem{gillman2018truss}
 Andrew Gillman, Kazuko Fuchi, and PR~Buskohl.
 \newblock Truss-based nonlinear mechanical analysis for origami structures exhibiting bifurcation and limit point instabilities.
 \newblock {\em International Journal of Solids and Structures}, 147:80--93, 2018.
 
-\bibitem{grashof1883voss}
-Franz Grashof.
-\newblock {\em Theoretische Maschinenlehre: Theorie der Getriebe und der mechanischen Me{\ss}instrumente}, volume~2.
-\newblock Voss, 1883.
-
-\bibitem{halswell_rhib_2011}
-Peter Halswell, Philip~A Wilson, Dominic~J Taunton, and Stephen Austen.
-\newblock Design and performance of inflatable boats: flexibility and environmental considerations.
-\newblock 2011.
-
-\bibitem{han2019antenna}
-Bo~Han, Yundou Xu, Jiantao Yao, Dong Zheng, Yongjie Li, and Yongsheng Zhao.
-\newblock Design and analysis of a scissors double-ring truss deployable mechanism for space antennas.
-\newblock {\em Aerospace Science and Technology}, 93:105357, 2019.
-
-\bibitem{harder_reconfiguration_2004}
-Deane~L Harder, Olga Speck, Catriona~L Hurd, and Thomas Speck.
-\newblock Reconfiguration as a prerequisite for survival in highly unstable flow-dominated habitats.
-\newblock {\em Journal of Plant Growth Regulation}, 23:98--107, 2004.
-
-\bibitem{hibbeler2006structural}
-Russell~Charles Hibbeler and Kiang-Hwee Tan.
-\newblock {\em Structural analysis}.
-\newblock Pearson Prentice Hall Upper Saddle River, 2006.
-
-\bibitem{hoberman1991scissor}
-Charles Hoberman.
-\newblock Radial expansion/retraction truss structures, June~18 1991.
-\newblock US Patent 5,024,031.
-
-\bibitem{origami_flexiball_2023}
-Fuwen Hu, Zichuan Kou, Eyob~Messele Sefene, and Tadeusz Mikolajczyk.
-\newblock An origami flexiball-inspired soft robotic jellyfish.
-\newblock {\em Journal of Marine Science and Engineering}, 11(4), 2023.
-
-\bibitem{kartal2010effects}
-ME~Kartal, HB~Basaga, A~Bayraktar, and Murat Muvaf{\i}k.
-\newblock Effects of semi-rigid connection on structural responses.
-\newblock {\em Electronic journal of structural Engineering}, 10:22--35, 2010.
-
-\bibitem{kassabian1999roof}
-PE~Kassabian, Zhong You, and Sergio Pellegrino.
-\newblock Retractable roof structures.
-\newblock {\em Proceedings of the Institution of Civil Engineers-Structures and Buildings}, 134(1):45--56, 1999.
-
-\bibitem{kim2014design}
-Bongsu Kim and Ashish~D Deshpande.
-\newblock Design of nonlinear rotational stiffness using a noncircular pulley-spring mechanism.
-\newblock {\em Journal of Mechanisms and Robotics}, 6(4):041009, 2014.
-
-\bibitem{kim_design_2013}
-Dong~Jin Kim, Sun~Young Kim, Young~Jun You, Key~Pyo Rhee, Seong~Hwan Kim, and Yeon~Gyu Kim.
-\newblock Design of high-speed planing hulls for the improvement of resistance and seakeeping performance.
-\newblock {\em International Journal of Naval Architecture and Ocean Engineering}, 5(1):161--177, 2013.
-
-\bibitem{kim2014opt}
-Suh~In Kim and Yoon~Young Kim.
-\newblock Topology optimization of planar linkage mechanisms.
-\newblock {\em International Journal for Numerical Methods in Engineering}, 98(4):265--286, 2014.
-
-\bibitem{kim2021scissor}
-Tae-Hyun Kim, Jong-Eun Suh, and Jae-Hung Han.
-\newblock Deployable truss structure with flat-form storability using scissor-like elements.
-\newblock {\em Mechanism and Machine Theory}, 159:104252, 2021.
-
-\bibitem{kiper2008polyhedra}
-G{\"o}khan Kiper, Eres S{\"o}ylemez, and AU~{\"O}zg{\"u}r Ki{\c{s}}isel.
-\newblock A family of deployable polygons and polyhedra.
-\newblock {\em Mechanism and Machine Theory}, 43(5):627--640, 2008.
-
-\bibitem{knox2009unidirectional}
-Brian~T Knox and James~P Schmiedeler.
-\newblock A unidirectional series-elastic actuator design using a spiral torsion spring.
-\newblock {\em Journal of Mechanical Design}, 131(12), 2009.
-
-\bibitem{korobkin_hydro_2017}
-Alexander~A Korobkin, Tatyana~I Khabakhpasheva, and Kevin~J Maki.
-\newblock Hydrodynamic forces in water exit problems.
-\newblock {\em Journal of Fluids and Structures}, 69:16--33, 2017.
-
-\bibitem{kuribayashi_stent_2006}
-Kaori Kuribayashi, Koichi Tsuchiya, Zhong You, Dacian Tomus, Minoru Umemoto, Takahiro Ito, and Masahiro Sasaki.
-\newblock Self-deployable origami stent grafts as a biomedical application of ni-rich tini shape memory alloy foil.
-\newblock {\em Materials Science and Engineering: A}, 419(1--2):131--137, 2006.
-
-\bibitem{li2023opt}
-Yaxin Li and Sudarshan Krishnan.
-\newblock Geometric design and optimization of scissor-type deployable structures.
-\newblock {\em Journal of Building Engineering}, 65:105724, 2023.
-
-\bibitem{liu2017merlin}
-Ke~Liu and Glaucio~H Paulino.
-\newblock Nonlinear mechanics of non-rigid origami: an efficient computational approach.
-\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 473(2206):20170348, 2017.
-
-\bibitem{liu2009myard}
-SY~Liu and Yan Chen.
-\newblock Myard linkage and its mobile assemblies.
-\newblock {\em Mechanism and Machine Theory}, 44(10):1950--1963, 2009.
-
-\bibitem{liu2022tensegrity}
-Yixiang Liu, Qing Bi, Xiaoming Yue, Jiang Wu, Bin Yang, and Yibin Li.
-\newblock A review on tensegrity structures-based robots.
-\newblock {\em Mechanism and Machine Theory}, 168:104571, 2022.
+\bibitem{zhu2022review}
+Yi~Zhu, Mark Schenk, and Evgueni~T Filipov.
+\newblock A review on origami simulations: from kinematics, to mechanics, toward multiphysics.
+\newblock {\em Applied Mechanics Reviews}, 74(3):030801, 2022.
 
 \bibitem{lu2023origami}
 Lu~Lu, Sophie Leanza, and Ruike~Renee Zhao.
 \newblock Origami with rotational symmetry: a review on their mechanics and design.
 \newblock {\em Applied Mechanics Reviews}, 75(5):050801, 2023.
-
-\bibitem{lum2000laser}
-KCP Lum, SL~Ng, and I~Black.
-\newblock Co2 laser cutting of mdf: 1. determination of process parameter settings.
-\newblock {\em Optics \& laser technology}, 32(1):67--76, 2000.
-
-\bibitem{ma_design_2024}
-Xiaofei Ma, Ning An, Qiang Cong, Jiang-Bo Bai, Minger Wu, Yan Xu, Jinxiong Zhou, Dayu Zhang, Taotao Zhang, Ruiwen Guo, et~al.
-\newblock Design, modeling, and manufacturing of high strain composites for space deployable structures.
-\newblock {\em Communications Engineering}, 3(1):78, 2024.
-
-\bibitem{mcguire2000matrix}
-W.~McGuire, R.H. Gallagher, and R.D. Ziemian.
-\newblock {\em Matrix Structural Analysis}.
-\newblock Wiley, 2015.
-
-\bibitem{meloni_engineering_2021}
-Marco Meloni, Jianguo Cai, Qian Zhang, Daniel Sang-Hoon~Lee, Meng Li, Ruijun Ma, Teo~Emilov Parashkevov, and Jian Feng.
-\newblock Engineering origami: A comprehensive review of recent applications, design methods, and tools.
-\newblock {\em Advanced Science}, 8(13):2000636, 2021.
-
-\bibitem{mira2014arch}
-Lara~Alegria Mira, Ashley~P Thrall, and Niels De~Temmerman.
-\newblock Deployable scissor arch for transitional shelters.
-\newblock {\em Automation in Construction}, 43:123--131, 2014.
-
-\bibitem{k_science_2008}
-K~Miura.
-\newblock Science of miura-ori: A review.
-\newblock In {\em Proceedings of 4th International Conference on Origami in Science, Mathematics, and Education (4OSME)}, 2008.
-
-\bibitem{miura1984design}
-Koryo Miura.
-\newblock Design and operation of a deployable truss structure.
-\newblock In {\em NASA. Goddard Space Flight Center The 18th Aerospace Mech. Symp.}, 1984.
-
-\bibitem{mohammed2019effect}
-Douaa~Raheem Mohammed and Murtada~A Ismael.
-\newblock Effect of semi-rigid connection on post-buckling behaviour of frames using finite element method.
-\newblock {\em Civil Engineering Journal}, 5(7):1619--1630, 2019.
-
-\bibitem{molina2023closed}
-Juan~Camilo Molina-Villegas and Jorge Eliecer~Ballesteros Ortega.
-\newblock Closed-form solution of timoshenko frames with semi-rigid connections.
-\newblock In {\em Structures}, volume~48, pages 212--225. Elsevier, 2023.
-
-\bibitem{mushtaq2020laser}
-Ray~Tahir Mushtaq, Yanen Wang, Mudassar Rehman, Aqib~Mashood Khan, and Mozammel Mia.
-\newblock State-of-the-art and trends in co2 laser cutting of polymeric materials—a review.
-\newblock {\em Materials}, 13(17):3839, 2020.
-
-\bibitem{packman2005rolling}
-R~Packman.
-\newblock The rolling bridge, paddington basin.
-\newblock {\em Structural Engineer}, 83(2), 2005.
-
-\bibitem{paoli_fabrication_2012}
-Alessandro Paoli and Armando~V. Razionale.
-\newblock Large yacht hull measurement by integrating optical scanning with mechanical tracking-based methodologies.
-\newblock {\em Robotics and Computer-Integrated Manufacturing}, 28(5):592--601, 2012.
-
-\bibitem{patel2007scissor}
-Jiten Patel and GK~Ananthasuresh.
-\newblock A kinematic theory for radially foldable planar linkages.
-\newblock {\em International journal of solids and structures}, 44(18-19):6279--6298, 2007.
-
-\bibitem{patil2025truss}
-Hardik~Y. Patil and Evgueni~T. Filipov.
-\newblock Transforming static trusses into shape morphing systems using principles of quadrilateral linkages.
-\newblock {\em International Journal of Solids and Structures}, 332:113913, 2026.
-
-\bibitem{qi2017bricard}
-Xiaozhi Qi, Hailin Huang, Zhihuai Miao, Bing Li, and Zongquan Deng.
-\newblock Design and mobility analysis of large deployable mechanisms based on plane-symmetric bricard linkage.
-\newblock {\em Journal of Mechanical Design}, 139(2):022302, 2017.
-
-\bibitem{ross2010wood}
-Robert~J Ross et~al.
-\newblock Wood handbook: wood as an engineering material.
-\newblock {\em USDA Forest Service, Forest Products Laboratory, General Technical Report FPL-GTR-190, 2010: 509 p. 1 v.}, 190, 2010.
-
-\bibitem{russell_causeway_2014}
-Brittani~R Russell, Ashley~P Thrall, Joseph~A Padula, and Jimmy~E Fowler.
-\newblock Reconceptualization and optimization of a rapidly deployable floating causeway.
-\newblock {\em Journal of Bridge Engineering}, 19(4):04013013, 2014.
-
-\bibitem{savitsky_planing_1985}
-Daniel Savitsky.
-\newblock Planing craft.
-\newblock {\em Naval Engineers Journal}, 97(2):113--141, 1985.
-
-\bibitem{whisker_savitsky_2007}
-Daniel Savitsky, Michael~F DeLorme, and Raju Datla.
-\newblock Inclusion of whisker spray drag in performance prediction method for high-speed planing hulls.
-\newblock {\em Marine Technology and SNAME News}, 44(01):35--56, 2007.
-
-\bibitem{schenk2011origami}
-Mark Schenk, Simon~D Guest, et~al.
-\newblock Origami folding: A structural engineering approach.
-\newblock {\em Origami}, 5:291--304, 2011.
-
-\bibitem{sigmund2013topology}
-Ole Sigmund and Kurt Maute.
-\newblock Topology optimization approaches: A comparative review.
-\newblock {\em Structural and multidisciplinary optimization}, 48(6):1031--1055, 2013.
-
-\bibitem{snelson1965tensegrity}
-Kenneth~D Snelson.
-\newblock Continuous tension, discontinuous compression structures, February~16 1965.
-\newblock US Patent 3,169,611.
-
-\bibitem{sofla2009shape}
-AYN Sofla, DM~Elzey, and HNG Wadley.
-\newblock Shape morphing hinged truss structures.
-\newblock {\em Smart Materials and Structures}, 18(6):065012, 2009.
-
-\bibitem{stolpe2016truss}
-Mathias Stolpe.
-\newblock Truss optimization with discrete design variables: a critical review.
-\newblock {\em Structural and Multidisciplinary Optimization}, 53:349--374, 2016.
-
-\bibitem{studio2002rolling}
-Heatherwick Studio.
-\newblock Rolling bridge.
-\newblock {\em Retrieved May}, 30:2020, 2002.
-
-\bibitem{sun_planing_2007}
-Hui Sun and Odd~M Faltinsen.
-\newblock The influence of gravity on the performance of planing vessels in calm water.
-\newblock {\em Journal of Engineering Mathematics}, 58:91--107, 2007.
-
-\bibitem{tavakoli_review_2024}
-Sasan Tavakoli, Mingyang Zhang, Aleksander~A Kondratenko, and Spyros Hirdaris.
-\newblock A review on the hydrodynamics of planing hulls.
-\newblock {\em Ocean Engineering}, 303:117046, 2024.
-
-\bibitem{thorne2017structural}
-Robert Thorne.
-\newblock {\em Structural Iron and Steel, 1850--1900}.
-\newblock Routledge, 2017.
-
-\bibitem{tibert2002tensegrity}
-Gunnar Tibert.
-\newblock {\em Deployable tensegrity structures for space applications}.
-\newblock PhD thesis, KTH, 2002.
-
-\bibitem{turner1956stiffness}
-M~Jon Turner, Ray~W Clough, Harold~C Martin, and LJ~Topp.
-\newblock Stiffness and deflection analysis of complex structures.
-\newblock {\em journal of the Aeronautical Sciences}, 23(9):805--823, 1956.
-
-\bibitem{tyrrell1970convex}
-R~Tyrrell~Rockafellar.
-\newblock Convex analysis.
-\newblock {\em Princeton mathematical series}, 28, 1970.
-
-\bibitem{ullah2022topopt}
-Zahur Ullah, Baseer Ullah, and Wajid Khan.
-\newblock Proportional topology optimisation with maximum entropy-based meshless method for minimum compliance and stress constrained problems.
-\newblock {\em Engineering with Computers}, 38(6):5541--5561, 2022.
-
-\bibitem{wang2015design}
-Yan Wang, Rongqiang Liu, Hui Yang, Qiang Cong, and Hongwei Guo.
-\newblock Design and deployment analysis of modular deployable structure for large antennas.
-\newblock {\em Journal of Spacecraft and Rockets}, 52(4):1101--1111, 2015.
-
-\bibitem{wasfy1996torsional}
-TAMER~M WASFY.
-\newblock A torsional spring-like beam element for the dynamic analysis of flexible multibody systems.
-\newblock {\em International Journal for Numerical Methods in Engineering}, 39(7):1079--1096, 1996.
-
-\bibitem{woodruff2020bar}
-Steven~R Woodruff and Evgueni~T Filipov.
-\newblock A bar and hinge model formulation for structural analysis of curved-crease origami.
-\newblock {\em International Journal of Solids and Structures}, 204:114--127, 2020.
-
-\bibitem{woodruff_bar_2020}
-Steven~R. Woodruff and Evgueni~T. Filipov.
-\newblock A bar and hinge model formulation for structural analysis of curved-crease origami.
-\newblock {\em International Journal of Solids and Structures}, 204--205:114--127, 2020.
-
-\bibitem{woodruff_curved_2021}
-Steven~R Woodruff and Evgueni~T Filipov.
-\newblock Curved creases redistribute global bending stiffness in corrugations: theory and experimentation.
-\newblock {\em Meccanica}, 56(6):1613--1634, 2021.
-
-\bibitem{yao2023dynamic}
-Huaibo Yao, Yixin Huang, Wenlai Ma, Lei Liang, and Yang Zhao.
-\newblock Dynamic analysis of a large deployable space truss structure considering semi-rigid joints.
-\newblock {\em Aerospace}, 10(9):821, 2023.
-
-\bibitem{you1997scissor}
-Zhong You and Sergio Pellegrino.
-\newblock Foldable bar structures.
-\newblock {\em International Journal of Solids and Structures}, 34(15):1825--1847, 1997.
-
-\bibitem{zarnick_nonlinear_1978}
-Ernest~E. Zarnick.
-\newblock A nonlinear mathematical model of motions of a planing boat in regular waves.
-\newblock Technical Report DTNSRDC--78/032, David W. Taylor Naval Ship Research and Development Center, Bethesda, Maryland, 1978.
-
-\bibitem{zarnick_nonlinear_1979}
-Ernest~E. Zarnick.
-\newblock A nonlinear mathematical model of motions of a planing boat in irregular waves.
-\newblock Technical Report DTNSRDC/SPD--0867--01, David W. Taylor Naval Ship Research and Development Center, Bethesda, Maryland, 1979.
-
-\bibitem{zegard2020continuum}
-Tomas Zegard, Christian Hartz, Arek Mazurek, and William~F Baker.
-\newblock Advancing building engineering through structural and topology optimization.
-\newblock {\em Structural and Multidisciplinary Optimization}, 62(2):915--935, 2020.
-
-\bibitem{zegard2014grand}
-Tom{\'a}s Zegard and Glaucio~H Paulino.
-\newblock Grand—ground structure based topology optimization for arbitrary 2d domains using matlab.
-\newblock {\em Structural and Multidisciplinary Optimization}, 50:861--882, 2014.
 
 \bibitem{zhang2019energy}
 Yunlan Zhang, David Restrepo, Mirian Velay-Lizancos, Nilesh~D Mankame, and Pablo~D Zavattieri.
@@ -495,14 +290,219 @@ Shaowei Zhu, Xiaojun Tan, Shuai Chen, Bing Wang, Li~Ma, and Linzhi Wu.
 \newblock Quasi-all-directional negative stiffness metamaterials based on negative rotation stiffness elements.
 \newblock {\em physica status solidi (b)}, 257(6):1900538, 2020.
 
-\bibitem{zhu2022review}
-Yi~Zhu, Mark Schenk, and Evgueni~T Filipov.
-\newblock A review on origami simulations: from kinematics, to mechanics, toward multiphysics.
-\newblock {\em Applied Mechanics Reviews}, 74(3):030801, 2022.
+\bibitem{wasfy1996torsional}
+TAMER~M WASFY.
+\newblock A torsional spring-like beam element for the dynamic analysis of flexible multibody systems.
+\newblock {\em International Journal for Numerical Methods in Engineering}, 39(7):1079--1096, 1996.
+
+\bibitem{kartal2010effects}
+ME~Kartal, HB~Basaga, A~Bayraktar, and Murat Muvaf{\i}k.
+\newblock Effects of semi-rigid connection on structural responses.
+\newblock {\em Electronic journal of structural Engineering}, 10:22--35, 2010.
+
+\bibitem{molina2023closed}
+Juan~Camilo Molina-Villegas and Jorge Eliecer~Ballesteros Ortega.
+\newblock Closed-form solution of timoshenko frames with semi-rigid connections.
+\newblock In {\em Structures}, volume~48, pages 212--225. Elsevier, 2023.
+
+\bibitem{mohammed2019effect}
+Douaa~Raheem Mohammed and Murtada~A Ismael.
+\newblock Effect of semi-rigid connection on post-buckling behaviour of frames using finite element method.
+\newblock {\em Civil Engineering Journal}, 5(7):1619--1630, 2019.
+
+\bibitem{schenk2011origami}
+Mark Schenk, Simon~D Guest, et~al.
+\newblock Origami folding: A structural engineering approach.
+\newblock {\em Origami}, 5:291--304, 2011.
+
+\bibitem{liu2017merlin}
+Ke~Liu and Glaucio~H Paulino.
+\newblock Nonlinear mechanics of non-rigid origami: an efficient computational approach.
+\newblock {\em Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences}, 473(2206):20170348, 2017.
+
+\bibitem{filipov2017bar}
+ET~Filipov, K~Liu, Tomohiro Tachi, Mark Schenk, and Glaucio~H Paulino.
+\newblock Bar and hinge models for scalable analysis of origami.
+\newblock {\em International Journal of Solids and Structures}, 124:26--45, 2017.
+
+\bibitem{woodruff2020bar}
+Steven~R Woodruff and Evgueni~T Filipov.
+\newblock A bar and hinge model formulation for structural analysis of curved-crease origami.
+\newblock {\em International Journal of Solids and Structures}, 204:114--127, 2020.
+
+\bibitem{mcguire2000matrix}
+W.~McGuire, R.H. Gallagher, and R.D. Ziemian.
+\newblock {\em Matrix Structural Analysis}.
+\newblock Wiley, 2015.
+
+\bibitem{patil2025truss}
+Hardik~Y. Patil and Evgueni~T. Filipov.
+\newblock Transforming static trusses into shape morphing systems using principles of quadrilateral linkages.
+\newblock {\em International Journal of Solids and Structures}, 332:113913, 2026.
+
+\bibitem{carter_boat_2006}
+Robert Carter.
+\newblock Boat remains and maritime trade in the persian gulf during the sixth and fifth millennia bc.
+\newblock {\em Antiquity}, 80(307):52--63, 2006.
+
+\bibitem{paoli_fabrication_2012}
+Alessandro Paoli and Armando~V. Razionale.
+\newblock Large yacht hull measurement by integrating optical scanning with mechanical tracking-based methodologies.
+\newblock {\em Robotics and Computer-Integrated Manufacturing}, 28(5):592--601, 2012.
+
+\bibitem{bruce_ship_2021}
+George Bruce.
+\newblock Ship construction.
+\newblock {\em Shipbuilding Management}, pages 153--162, 2021.
+
+\bibitem{bjorn_crew_2017}
+MP~de~Alwis, K~Garme, Riccardo Lo~Martire, JI~K{\aa}sin, and Bj{\"o}rn {\"A}ng.
+\newblock Crew acceleration exposure, health and performance in high-speed operations at sea.
+\newblock In {\em The 11th Symposium on High-Speed Marine Vehicles, Naples, Italy}, 2017.
+
+\bibitem{meloni_engineering_2021}
+Marco Meloni, Jianguo Cai, Qian Zhang, Daniel Sang-Hoon~Lee, Meng Li, Ruijun Ma, Teo~Emilov Parashkevov, and Jian Feng.
+\newblock Engineering origami: A comprehensive review of recent applications, design methods, and tools.
+\newblock {\em Advanced Science}, 8(13):2000636, 2021.
+
+\bibitem{chen_drag_2023}
+Guanyu Chen, Dongsheng Chen, Jessica Weakly, and Cynthia Sung.
+\newblock Drag coefficient characterization of the origami magic ball.
+\newblock In {\em ASME International Design Engineering Technical Conferences and Computers and Information in Engineering Conference (IDETC/CIE)}, 2023.
+
+\bibitem{origami_flexiball_2023}
+Fuwen Hu, Zichuan Kou, Eyob~Messele Sefene, and Tadeusz Mikolajczyk.
+\newblock An origami flexiball-inspired soft robotic jellyfish.
+\newblock {\em Journal of Marine Science and Engineering}, 11(4), 2023.
 
 \bibitem{zirbel_hanaflex_2015}
 Shannon~A Zirbel, Brian~P Trease, Mark~W Thomson, Robert~J Lang, Spencer~P Magleby, and Larry~H Howell.
 \newblock Hanaflex: a large solar array for space applications.
 \newblock In {\em Micro- and Nanotechnology Sensors, Systems, and Applications VII}, volume 9467, pages 179--187. SPIE, 2015.
+
+\bibitem{kuribayashi_stent_2006}
+Kaori Kuribayashi, Koichi Tsuchiya, Zhong You, Dacian Tomus, Minoru Umemoto, Takahiro Ito, and Masahiro Sasaki.
+\newblock Self-deployable origami stent grafts as a biomedical application of ni-rich tini shape memory alloy foil.
+\newblock {\em Materials Science and Engineering: A}, 419(1--2):131--137, 2006.
+
+\bibitem{bowen_starshade_2016}
+Landen Bowen, Brian Trease, Mary Frecker, and Timothy Simpson.
+\newblock Dynamic modeling and analysis of an origami-inspired optical shield for the starshade spacecraft.
+\newblock In {\em Smart Materials, Adaptive Structures and Intelligent Systems}, volume 50480, page V001T01A012. American Society of Mechanical Engineers, 2016.
+
+\bibitem{dudte_scale_2016}
+Levi~H Dudte, Etienne Vouga, Tomohiro Tachi, and Lakshminarayanan Mahadevan.
+\newblock Programming curvature using origami tessellations.
+\newblock {\em Nature Materials}, 15(5):583--588, 2016.
+
+\bibitem{harder_reconfiguration_2004}
+Deane~L Harder, Olga Speck, Catriona~L Hurd, and Thomas Speck.
+\newblock Reconfiguration as a prerequisite for survival in highly unstable flow-dominated habitats.
+\newblock {\em Journal of Plant Growth Regulation}, 23:98--107, 2004.
+
+\bibitem{k_science_2008}
+K~Miura.
+\newblock Science of miura-ori: A review.
+\newblock In {\em Proceedings of 4th International Conference on Origami in Science, Mathematics, and Education (4OSME)}, 2008.
+
+\bibitem{erik_demaine_curved_2011}
+Erik Demaine, Martin Demaine, Duks Koschitz, and Tomohiro Tachi.
+\newblock Curved crease folding a review on art, design and mathematics.
+\newblock In {\em Proceedings of 35th Annual Symposium of IABSE/52nd Annual Symposium of IASS/6th International Conference on Space Structures: Taller, Longer, Lighter --- Meeting growing demand with limited resources}, page~1, London, United Kingdom, September 2011.
+
+\bibitem{woodruff_curved_2021}
+Steven~R Woodruff and Evgueni~T Filipov.
+\newblock Curved creases redistribute global bending stiffness in corrugations: theory and experimentation.
+\newblock {\em Meccanica}, 56(6):1613--1634, 2021.
+
+\bibitem{savitsky_planing_1985}
+Daniel Savitsky.
+\newblock Planing craft.
+\newblock {\em Naval Engineers Journal}, 97(2):113--141, 1985.
+
+\bibitem{tavakoli_review_2024}
+Sasan Tavakoli, Mingyang Zhang, Aleksander~A Kondratenko, and Spyros Hirdaris.
+\newblock A review on the hydrodynamics of planing hulls.
+\newblock {\em Ocean Engineering}, 303:117046, 2024.
+
+\bibitem{kim_design_2013}
+Dong~Jin Kim, Sun~Young Kim, Young~Jun You, Key~Pyo Rhee, Seong~Hwan Kim, and Yeon~Gyu Kim.
+\newblock Design of high-speed planing hulls for the improvement of resistance and seakeeping performance.
+\newblock {\em International Journal of Naval Architecture and Ocean Engineering}, 5(1):161--177, 2013.
+
+\bibitem{woodruff_bar_2020}
+Steven~R. Woodruff and Evgueni~T. Filipov.
+\newblock A bar and hinge model formulation for structural analysis of curved-crease origami.
+\newblock {\em International Journal of Solids and Structures}, 204--205:114--127, 2020.
+
+\bibitem{doctors_hydrodynamics_1985}
+Lawrence~J Doctors.
+\newblock Hydrodynamics of high-speed small craft.
+\newblock Technical report, 1985.
+
+\bibitem{ma_design_2024}
+Xiaofei Ma, Ning An, Qiang Cong, Jiang-Bo Bai, Minger Wu, Yan Xu, Jinxiong Zhou, Dayu Zhang, Taotao Zhang, Ruiwen Guo, et~al.
+\newblock Design, modeling, and manufacturing of high strain composites for space deployable structures.
+\newblock {\em Communications Engineering}, 3(1):78, 2024.
+
+\bibitem{halswell_rhib_2011}
+Peter Halswell, Philip~A Wilson, Dominic~J Taunton, and Stephen Austen.
+\newblock Design and performance of inflatable boats: flexibility and environmental considerations.
+\newblock 2011.
+
+\bibitem{russell_causeway_2014}
+Brittani~R Russell, Ashley~P Thrall, Joseph~A Padula, and Jimmy~E Fowler.
+\newblock Reconceptualization and optimization of a rapidly deployable floating causeway.
+\newblock {\em Journal of Bridge Engineering}, 19(4):04013013, 2014.
+
+\bibitem{deleo_origami_2020}
+Antonio~Alessandro Deleo, James O'Neil, Hiromi Yasuda, Marco Salviato, and Jinkyu Yang.
+\newblock Origami-based deployable structures made of carbon fiber reinforced polymer composites.
+\newblock {\em Composites Science and Technology}, 191:108060, 2020.
+
+\bibitem{deleo_composite_2018}
+A~Deleo, J~O'Neil, Hiromi Yasuda, Jinkyu Yang, and Marco Salviato.
+\newblock Composite origami: Foldable structures based on tachi-miura-polyhedron origami technique.
+\newblock {\em Proceedings of SAMPE}, 2018.
+
+\bibitem{constans2018introduction}
+Eric Constans and Karl~B Dyer.
+\newblock {\em Introduction to mechanism design: With computer applications}.
+\newblock CRC Press, 2018.
+
+\bibitem{zarnick_nonlinear_1978}
+Ernest~E. Zarnick.
+\newblock A nonlinear mathematical model of motions of a planing boat in regular waves.
+\newblock Technical Report DTNSRDC--78/032, David W. Taylor Naval Ship Research and Development Center, Bethesda, Maryland, 1978.
+
+\bibitem{zarnick_nonlinear_1979}
+Ernest~E. Zarnick.
+\newblock A nonlinear mathematical model of motions of a planing boat in irregular waves.
+\newblock Technical Report DTNSRDC/SPD--0867--01, David W. Taylor Naval Ship Research and Development Center, Bethesda, Maryland, 1979.
+
+\bibitem{faltinsen_numerical_1991}
+O~Faltinsen and Rui Zhao.
+\newblock Numerical predictions of ship motions at high forward speed.
+\newblock {\em Philosophical Transactions of the Royal Society of London. Series A: Physical and Engineering Sciences}, 334(1634):241--252, 1991.
+
+\bibitem{sun_planing_2007}
+Hui Sun and Odd~M Faltinsen.
+\newblock The influence of gravity on the performance of planing vessels in calm water.
+\newblock {\em Journal of Engineering Mathematics}, 58:91--107, 2007.
+
+\bibitem{korobkin_hydro_2017}
+Alexander~A Korobkin, Tatyana~I Khabakhpasheva, and Kevin~J Maki.
+\newblock Hydrodynamic forces in water exit problems.
+\newblock {\em Journal of Fluids and Structures}, 69:16--33, 2017.
+
+\bibitem{akers_dynamic_1999}
+Richard~H. Akers.
+\newblock Dynamic analysis of planing hulls in the vertical plane.
+\newblock In {\em Proceedings of The Society of Naval Architects and Marine Engineers}, New England, 1999.
+
+\bibitem{whisker_savitsky_2007}
+Daniel Savitsky, Michael~F DeLorme, and Raju Datla.
+\newblock Inclusion of whisker spray drag in performance prediction method for high-speed planing hulls.
+\newblock {\em Marine Technology and SNAME News}, 44(01):35--56, 2007.
 
 \end{thebibliography}

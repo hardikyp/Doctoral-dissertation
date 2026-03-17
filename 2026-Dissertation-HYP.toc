@@ -1,12 +1,12 @@
 \contentsline {frontchapter}{Dedication}{ii}{section*.1}%
 \contentsline {frontchapter}{Acknowledgements}{iii}{section*.2}%
 \contentsline {frontchapter}{Preface}{iv}{section*.3}%
-\contentsline {frontchapter}{List of Figures}{vii}{section*.5}%
-\contentsline {frontchapter}{List of Tables}{xi}{section*.6}%
-\contentsline {frontchapter}{List of Programs}{xii}{section*.7}%
-\contentsline {frontchapter}{List of Appendices}{xiii}{section*.9}%
-\contentsline {frontchapter}{List of Acronyms}{xiv}{section*.11}%
-\contentsline {frontchapter}{Abstract}{xv}{section*.12}%
+\contentsline {frontchapter}{List of Figures}{viii}{section*.5}%
+\contentsline {frontchapter}{List of Tables}{xii}{section*.6}%
+\contentsline {frontchapter}{List of Programs}{xiii}{section*.7}%
+\contentsline {frontchapter}{List of Appendices}{xiv}{section*.9}%
+\contentsline {frontchapter}{List of Acronyms}{xv}{section*.11}%
+\contentsline {frontchapter}{Abstract}{xvi}{section*.12}%
 \vspace {3.9ex}\noindent {\uppercase {Chapter}}\vspace {1.3ex}
 \contentsline {chapter}{\numberline {1}Background on static systems}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Transforming static trusses into shape morphing systems using principles of quadrilateral linkages}{2}{chapter.2}%
@@ -26,6 +26,7 @@
 \contentsline {subsection}{\numberline {2.5.1}Key contributions}{29}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Challenges and considerations for future work}{31}{subsection.2.5.2}%
 \contentsline {section}{\numberline {2.6}Concluding remarks}{32}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Data Accessibility}{33}{section.2.7}%
 \contentsline {chapter}{\numberline {3}Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}{34}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Stiffness matrix of a three-node torsional spring element}{36}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Torsional spring constitutive law}{37}{subsection.3.1.1}%
@@ -56,11 +57,11 @@
 \contentsline {section}{\numberline {5.5}Concluding remarks}{78}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Concluding Remarks and Future Work}{79}{chapter.6}%
 \vspace {3.9ex}
-\contentsline {backchapter}{Appendices}{80}{section*.34}%
+\contentsline {backchapter}{Appendices}{80}{section*.35}%
 \global \c@tocdepth 0\relax 
 \contentsline {section}{\numberline {A.1}Position analysis of a general quadrilateral linkage}{80}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Position analysis of 6 bar linkage with a single degree of freedom}{83}{section.A.2}%
 \contentsline {section}{\numberline {A.3}A note on the extent of actuation of a quadrilateral linkage}{84}{section.A.3}%
 \global \c@tocdepth 1\relax 
 \vspace {1.3ex}
-\contentsline {backchapter}{Bibliography}{88}{section*.42}%
+\contentsline {backchapter}{Bibliography}{88}{section*.43}%

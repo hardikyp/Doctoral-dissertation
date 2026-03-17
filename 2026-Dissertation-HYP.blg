@@ -1,51 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: 2026-Dissertation-HYP.aux
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: references.bib
 Warning--there's a number but no series in barry_implementation_2002
-Warning--empty institution in doctors_hydrodynamics_1985
 Warning--empty institution in giersch2010deployment
+Warning--empty institution in doctors_hydrodynamics_1985
 Warning--empty journal in halswell_rhib_2011
 You've used 101 entries,
-            2118 wiz_defined-function locations,
-            1092 strings with 22081 characters,
-and the built_in function-call counts, 34214 in all, are:
-= -- 3340
-> -- 1758
+            1791 wiz_defined-function locations,
+            1041 strings with 21607 characters,
+and the built_in function-call counts, 23121 in all, are:
+= -- 2051
+> -- 1065
 < -- 13
-+ -- 711
-- -- 592
-* -- 2587
-:= -- 5846
++ -- 397
+- -- 296
+* -- 1692
+:= -- 3746
 add.period$ -- 306
 call.type$ -- 101
-change.case$ -- 591
+change.case$ -- 96
 chr.to.int$ -- 0
 cite$ -- 105
-duplicate$ -- 1172
-empty$ -- 2549
-format.name$ -- 592
-if$ -- 6932
+duplicate$ -- 970
+empty$ -- 2244
+format.name$ -- 296
+if$ -- 5040
 int.to.chr$ -- 0
 int.to.str$ -- 101
 missing$ -- 99
 newline$ -- 508
-num.names$ -- 202
-pop$ -- 505
+num.names$ -- 101
+pop$ -- 210
 preamble$ -- 1
-purify$ -- 495
+purify$ -- 0
 quote$ -- 0
-skip$ -- 792
+skip$ -- 385
 stack$ -- 0
-substring$ -- 2201
+substring$ -- 1678
 swap$ -- 164
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 394
+type$ -- 0
 warning$ -- 4
-while$ -- 329
+while$ -- 228
 width$ -- 104
 write$ -- 1107
 (There were 4 warnings)

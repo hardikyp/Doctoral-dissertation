@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  17 MAR 2026 18:09
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.16)  17 MAR 2026 19:22
  restricted system commands enabled.
  file:line:error style messages enabled.
 **"d:/University of Michigan Dropbox/Hardik Patil/01-Projects/01-Dissertation/02-Manuscript/2026-Dissertation-HYP"
@@ -607,39 +607,29 @@ Package fontspec Info:
 (fontspec)             <->"name:Times New
 (fontspec)             Roman/BI:mode=node;script=latn;language=dflt;+tlig;+smcp;"
 
- (./2026-Dissertation-HYP.aux
-
-LaTeX Warning: Label `sec-conclusion' multiply defined.
-
-
-LaTeX Warning: Label `sec-discussion' multiply defined.
-
-
-LaTeX Warning: Label `sec-conclusion' multiply defined.
-
-)
+ (./2026-Dissertation-HYP.aux)
 \openout1 = 2026-Dissertation-HYP.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -702,38 +692,38 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 124.
+Package hyperref Info: Link coloring ON on input line 123.
  (./2026-Dissertation-HYP.out) (./2026-Dissertation-HYP.out)
 \@outlinefile=\write3
 
 \openout3 = 2026-Dissertation-HYP.out
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 124.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 124.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 124.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 124.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 124.
+(Font)              <12> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 124.
+(Font)              <8> on input line 123.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 124.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124.
+(Font)              <6> on input line 123.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 123.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -741,10 +731,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [0
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<00-front-material/frontispiece.png, id=163, 1284.8pt x 926.46124pt>
+<00-front-material/frontispiece.png, id=167, 1284.8pt x 926.46124pt>
 File: 00-front-material/frontispiece.png Graphic file (type png)
 <use 00-front-material/frontispiece.png>
-Package luatex.def Info: 00-front-material/frontispiece.png  used on input line 124.
+Package luatex.def Info: 00-front-material/frontispiece.png  used on input line 123.
 (luatex.def)             Requested size: 469.75502pt x 338.72807pt.
 
 
@@ -766,54 +756,43 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.0'
 \openout4 = 2026-Dissertation-HYP.toc
 
 
-[6] (./2026-Dissertation-HYP.lof
+[6]
 
-[7]
+[7] (./2026-Dissertation-HYP.lof
 
 [8]
 
-[9])
+[9]
+
+[10])
 \tf@lof=\write5
 
 \openout5 = 2026-Dissertation-HYP.lof
 
 
-[10] (./2026-Dissertation-HYP.lot)
+[11] (./2026-Dissertation-HYP.lot)
 \tf@lot=\write6
 
 \openout6 = 2026-Dissertation-HYP.lot
 
 
-[11] (./2026-Dissertation-HYP.lop)
+[12] (./2026-Dissertation-HYP.lop)
 \tf@lop=\write7
 
 \openout7 = 2026-Dissertation-HYP.lop
 
 
-[12] (./2026-Dissertation-HYP.loapp)
+[13] (./2026-Dissertation-HYP.loapp)
 \tf@loapp=\write8
 
 \openout8 = 2026-Dissertation-HYP.loapp
 
 
-[13]
+[14]
 
-LaTeX Warning: Hyper reference `acro:TLA' on page xiv undefined on input line 124.
+[15] (./00-front-material/abstract.tex)
 
-
-LaTeX Warning: Hyper reference `acro:TLA' on page xiv undefined on input line 124.
-
-
-LaTeX Warning: Hyper reference `acro:SOA' on page xiv undefined on input line 124.
-
-
-LaTeX Warning: Hyper reference `acro:SOA' on page xiv undefined on input line 124.
-
-
-
-[14] (./00-front-material/abstract.tex)
-
-[15] (./02-chapters/01-chapter.tex
+[16] (./02-chapters/01-chapter.tex
 CHAPTER 1.
 ) (./02-chapters/02-chapter.tex
 
@@ -829,16 +808,12 @@ CHAPTER 2.
 
 [3]
 
-LaTeX Warning: Reference `sec-data' on page 4 undefined on input line 9.
-
-
-
 [4]
 
 [5]
 
 [6]
-<01-figures/02-01-node-intro-rules.jpg, id=616, 540.5796pt x 312.9291pt>
+<01-figures/02-01-node-intro-rules.jpg, id=630, 540.5796pt x 312.9291pt>
 File: 01-figures/02-01-node-intro-rules.jpg Graphic file (type jpg)
 <use 01-figures/02-01-node-intro-rules.jpg>
 Package luatex.def Info: 01-figures/02-01-node-intro-rules.jpg  used on input line 30.
@@ -848,7 +823,7 @@ Package luatex.def Info: 01-figures/02-01-node-intro-rules.jpg  used on input li
 [7]
 
 [8<./01-figures/02-01-node-intro-rules.jpg>]
-<01-figures/02-02-node-intro-algo.jpg, id=632, 540.5796pt x 273.1806pt>
+<01-figures/02-02-node-intro-algo.jpg, id=646, 540.5796pt x 273.1806pt>
 File: 01-figures/02-02-node-intro-algo.jpg Graphic file (type jpg)
 <use 01-figures/02-02-node-intro-algo.jpg>
 Package luatex.def Info: 01-figures/02-02-node-intro-algo.jpg  used on input line 58.
@@ -861,12 +836,8 @@ Package luatex.def Info: 01-figures/02-02-node-intro-algo.jpg  used on input lin
 
 [11]
 
-LaTeX Warning: Reference `appx-subsec-actuation' on page 12 undefined on input line 80.
-
-
-
 [12]
-<01-figures/02-03-traditional-truss.jpg, id=656, 540.5796pt x 270.2898pt>
+<01-figures/02-03-traditional-truss.jpg, id=671, 540.5796pt x 270.2898pt>
 File: 01-figures/02-03-traditional-truss.jpg Graphic file (type jpg)
 <use 01-figures/02-03-traditional-truss.jpg>
 Package luatex.def Info: 01-figures/02-03-traditional-truss.jpg  used on input line 89.
@@ -880,7 +851,7 @@ Package luatex.def Info: 01-figures/02-03-traditional-truss.jpg  used on input l
 [15]
 
 [16]
-<01-figures/02-04-arbitrary-truss.jpg, id=686, 540.5796pt x 341.40347pt>
+<01-figures/02-04-arbitrary-truss.jpg, id=701, 540.5796pt x 341.40347pt>
 File: 01-figures/02-04-arbitrary-truss.jpg Graphic file (type jpg)
 <use 01-figures/02-04-arbitrary-truss.jpg>
 Package luatex.def Info: 01-figures/02-04-arbitrary-truss.jpg  used on input line 115.
@@ -894,7 +865,7 @@ Package luatex.def Info: 01-figures/02-04-arbitrary-truss.jpg  used on input lin
 [19]
 
 [20]
-<01-figures/02-05-out-of-plane-assembly.jpg, id=720, 540.5796pt x 168.3891pt>
+<01-figures/02-05-out-of-plane-assembly.jpg, id=735, 540.5796pt x 168.3891pt>
 File: 01-figures/02-05-out-of-plane-assembly.jpg Graphic file (type jpg)
 <use 01-figures/02-05-out-of-plane-assembly.jpg>
 Package luatex.def Info: 01-figures/02-05-out-of-plane-assembly.jpg  used on input line 138.
@@ -904,7 +875,7 @@ Package luatex.def Info: 01-figures/02-05-out-of-plane-assembly.jpg  used on inp
 [21]
 
 [22<./01-figures/02-05-out-of-plane-assembly.jpg>]
-<01-figures/02-06-cantilever-testing.jpg, id=740, 540.5796pt x 284.59926pt>
+<01-figures/02-06-cantilever-testing.jpg, id=755, 540.5796pt x 284.59926pt>
 File: 01-figures/02-06-cantilever-testing.jpg Graphic file (type jpg)
 <use 01-figures/02-06-cantilever-testing.jpg>
 Package luatex.def Info: 01-figures/02-06-cantilever-testing.jpg  used on input line 151.
@@ -918,7 +889,7 @@ Package luatex.def Info: 01-figures/02-06-cantilever-testing.jpg  used on input 
 [25]
 
 [26]
-<01-figures/02-07-warren-truss-testing.jpg, id=781, 540.5796pt x 284.59926pt>
+<01-figures/02-07-warren-truss-testing.jpg, id=796, 540.5796pt x 284.59926pt>
 File: 01-figures/02-07-warren-truss-testing.jpg Graphic file (type jpg)
 <use 01-figures/02-07-warren-truss-testing.jpg>
 Package luatex.def Info: 01-figures/02-07-warren-truss-testing.jpg  used on input line 170.
@@ -933,9 +904,9 @@ Package luatex.def Info: 01-figures/02-07-warren-truss-testing.jpg  used on inpu
 
 [30]
 
-[31]) (./02-chapters/03-chapter.tex
+[31]
 
-[32]
+[32]) (./02-chapters/03-chapter.tex
 
 [33]
 CHAPTER 3.
@@ -944,9 +915,12 @@ CHAPTER 3.
 [34
 
 ]
+Package acronym Info: Label `acro:3NTS' newly defined as it shall be overridden
+although it is yet undefined on input line 10.
+
 
 [35]
-<01-figures/03-01-spring-stiffness.jpg, id=877, 223.91655pt x 108.04366pt>
+<01-figures/03-01-spring-stiffness.jpg, id=899, 223.91655pt x 108.04366pt>
 File: 01-figures/03-01-spring-stiffness.jpg Graphic file (type jpg)
 <use 01-figures/03-01-spring-stiffness.jpg>
 Package luatex.def Info: 01-figures/03-01-spring-stiffness.jpg  used on input line 20.
@@ -969,7 +943,7 @@ Overfull \hbox (17.7847pt too wide) detected at line 96
 [40]
 
 [41]
-<01-figures/03-02-validation.jpg, id=934, 455.301pt x 247.52475pt>
+<01-figures/03-02-validation.jpg, id=957, 455.301pt x 247.52475pt>
 File: 01-figures/03-02-validation.jpg Graphic file (type jpg)
 <use 01-figures/03-02-validation.jpg>
 Package luatex.def Info: 01-figures/03-02-validation.jpg  used on input line 132.
@@ -981,7 +955,7 @@ Package luatex.def Info: 01-figures/03-02-validation.jpg  used on input line 132
 [43<./01-figures/03-02-validation.jpg>]
 
 [44]
-<01-figures/03-03-reconfigurable-truss.jpg, id=958, 227.6505pt x 204.88545pt>
+<01-figures/03-03-reconfigurable-truss.jpg, id=980, 227.6505pt x 204.88545pt>
 File: 01-figures/03-03-reconfigurable-truss.jpg Graphic file (type jpg)
 <use 01-figures/03-03-reconfigurable-truss.jpg>
 Package luatex.def Info: 01-figures/03-03-reconfigurable-truss.jpg  used on input line 152.
@@ -1011,7 +985,7 @@ CHAPTER 5.
 [51]
 
 [52]
-<01-figures/05-01-geometry-and-hull-folding.jpg, id=1044, 469.755pt x 113.4639pt>
+<01-figures/05-01-geometry-and-hull-folding.jpg, id=1066, 469.755pt x 113.4639pt>
 File: 01-figures/05-01-geometry-and-hull-folding.jpg Graphic file (type jpg)
 <use 01-figures/05-01-geometry-and-hull-folding.jpg>
 Package luatex.def Info: 01-figures/05-01-geometry-and-hull-folding.jpg  used on input line 26.
@@ -1021,7 +995,7 @@ Package luatex.def Info: 01-figures/05-01-geometry-and-hull-folding.jpg  used on
 [53<./01-figures/05-01-geometry-and-hull-folding.jpg>]
 
 [54]
-<01-figures/05-02-crease-pattern-and-bar-hinge.jpg, id=1069, 469.755pt x 287.8755pt>
+<01-figures/05-02-crease-pattern-and-bar-hinge.jpg, id=1092, 469.755pt x 287.8755pt>
 File: 01-figures/05-02-crease-pattern-and-bar-hinge.jpg Graphic file (type jpg)
 <use 01-figures/05-02-crease-pattern-and-bar-hinge.jpg>
 Package luatex.def Info: 01-figures/05-02-crease-pattern-and-bar-hinge.jpg  used on input line 44.
@@ -1029,7 +1003,7 @@ Package luatex.def Info: 01-figures/05-02-crease-pattern-and-bar-hinge.jpg  used
 
 
 [55<./01-figures/05-02-crease-pattern-and-bar-hinge.jpg>]
-<01-figures/05-03-hausdorff-shape-matching-optimization.jpg, id=1080, 469.755pt x 187.902pt>
+<01-figures/05-03-hausdorff-shape-matching-optimization.jpg, id=1102, 469.755pt x 187.902pt>
 File: 01-figures/05-03-hausdorff-shape-matching-optimization.jpg Graphic file (type jpg)
 <use 01-figures/05-03-hausdorff-shape-matching-optimization.jpg>
 Package luatex.def Info: 01-figures/05-03-hausdorff-shape-matching-optimization.jpg  used on input line 58.
@@ -1058,7 +1032,7 @@ Overfull \hbox (7.96838pt too wide) in paragraph at lines 90--90
 
 
 [59]
-<01-figures/05-04-calm-cco-eval.jpg, id=1110, 469.755pt x 370.5042pt>
+<01-figures/05-04-calm-cco-eval.jpg, id=1132, 469.755pt x 370.5042pt>
 File: 01-figures/05-04-calm-cco-eval.jpg Graphic file (type jpg)
 <use 01-figures/05-04-calm-cco-eval.jpg>
 Package luatex.def Info: 01-figures/05-04-calm-cco-eval.jpg  used on input line 103.
@@ -1068,7 +1042,7 @@ Package luatex.def Info: 01-figures/05-04-calm-cco-eval.jpg  used on input line 
 [60]
 
 [61<./01-figures/05-04-calm-cco-eval.jpg>]
-<01-figures/05-05-wavy-cco-eval.jpg, id=1130, 469.755pt x 365.4453pt>
+<01-figures/05-05-wavy-cco-eval.jpg, id=1152, 469.755pt x 365.4453pt>
 File: 01-figures/05-05-wavy-cco-eval.jpg Graphic file (type jpg)
 <use 01-figures/05-05-wavy-cco-eval.jpg>
 Package luatex.def Info: 01-figures/05-05-wavy-cco-eval.jpg  used on input line 112.
@@ -1094,7 +1068,7 @@ Overfull \hbox (161.04247pt too wide) in paragraph at lines 161--161
 [65]
 
 [66]
-<01-figures/05-06-tunable-calm-hydrodynamics.jpg, id=1174, 469.755pt x 367.8543pt>
+<01-figures/05-06-tunable-calm-hydrodynamics.jpg, id=1197, 469.755pt x 367.8543pt>
 File: 01-figures/05-06-tunable-calm-hydrodynamics.jpg Graphic file (type jpg)
 <use 01-figures/05-06-tunable-calm-hydrodynamics.jpg>
 Package luatex.def Info: 01-figures/05-06-tunable-calm-hydrodynamics.jpg  used on input line 173.
@@ -1104,7 +1078,7 @@ Package luatex.def Info: 01-figures/05-06-tunable-calm-hydrodynamics.jpg  used o
 [67]
 
 [68<./01-figures/05-06-tunable-calm-hydrodynamics.jpg>]
-<01-figures/05-07-tunable-wavy-hydrodynamics.jpg, id=1185, 469.755pt x 435.5472pt>
+<01-figures/05-07-tunable-wavy-hydrodynamics.jpg, id=1208, 469.755pt x 435.5472pt>
 File: 01-figures/05-07-tunable-wavy-hydrodynamics.jpg Graphic file (type jpg)
 <use 01-figures/05-07-tunable-wavy-hydrodynamics.jpg>
 Package luatex.def Info: 01-figures/05-07-tunable-wavy-hydrodynamics.jpg  used on input line 185.
@@ -1116,7 +1090,7 @@ Package luatex.def Info: 01-figures/05-07-tunable-wavy-hydrodynamics.jpg  used o
 [70<./01-figures/05-07-tunable-wavy-hydrodynamics.jpg>]
 
 [71]
-<01-figures/05-08-prototype-scaling-up.jpg, id=1200, 469.755pt x 261.6174pt>
+<01-figures/05-08-prototype-scaling-up.jpg, id=1222, 469.755pt x 261.6174pt>
 File: 01-figures/05-08-prototype-scaling-up.jpg Graphic file (type jpg)
 <use 01-figures/05-08-prototype-scaling-up.jpg>
 Package luatex.def Info: 01-figures/05-08-prototype-scaling-up.jpg  used on input line 203.
@@ -1143,7 +1117,7 @@ CHAPTER 6.
 
 ] (./03-appendices/01-appendix.tex
 APPENDIX A.
-<01-figures/A1-linkage-kinematics.jpg, id=1257, 469.755pt x 224.7597pt>
+<01-figures/A1-linkage-kinematics.jpg, id=1279, 469.755pt x 224.7597pt>
 File: 01-figures/A1-linkage-kinematics.jpg Graphic file (type jpg)
 <use 01-figures/A1-linkage-kinematics.jpg>
 Package luatex.def Info: 01-figures/A1-linkage-kinematics.jpg  used on input line 6.
@@ -1163,7 +1137,7 @@ Package luatex.def Info: 01-figures/A1-linkage-kinematics.jpg  used on input lin
 
 [84]
 APPENDIX B.
-<01-figures/B1-powersea.jpg, id=1315, 469.755pt x 122.3772pt>
+<01-figures/B1-powersea.jpg, id=1337, 469.755pt x 122.3772pt>
 File: 01-figures/B1-powersea.jpg Graphic file (type jpg)
 <use 01-figures/B1-powersea.jpg>
 Package luatex.def Info: 01-figures/B1-powersea.jpg  used on input line 6.
@@ -1177,29 +1151,29 @@ Package luatex.def Info: 01-figures/B1-powersea.jpg  used on input line 6.
 [86]
 
 [87] (./2026-Dissertation-HYP.bbl
-Underfull \hbox (badness 4792) in paragraph at lines 54--57
-[]\TU/TimesNewRoman(0)/m/n/12 Yan Chen and Zhong You.  Mo-bile as-sem-blies based on the ben-nett link-age.
- []
-
-
 
 [88
 
 
 ]
-
-[89]
-
-[90]
-Underfull \hbox (badness 1122) in paragraph at lines 239--242
-[]\TU/TimesNewRoman(0)/m/n/12 Kaori Kurib-ayashi, Koichi Tsuchiya, Zhong You, Da-cian To-mus, Mi-noru Umem-oto,
+Underfull \hbox (badness 4792) in paragraph at lines 104--107
+[]\TU/TimesNewRoman(0)/m/n/12 Yan Chen and Zhong You.  Mo-bile as-sem-blies based on the ben-nett link-age.
  []
 
 
 
+[89]
+
+[90]
+
 [91]
 
 [92]
+Underfull \hbox (badness 1122) in paragraph at lines 384--387
+[]\TU/TimesNewRoman(0)/m/n/12 Kaori Kurib-ayashi, Koichi Tsuchiya, Zhong You, Da-cian To-mus, Mi-noru Umem-oto,
+ []
+
+
 
 [93]
 
@@ -1210,31 +1184,24 @@ Underfull \hbox (badness 1122) in paragraph at lines 239--242
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-03-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `2026-Dissertation-HYP.out' has not changed.
-(rerunfilecheck)             Checksum: 57372888E865C4F20CB90A5600932805;9904.
+(rerunfilecheck)             Checksum: DB658E55AC5AD7FB72B073FA74FE4FA6;10052.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20005 strings out of 471941
+ 20013 strings out of 471941
  100000,953878 words of node,token memory allocated
- 837 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 37 attribute, 66 glue_spec, 37 attribute_list, 1 write, 25 pdf_action nodes
-   avail lists: 1:1,2:1195,3:428,4:292,5:711,6:128,7:8534,8:93,9:1308,10:32,11:688
- 45635 multiletter control sequences out of 65536+600000
+ 829 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 35 attribute, 66 glue_spec, 35 attribute_list, 1 write, 25 pdf_action nodes
+   avail lists: 1:1,2:1128,3:401,4:296,5:728,6:128,7:8530,8:93,9:1308,10:32,11:688
+ 45641 multiletter control sequences out of 65536+600000
  78 fonts using 20551695 bytes
- 87i,15n,89p,2947b,904s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,15n,89p,2947b,902s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf>{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf><c:/Windows/Fonts/timesi.ttf><c:/Windows/Fonts/times.ttf><c:/Windows/Fonts/timesbd.ttf><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 2026-Dissertation-HYP.pdf (112 pages, 17936416 bytes).
+Output written on 2026-Dissertation-HYP.pdf (113 pages, 17937314 bytes).
 
-PDF statistics: 1473 PDF objects out of 1728 (max. 8388607)
- 1295 compressed objects within 13 object streams
- 350 named destinations out of 1000 (max. 131072)
- 305 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1496 PDF objects out of 1728 (max. 8388607)
+ 1316 compressed objects within 14 object streams
+ 352 named destinations out of 1000 (max. 131072)
+ 313 words of extra memory for PDF output out of 10000 (max. 100000000)
 
