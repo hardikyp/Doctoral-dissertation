@@ -8,60 +8,63 @@
 \contentsline {frontchapter}{List of Acronyms}{xv}{section*.11}%
 \contentsline {frontchapter}{Abstract}{xvi}{section*.12}%
 \vspace {3.9ex}\noindent {\uppercase {Chapter}}\vspace {1.3ex}
-\contentsline {chapter}{\numberline {1}Background on static systems}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Transforming static trusses into shape morphing systems using principles of quadrilateral linkages}{2}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Transforming static triangulated trusses into reconfigurable systems}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}From triangles to reconfigurable quadrilateral linkages}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Rules for determining node location in an individual triangle}{6}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Workflow for system level node placement}{8}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Transforming traditional trusses into reconfigurable systems}{12}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Reconfigurable trusses for arbitrary geometries}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Arbitrary truss geometries from ground-structure-based topology optimization}{15}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Arbitrary truss geometries from continuum topology optimization}{17}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Physical design of reconfigurable trusses and proof-of-concept prototypes}{20}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Distributing truss members in and out of plane}{20}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Comparison of stiffness and strength between reconfigurable and static trusses}{23}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Structural behavior of a three meter long reconfigurable Warren truss bridge}{26}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Discussion}{29}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Key contributions}{29}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Challenges and considerations for future work}{31}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Concluding remarks}{32}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Data Accessibility}{33}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}{34}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Stiffness matrix of a three-node torsional spring element}{36}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Torsional spring constitutive law}{37}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Relative angle between the bars}{38}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Derivatives of bar vectors and auxiliary quantities}{39}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Closed-form expression for gradient of relative angle}{40}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Hessian of the relative angle}{40}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Validation of the three-node torsional spring element}{41}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Comparing analytical and simulated behavior of the simplest three-node torsional spring structure}{41}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Comparing analytical and simulated buckling behaviour of a vertical column structure}{44}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Application to reconfigurable bar-linked structures}{45}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Concluding remarks}{47}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Functional applications of trusses}{48}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Rapidly Deployable Hulls and On-demand Tunable Hydrodynamics with Shape Morphing Curved Crease Origami}{49}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Geometry and curved folding}{52}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Planing hull geometry}{52}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Crease geometry and Bar and Hinge model for curved folding}{54}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Shape matching and optimization}{56}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Hydrodynamic analysis}{59}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Performance evaluation of curved-crease origami hulls}{59}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Tunable hydrodynamics with shape morphing curved-origami hulls}{65}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Calm water hydrodynamics}{66}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Wavy water hydrodynamics}{69}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Discussion}{71}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Key findings}{71}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Physical implementation}{74}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Considerations for future work}{75}{subsection.5.4.3}%
-\contentsline {section}{\numberline {5.5}Concluding remarks}{78}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Concluding Remarks and Future Work}{79}{chapter.6}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Problem statement}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research objectives}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Scope of the thesis}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Transforming static trusses into shape morphing systems using principles of quadrilateral linkages}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Transforming static triangulated trusses into reconfigurable systems}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}From triangles to reconfigurable quadrilateral linkages}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Rules for determining node location in an individual triangle}{8}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Workflow for system level node placement}{10}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Transforming traditional trusses into reconfigurable systems}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Reconfigurable trusses for arbitrary geometries}{17}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Arbitrary truss geometries from ground-structure-based topology optimization}{18}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Arbitrary truss geometries from continuum topology optimization}{20}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Physical design of reconfigurable trusses and proof-of-concept prototypes}{22}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Distributing truss members in and out of plane}{23}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Comparison of stiffness and strength between reconfigurable and static trusses}{25}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Structural behavior of a three meter long reconfigurable Warren truss bridge}{28}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Discussion}{32}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Key contributions}{32}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Challenges and considerations for future work}{33}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Concluding remarks}{35}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Data Accessibility}{35}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}{36}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Stiffness matrix of a three-node torsional spring element}{38}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Torsional spring constitutive law}{39}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Relative angle between the bars}{40}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Derivatives of bar vectors and auxiliary quantities}{41}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Closed-form expression for gradient of relative angle}{42}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Hessian of the relative angle}{42}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}Validation of the three-node torsional spring element}{43}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Comparing analytical and simulated behavior of the simplest three-node torsional spring structure}{43}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Comparing analytical and simulated buckling behaviour of a vertical column structure}{46}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Application to reconfigurable bar-linked structures}{47}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Concluding remarks}{49}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Functional applications of trusses}{50}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Rapidly Deployable Hulls and On-demand Tunable Hydrodynamics with Shape Morphing Curved Crease Origami}{51}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Geometry and curved folding}{54}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Planing hull geometry}{54}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Crease geometry and Bar and Hinge model for curved folding}{56}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Shape matching and optimization}{58}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Hydrodynamic analysis}{61}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Performance evaluation of curved-crease origami hulls}{61}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Tunable hydrodynamics with shape morphing curved-origami hulls}{67}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Calm water hydrodynamics}{68}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Wavy water hydrodynamics}{71}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5.4}Discussion}{73}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Key findings}{73}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Physical implementation}{76}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Considerations for future work}{77}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}Concluding remarks}{80}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Concluding Remarks and Future Work}{81}{chapter.6}%
 \vspace {3.9ex}
-\contentsline {backchapter}{Appendices}{80}{section*.35}%
+\contentsline {backchapter}{Appendices}{82}{section*.35}%
 \global \c@tocdepth 0\relax 
-\contentsline {section}{\numberline {A.1}Position analysis of a general quadrilateral linkage}{80}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Position analysis of 6 bar linkage with a single degree of freedom}{83}{section.A.2}%
-\contentsline {section}{\numberline {A.3}A note on the extent of actuation of a quadrilateral linkage}{84}{section.A.3}%
+\contentsline {section}{\numberline {A.1}Position analysis of a general quadrilateral linkage}{82}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Position analysis of 6 bar linkage with a single degree of freedom}{85}{section.A.2}%
+\contentsline {section}{\numberline {A.3}A note on the extent of actuation of a quadrilateral linkage}{86}{section.A.3}%
 \global \c@tocdepth 1\relax 
 \vspace {1.3ex}
-\contentsline {backchapter}{Bibliography}{88}{section*.43}%
+\contentsline {backchapter}{Bibliography}{90}{section*.43}%
