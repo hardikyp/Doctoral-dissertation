@@ -7,8 +7,5 @@
 - [ ] Resize the following figures:
   - 04-illustrator-files/02-01-node-intro-rules.ai
   - 04-illustrator-files/02-03-traditional-truss.ai
-  - 04-illustrator-files/02-04-arbitrary-truss.ai
 
 - [ ] Add vertical spacing over the first and under the last data row of tables in [Chapters 5](02-chapters/05-chapter.tex)
-
-- [ ]
