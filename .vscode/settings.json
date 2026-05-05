@@ -3,53 +3,63 @@
         "reconfigurablity"
     ],
     "latex-workshop.latex.tools": [
-    {
-      "name": "lualatex",
-      "command": "lualatex",
-      "args": [
-        "--synctex=1",
-        "--interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "pdflatex",
-      "command": "pdflatex",
-      "args": [
-        "--synctex=1",
-        "--interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%"
-      ]
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": [
-        "%DOCFILE%"
-      ]
-    }
-  ],
-  "latex-workshop.latex.recipes": [
-    {
-      "name": "lualatex -> bibtex -> lualatex*2",
-      "tools": [
-        "lualatex",
-        "bibtex",
-        "lualatex",
-        "lualatex"
-      ]
-    },
-    {
-      "name": "pdflatex -> bibtex -> pdflatex*2",
-      "tools": [
-        "pdflatex",
-        "bibtex",
-        "pdflatex",
-        "pdflatex"
-      ]
-    }
-  ],
-  "latex-workshop.latex.build.selectedRecipe": "lualatex -> bibtex -> lualatex*2"
+        {
+            "name": "clean auxiliary files",
+            "command": "latexmk",
+            "args": [
+                "-c",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "--synctex=1",
+                "--interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "--synctex=1",
+                "--interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex -> bibtex -> lualatex*2",
+            "tools": [
+                "lualatex",
+                "bibtex",
+                "lualatex",
+                "lualatex",
+                "clean auxiliary files"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex",
+                "clean auxiliary files"
+            ]
+        }
+    ],
+    "latex-workshop.latex.build.selectedRecipe": "lualatex -> bibtex -> lualatex*2"
 }
