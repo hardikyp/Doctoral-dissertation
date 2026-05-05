@@ -5,10 +5,13 @@
     "latex-workshop.latex.tools": [
         {
             "name": "clean auxiliary files",
-            "command": "latexmk",
+            "command": "powershell",
             "args": [
-                "-c",
-                "%DOC%"
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "$base = Join-Path '%DIR%' '%DOCFILE%'; $exts = @('aux','acn','acr','alg','bbl','bcf','blg','fdb_latexmk','fls','glg','glo','gls','idx','ilg','ind','ist','lof','lol','lot','lop','loapp','out','run.xml','toc','xdv'); foreach ($ext in $exts) { Remove-Item -LiteralPath ($base + '.' + $ext) -Force -ErrorAction SilentlyContinue }; exit 0"
             ]
         },
         {
