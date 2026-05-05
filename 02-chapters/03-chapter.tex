@@ -67,7 +67,7 @@ Hence, the relative angle \(\alpha{}\) is obtained as
 \begin{flalign}
   \quad \alpha{} &= \tan{}^{-1}\left(\frac{S}{C}\right) ~. &\label{eq-alpha}
 \end{flalign}
-It is important to note that this expression when programmed into \textsc{Matlab} does not capture the spring's full range of rotation, as the \texttt{atan2} function returns values in the interval [\(-\pi\), \(\pi\)]. To obtain a continuous measure of rotation in the range [0, 2\(\pi\)), the computed angle in \textsc{Matlab} is modified as
+It is important to note that this expression when programmed into Matlab does not capture the spring's full range of rotation, as the \texttt{atan2} function returns values in the interval [\(-\pi\), \(\pi\)]. To obtain a continuous measure of rotation in the range [0, 2\(\pi\)), the computed angle in Matlab is modified as
 \begin{flalign}
   \quad \alpha{} = \mathrm{mod}\left(\alpha{}, 2\pi\right)~,\label{eq-mod-alpha}
 \end{flalign}
