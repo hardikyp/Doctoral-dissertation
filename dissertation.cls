@@ -72,8 +72,8 @@
 % This is useful for complex figures.
 \RequirePackage{subcaption}
 
-% Compress multiple citations
-\RequirePackage{natbib}
+% Use numeric natbib mode so it matches numeric .bst files like unsrt.
+\RequirePackage[numbers,sort&compress]{natbib}
 
 % This package allows the ability to create a 'code' environment.
 \RequirePackage{verbatim}
