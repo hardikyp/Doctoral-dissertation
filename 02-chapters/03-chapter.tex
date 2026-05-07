@@ -1,6 +1,8 @@
-\chapter{Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}
-\label{chpt-torsional-springs}
+\chapter{Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures}\label{chapter-03}
 
+This technical note presents the derivation, validation, and application of a \emph{three-node torsional spring (3NTS)} element for the analysis of bar-linked, reconfigurable structures. The 3NTS element assigns rotational stiffness to a joint  (node) of two axial force members (bars) in truss-like assemblies. This element avoids the use of rotational degrees of freedom in the model by recasting its resisting moment into equivalent nodal forces, which are consistent with global equilibrium, thereby keeping the model size compact and computationally efficient. The 3NTS is integrated into standard nonlinear solvers to simulate large-displacement response and validated against analytical solutions of two benchmark examples: the simplest 3NTS structure and the buckling of a vertical column. We further apply the framework to a reconfigurable truss structure from our previous work to illustrate potential functional use cases and outline its broader applicability to metamaterials, kirigami systems, and biomechanical assemblies. An open-source matrix structural analysis tool implementing the 3NTS and axial force members is made available with this note. This work has been published as \href{https://doi.org/10.1115/1.4070821}{\textbf{Patil, H. Y.}, \& Filipov, E. T. (2026). Three-node torsional spring element formulation for the analysis of reconfigurable bar-linked structures. Journal of Applied Mechanics, 93(3), 034502.}
+
+\section{Introduction}\label{sec-torsional-spring-intro}
 Over the past century, structural element formulations have evolved to capture nonlinearity and connection flexibility, enabling accurate modeling of practical structures~\cite{felippa2001history}. However, the support for modeling joint rotational stiffness within truss-like structures using a torsional (or coil) spring remains limited, especially in formulations with minimal degrees of freedom (DOF) and high computational efficiency.
 
 Joint rotational stiffness is crucial in applications where controlled joint rotation influences the global structural behavior. Some examples include reconfigurable linkages and robotic arms that rely on programmed hinge stiffnesses~\cite{kim2014design,franco2021static,knox2009unidirectional,dumas2012joint}, biomechanics where joint stiffness affects function~\cite{edwards2007effect,fang2017online}, origami-inspired mechanisms where crease stiffness governs panel folding~\cite{gillman2018truss,zhu2022review,lu2023origami}, and semi-rigid connections in lattice structures and metamaterials that store and release energy to achieve functional reconfiguration~\cite{zhang2019energy,zhang2021architected,zhu2020quasi}.
@@ -18,8 +20,7 @@ The stiffness matrix of a two-dimensional three-node torsional spring is derived
 \begin{figure}[!htbp]
   \centering
   \includegraphics{01-figures/03-01-spring-stiffness.jpg}
-  \caption{A schematic representation of the three-node rotational spring unit depicting the nodal displacements.}
-  \label{fig-spring-stiffness}
+  \caption{A schematic representation of the three-node rotational spring unit depicting the nodal displacements.}\label{fig-spring-stiffness}
 \end{figure}
 
 Let the position vectors in the undeformed and deformed configurations be \(R_1 = [X_1, \: Y_1]^{\top}\), \(R_2 = [X_2, \: Y_2]^{\top}\), \(R_3 = [X_3, \: Y_3]^{\top}\), and \(r_1 = [x_1, \: y_1]^{\top}\), \(r_2 = [x_2, \: y_2]^{\top}\), \(r_3 = [x_3, \: y_3]^{\top}\), respectively. The global nodal coordinate vectors are expressed as \(R = [R_1^{\top{}},\: R_2^{\top{}},\: R_3^{\top{}}]^{\top{}}\) and \(r = [r_1^{\top{}},\: r_2^{\top{}},\: r_3^{\top{}}]^{\top{}}\), and the corresponding displacement vector is defined as \(u = r - R\).
@@ -50,7 +51,7 @@ Because \(M = K_T(\alpha{}-\alpha{}_o\)), it follows that \(\nabla{} M = K_T \na
 \end{flalign}
 
 \subsection{Relative angle between the bars}
-Let the vectors along bars 1 and 2 be defined as \(a = r_1 - r_2\) and \(b = r_3 - r_2\), where \(r_i = [x_i, y_i]^{\top{}}\) are the nodal position vectors in the deformed configuration. Define the 90\(^{\circ{}}\) counterclockwise rotation matrix N such that, for any vector \(v\) , the product \(Nv\) represents a rotation of \(v\) by \(+90^\circ{}\). Furthermore, the property \(N = -N^{\top{}}\) holds true.
+Let the vectors along bars 1 and 2 be defined as \(a = r_1 - r_2\) and \(b = r_3 - r_2\), where \(r_i = [x_i, y_i]^{\top{}}\) are the nodal position vectors in the deformed configuration. Define the 90\(^{\circ{}}\) counterclockwise rotation matrix N such that, for any vector \(v\), the product \(Nv\) represents a rotation of \(v\) by \(+90^\circ{}\). Furthermore, the property \(N = -N^{\top{}}\) holds true.
 \begin{flalign}
   \quad N &= \begin{bmatrix}
                 0 & -1\\
@@ -58,18 +59,18 @@ Let the vectors along bars 1 and 2 be defined as \(a = r_1 - r_2\) and \(b = r_3
               \end{bmatrix} &\label{eq-N-mat}
 \end{flalign}
 
-The cosine and sine of the relative angle \(\alpha\) between bars 1 and 2 are then expressed as
+The cosine and sine of the relative angle \(\alpha{}\) between bars 1 and 2 are then expressed as
 \begin{flalign}
-  \quad C &= a \cdot b = \|a\| \, \|b\| \, cos{}(\alpha{}) ~, &\notag{}\\
-  \quad S &= a^{\top{}} N b = \|a\| \, \|b\| \, sin{}(\alpha{}) ~. &\label{eq-sin-cos}
+  \quad C &= a \cdot b = \|a\| \, \|b\| \, \cos{}(\alpha{}) ~, &\notag{}\\
+  \quad S &= a^{\top{}} N b = \|a\| \, \|b\| \, \sin{}(\alpha{}) ~. &\label{eq-sin-cos}
 \end{flalign}
 Hence, the relative angle \(\alpha{}\) is obtained as 
 \begin{flalign}
   \quad \alpha{} &= \tan{}^{-1}\left(\frac{S}{C}\right) ~. &\label{eq-alpha}
 \end{flalign}
-It is important to note that this expression when programmed into Matlab does not capture the spring's full range of rotation, as the \texttt{atan2} function returns values in the interval [\(-\pi\), \(\pi\)]. To obtain a continuous measure of rotation in the range [0, 2\(\pi\)), the computed angle in Matlab is modified as
+It is important to note that this expression when programmed into Matlab does not capture the spring's full range of rotation, as the \texttt{atan2} function returns values in the interval [\(-\pi{}\), \(\pi{}\)]. To obtain a continuous measure of rotation in the range [0, 2\(\pi{}\)), the computed angle in Matlab is modified as
 \begin{flalign}
-  \quad \alpha{} = \mathrm{mod}\left(\alpha{}, 2\pi\right)~,\label{eq-mod-alpha}
+  \quad \alpha{} = \mathrm{\mod}\left(\alpha{}, 2\pi\right)~,\label{eq-mod-alpha}
 \end{flalign}
 where \texttt{mod} function returns the remainder after dividing \(\alpha{}\) by \(2\pi{}\). This treatment assumes that the torsional spring does not undergo self-overlapping deformations.
 
@@ -97,7 +98,7 @@ Substituting Eq.~\ref{eq-vector-derivatives} into Eq.~\ref{eq-grad-alpha} and ap
 These three 2\(\times{}\)1 vectors together form the full 6\(\times{}\)1 gradient vector \(\nabla{}\alpha{}\).
 
 \subsection{Hessian of the relative angle}
-The Hessian matrix \(\nabla{}^2\alpha{}\) is of size 6\(\times\)6 and consists of nine 2\(\times\)2 sub-blocks corresponding to the second derivatives of \(\alpha{}\) with respect to the nodal coordinates. The sub-blocks are expressed as
+The Hessian matrix \(\nabla{}^2\alpha{}\) is of size 6\(\times{}\)6 and consists of nine 2\(\times{}\)2 sub-blocks corresponding to the second derivatives of \(\alpha{}\) with respect to the nodal coordinates. The sub-blocks are expressed as
 \begin{flalign}
   \quad \mathbf{H}_{11} &= \frac{1}{\|a\|^2}N - \frac{2}{\|a\|^4}(Na)a^{\top{}} &\notag{}\\
   \quad \mathbf{H}_{22} &= \frac{1}{\|a\|^2}N - \frac{2}{\|a\|^4}(Na)a^{\top{}} + \frac{2}{\|b\|^4}(Nb)b^{\top{}} - \frac{1}{\|b\|^2}N &\notag{}\\
@@ -130,8 +131,7 @@ Figure~\ref{fig-validation-examples}\,(b) compares the analytical and simulated 
 \begin{figure}[!htbp]
   \centering
   \includegraphics{01-figures/03-02-validation.jpg}
-  \caption{Validation of the simulated behavior of bar-linked structures with torsional spring elements against their respective analytical solutions. (a) Simplest structure with a torsional spring element; (b) Comparison of analytical and simulated load–displacement responses for the structure in (a); (c) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (a); (d) Buckling of a bar-linked vertical column comprising of two bars and a torsional spring element at the central joint; (e) Comparison of analytical and simulated load–displacement responses for the structure in (d); (f) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (d).}
-  \label{fig-validation-examples}
+  \caption{Validation of the simulated behavior of bar-linked structures with torsional spring elements against their respective analytical solutions. (a) Simplest structure with a torsional spring element; (b) Comparison of analytical and simulated load–displacement responses for the structure in (a); (c) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (a); (d) Buckling of a bar-linked vertical column comprising of two bars and a torsional spring element at the central joint; (e) Comparison of analytical and simulated load–displacement responses for the structure in (d); (f) Simulated external work and stacked internal strain energies (spring and bars) over load increments for the structure in (d).}\label{fig-validation-examples}
 \end{figure}
 
 \subsection{Comparing analytical and simulated buckling behaviour of a vertical column structure}\label{subsec-example-two}
@@ -150,8 +150,7 @@ The torsional spring implementation within the non-linear solver facilitates the
 \begin{figure}[!htbp]
   \centering
   \includegraphics{01-figures/03-03-reconfigurable-truss.jpg}
-  \caption{Load analysis of the actuation of a reconfigurable cantilever truss}
-  \label{fig-reconfigurable-truss}
+  \caption{Load analysis of the actuation of a reconfigurable cantilever truss}\label{fig-reconfigurable-truss}
 \end{figure}
 
 As a preliminary demonstration, a reconfigurable truss structure from our earlier work~\cite{patil2025truss} is analyzed here to illustrate the potential application of the developed analysis program. The reconfigurable cantilever truss shown in Fig.~\ref{fig-reconfigurable-truss} consists of bars with Young's modulus \(E=3\times{}10^6\)~Pa, cross-sectional area \(A=0.5\)~m\(^2\), and torsional springs of stiffness \(K_T=50\)~Nm/rad. The bar lengths are indicated in Fig.~\ref{fig-reconfigurable-truss}, and the reader is referred to Ref.~\cite{patil2025truss} for the exact locations of the torsional springs.
