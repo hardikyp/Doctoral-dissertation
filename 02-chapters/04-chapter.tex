@@ -1,1 +1,58 @@
 \chapter{Functional applications of trusses}\label{chapter-04}
+
+\section{Introduction}\label{04-sec-functional-intro}
+
+\section{Modeling the Response of a Rotational Joint}\label{04-sec-theory}
+
+\subsection{Enhanced Torsional Spring Constitutive Law}\label{04-subsec-enhanced-spring}
+The Three-Node Torsional Spring (3NTS) introduced in Chapter~\ref{chapter-03} was originally defined for a relative spring angle \(\alpha\) within the range \([0,2\pi)\). When the deformation exceeds this range, the nonlinear solver produces spurious results due to the self-overlap of the bars connected to the spring. To prevent this behavior, the constitutive law of the 3NTS is modified using concepts inspired by the Bar-and-Hinge formulation~\cite{liu2017merlin}. The modified formulation restricts the admissible deformation range and better represents the physical behavior of rotational joints in reconfigurable trusses, where geometric constraints prevent the connected members from reaching relative angles of exactly \(0\) or \(2\pi\).
+
+The modified constitutive formulation is referred to as the \textit{enhanced spring law}. It introduces four additional parameters that define the admissible deformation limits and the onset of nonlinear stiffening: (\textit{i}\hspace{1pt}) \(\delta\), the minimum allowable relative angle; (\textit{ii}\hspace{1pt}) \(\alpha_0\), the rest angle of the spring; (\textit{iii}\hspace{1pt}) \(\alpha_1\), the lower threshold angle at which stiffening begins; and (\textit{iv}\hspace{1pt}) \(\alpha_2\), the upper threshold angle at which stiffening begins. These parameters satisfy the following relationship: \(0 \le \delta < \alpha_1 < \alpha_0 < \alpha_2 < 2\pi-\delta \le 2\pi.\)
+
+The strain energy of the enhanced spring law is defined as:
+\begin{flalign}
+\quad{}U(\alpha)&=
+\begin{cases}
+\frac12 K_T(\alpha_0-\alpha_1)^2
++ K_T(\alpha_0-\alpha_1)(\alpha_1-\alpha)
+\\- \frac{4K_T(\alpha_1-\delta)^2}{\pi^2}
+\ln\!\left|\cos\!\left(\frac{\pi(\alpha_1-\alpha)}{2(\alpha_1-\delta)}\right)\right|, & \alpha < \alpha_1 \\[24pt]
+\frac12 K_T(\alpha-\alpha_0)^2, & \alpha_1 \le \alpha \le \alpha_2 \\[24pt]
+\frac12 K_T(\alpha_2-\alpha_0)^2
++ K_T(\alpha_2-\alpha_0)(\alpha-\alpha_2)
+\\- \frac{4K_T((2\pi-\delta)-\alpha_2)^2}{\pi^2}
+\ln\!\left|\cos\!\left(\frac{\pi(\alpha-\alpha_2)}{2((2\pi-\delta)-\alpha_2)}\right)\right|, & \alpha > \alpha_2
+\end{cases}&\label{eq-enhanced-energy}
+\end{flalign}
+
+The restoring moment of the enhanced spring is defined as:
+\begin{flalign}
+\quad{}M(\alpha)&=
+\begin{cases}
+K_T(\alpha_1-\alpha_0) + \dfrac{2K_T(\alpha_1-\delta)}{\pi}\tan\Bigg(\frac{\pi(\alpha-\alpha_1)}{2(\alpha_1-\delta)}\Bigg),
+& \alpha < \alpha_1 \\[24pt]
+K_T(\alpha-\alpha_0),
+& \alpha_1 \le \alpha \le \alpha_2 \\[24pt]
+K_T(\alpha_2-\alpha_0) + \dfrac{2K_T(2\pi-\delta-\alpha_2)}{\pi}\tan\Bigg(\frac{\pi(\alpha-\alpha_2)}{2(2\pi-\delta-\alpha_2)}\Bigg),
+& \alpha > \alpha_2
+\end{cases}&\label{eq-enhanced-moment}
+\end{flalign}
+
+Lastly, the value of rotational stiffness of the enhanced spring is defined as:
+\begin{flalign}
+\quad{}K_T(\alpha)&=
+\begin{cases}
+K_T\,\sec^2\Bigg(\frac{\pi(\alpha-\alpha_1)}{2(\alpha_1-\delta)}\Bigg), & \alpha < \alpha_1\\[24pt]
+K_T,& \alpha_1 \le \alpha \le \alpha_2
+\\[24pt]
+K_T\,\sec^2\Bigg(\frac{\pi(\alpha-\alpha_2)}{2((2\pi-\delta)-\alpha_2)}\Bigg), & \alpha > \alpha_2
+\end{cases} & \label{eq-enhanced-stiffness}
+\end{flalign}
+
+Figure~\ref{fig-spring-law-comparison} compares the enhanced spring law with the original linear torsional spring model. Unlike the linear formulation, the enhanced spring law introduces asymptotic stiffening near the admissible deformation limits, thereby preventing kinematic overlap and improving numerical robustness.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{01-figures/04-01-spring-law-comparison.jpg}
+  \caption{Comparison between the original linear torsional spring law and the enhanced spring law: (a) strain energy, (b) restoring moment, and (c) tangent stiffness as functions of the relative angle \(\alpha\).}\label{fig-spring-law-comparison}
+\end{figure}
