@@ -18,11 +18,13 @@ This repository contains files of my doctoral dissertation. Future coding agents
 - Do not remove packages from `packages.tex` or `dissertation.cls`
 - Do not add new packages unless a feature request cannot be fulfilled with the current package stack.
 
-## Change Rules For Future Agents
-
-- Do not change ANY filenames.
-- Do not change chapter, section and subsection titles
-- Do not change labels for titles, figures and tables within any `.tex` file.
+- You are only allowed to make LaTeX syntax and formatting changes.
+- Ask for explicit approval before making any syntax or formatting changes.
+- Do not modify, rewrite, paraphrase, summarize, or otherwise alter any text content in chapter or appendix `.tex` files.
+- Do not change any filenames.
+- Do not change chapter, section, or subsection titles.
+- Do not change any labels associated with titles, figures, tables, equations, or references within any `.tex` file.
+- Do not modify figure captions, table captions, citation keys, bibliography entries, or cross-reference identifiers unless explicitly instructed.
 
 ## Files Worth Reading First
 
