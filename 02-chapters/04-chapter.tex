@@ -2,14 +2,24 @@
 
 \section{Introduction}\label{04-sec-functional-intro}
 
-\section{Modeling the Response of a Rotational Joint}\label{04-sec-theory}
+\section{Modeling Nonlinear Response of a Rotational Joint}\label{04-sec-theory}
 
 \subsection{Enhanced Torsional Spring Constitutive Law}\label{04-subsec-enhanced-spring}
-The Three-Node Torsional Spring (3NTS) introduced in Chapter~\ref{chapter-03} was originally defined for a relative spring angle \(\alpha\) within the range \([0,2\pi)\). When the deformation exceeds this range, the nonlinear solver produces spurious results due to the self-overlap of the bars connected to the spring. To prevent this behavior, the constitutive law of the 3NTS is modified using concepts inspired by the Bar-and-Hinge formulation~\cite{liu2017merlin}. The modified formulation restricts the admissible deformation range and better represents the physical behavior of rotational joints in reconfigurable trusses, where geometric constraints prevent the connected members from reaching relative angles of exactly \(0\) or \(2\pi\).
+The Three-Node Torsional Spring (3NTS) element introduced in Chapter~\ref{chapter-03} was originally formulated using a linear torsional spring constitutive law. In this formulation, the spring deformation is described by the relative angle \(\alpha\) defined over the interval \([0,~2\pi)\). The spring's restoring moment is proportional to the difference between the current relative angle \(\alpha\) and the rest angle \(\alpha_0\). While this formulation works as long as \(0 \le \alpha < 2\pi\), numerical issues arise when the spring undergoes large rotations associated with self-overlap of the connected bars. Since \(\alpha\) is evaluated over [\(0,~2\pi\)), the computed angle wraps from \(2\pi\) to 0 when the rotation exceeds this range. This behavior produces a sudden jump in the computed spring deformation, leading to restoring moments and tangent stiffness that are inconsistent with the actual deformation path.
 
-The modified constitutive formulation is referred to as the \textit{enhanced spring law}. It introduces four additional parameters that define the admissible deformation limits and the onset of nonlinear stiffening: (\textit{i}\hspace{1pt}) \(\delta\), the minimum allowable relative angle; (\textit{ii}\hspace{1pt}) \(\alpha_0\), the rest angle of the spring; (\textit{iii}\hspace{1pt}) \(\alpha_1\), the lower threshold angle at which stiffening begins; and (\textit{iv}\hspace{1pt}) \(\alpha_2\), the upper threshold angle at which stiffening begins. These parameters satisfy the following relationship: \(0 \le \delta < \alpha_1 < \alpha_0 < \alpha_2 < 2\pi-\delta \le 2\pi.\)
+This numerical issue is also inconsistent with the observed physical behavior of the reconfigurable truss systems discussed in this dissertation. In these systems, the bars connected to a torsional spring do not overlap each other during reconfiguration. The fabrication techniques and kinematics of the truss physically limit the allowable rotation at each folding joint, as discussed in Chapter~\ref{chapter-02}. Furthermore, relative angles near 0 or \(2\pi\) correspond to a fully actuated degree of freedom, where the truss has reached its most compact configuration. Rotation of the spring joint beyond this state becomes meaningless. Therefore, rotations beyond the neighborhood of 0 or \(2\pi\) do not represent the intended deformation range of the torsional springs in the physical structure. This motivates restricting the admissible angular range of the spring.
 
-The strain energy of the enhanced spring law is defined as:
+To address the numerical issue and ensure that the spring model captures a realistic range of deformation for the folding joints, the constitutive law of the 3NTS element is modified using the concepts inspired by the bar-and-hinge model~\cite{liu2017merlin}. The modified formulation restricts the admissible deformation range of the spring by introducing nonlinear stiffening near the extreme deformation limits. This stiffening acts as a smooth mechanical stop, providing increasing resistance as the joint approaches its allowable rotation limit. This modified formulation, referred to as the \textit{Enhanced Spring Law}, preserves the original linear response near the rest configuration while creating energetic barriers near the lower and upper deformation limits.
+
+The enhanced spring law introduces three additional parameters to define the admissible deformation limits of the spring. The parameter, \(\delta\), defines the minimum allowable relative angle between the two connected members. Therefore, the lower admissible deformation limit of the spring becomes \(\delta\). By symmetry, the upper admissible limit becomes \(2\pi-\delta\). The parameters \(\alpha_1\) and \(\alpha_2\) define the lower and upper threshold angles, respectively, at which the spring response transitions from the linear to the nonlinear stiffening regime. These parameters satisfy \(0 \le \delta < \alpha_1 < \alpha_0 < \alpha_2 < 2\pi-\delta \le 2\pi\). Thus, the interval [\(\alpha_1,~\alpha_2\)] represents the nominal operating range of the spring. Within this range, the enhanced law is identical to the original linear torsional spring law. The intervals (\(\delta,~\alpha_1\)) and (\(\alpha_2,~2\pi-\delta\)), on the other hand, represent the nonlinear stiffening regions near the lower and upper deformation limits, respectively.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{01-figures/04-01-spring-law-comparison.jpg}
+  \caption{Comparison between the original linear torsional spring law and the enhanced spring law: (a) strain energy; (b) restoring moment; and (c) tangent stiffness as functions of the relative angle \(\alpha\).}\label{fig-spring-law-comparison}
+\end{figure}
+
+The strain energy, U(\(\alpha\)), of the enhanced spring law is defined as
 \begin{flalign}
 \quad{}U(\alpha)&=
 \begin{cases}
@@ -25,7 +35,7 @@ The strain energy of the enhanced spring law is defined as:
 \end{cases}&\label{eq-enhanced-energy}
 \end{flalign}
 
-The restoring moment of the enhanced spring is defined as:
+The restoring moment of the enhanced spring is obtained as the first derivative of the strain energy with respect to the relative angle \(\alpha\) as
 \begin{flalign}
 \quad{}M(\alpha)&=
 \begin{cases}
@@ -38,7 +48,7 @@ K_T(\alpha_2-\alpha_0) + \dfrac{2K_T(2\pi-\delta-\alpha_2)}{\pi}\tan\Bigg(\frac{
 \end{cases}&\label{eq-enhanced-moment}
 \end{flalign}
 
-Lastly, the value of rotational stiffness of the enhanced spring is defined as:
+The corresponding tangent rotational stiffness of the enhanced spring is obtained as the derivative of the restoring moment with respect to \(\alpha\) as
 \begin{flalign}
 \quad{}K_T(\alpha)&=
 \begin{cases}
@@ -49,10 +59,512 @@ K_T\,\sec^2\Bigg(\frac{\pi(\alpha-\alpha_2)}{2((2\pi-\delta)-\alpha_2)}\Bigg), &
 \end{cases} & \label{eq-enhanced-stiffness}
 \end{flalign}
 
-Figure~\ref{fig-spring-law-comparison} compares the enhanced spring law with the original linear torsional spring model. Unlike the linear formulation, the enhanced spring law introduces asymptotic stiffening near the admissible deformation limits, thereby preventing kinematic overlap and improving numerical robustness.
+Figure~\ref{fig-spring-law-comparison}\,(a-c) compares the original linear torsional spring law with the enhanced spring law in terms of strain energy, restoring moment, and tangent rotational stiffness. It is important to note that the values of \(\delta\), \(\alpha_1\), and \(\alpha_2\) used in Fig.~\ref{fig-spring-law-comparison} are chosen for visual representation only and are not up to scale. 
+
+The spring response can be divided into three regions. Firstly, when \(\alpha_1 \le \alpha \le \alpha_2\), the enhanced law reduces to the original 3NTS constitutive law. The tangent stiffness is constant and equal to \(K_\textrm{T}\), the restoring moment varies linearly with \(\alpha-\alpha_0\), and the strain energy varies quadratically with \(\alpha-\alpha_0\). The energy minimum occurs at \(\alpha=\alpha_0\), where the restoring moment is zero. Thus, the enhanced law does not alter the spring response in the intended operating range. In the lower stiffening region, where \(\delta < \alpha < \alpha_1\), the spring stiffens as the relative angle decreases below \(\alpha_1\). The tangent stiffness increases according to a secant-squared function and tends to infinity as \(\alpha \rightarrow \delta^+\). The restoring moment becomes increasingly negative. This moment resists further closure of the joint. The strain energy also grows rapidly as the lower admissible limit is approached. In the upper stiffening region, where \(\alpha_2 < \alpha < 2\pi-\delta\), the spring stiffens as the relative angle increases beyond \(\alpha_2\). The tangent stiffness again tends to infinity, now as \(\alpha \rightarrow (2\pi-\delta)^-\). The restoring moment becomes increasingly positive. This moment resists further deformation of the joint. The strain energy also grows rapidly near the upper admissible limit.
+
+\subsection{Path-dependent loading and Sequential Folding Enabled by Enhanced Torsional Spring}\label{04-subsec-deployment-path}
+
+The enhanced spring law formulated in the previous subsection allows the 3NTS element to model large rotations while enforcing prescribed angular limits. This capability is important for reconfigurable trusses with multiple independent kinematic degrees of freedom. In such systems, individual units may fold, lock, or remain active at different stages of deformation. The enhanced law makes it possible to simulate these transitions without numerical failure caused by angle wrapping, spring overlap, or physically inadmissible rotations. This subsection demonstrates these capabilities using two examples.
+
+The first example is the stacked square-linkage truss shown in Fig.~\ref{fig-deployment-path}\,(a). The structure consists of two vertically stacked square units. Each unit is a special case of a six-bar linkage formed by a square frame and a diagonal bar with a rotational joint at its midpoint. The midpoint joint on each diagonal is modeled using the enhanced torsional spring. Each unit therefore contributes one independent kinematic degree of freedom.
+
+The structure is approximately 2~m tall. Each non-diagonal member has a length of 1~m. The bars have an elastic modulus \(E = 3\times10^9~\text{Pa}\) and a cross-sectional area \(A = 0.5~\text{m}^2\). Each torsional spring has a linear-regime stiffness \(K_T = 10~\text{Nm/rad}\). A geometric imperfection of \(10^\circ\) is assigned to each folding joint to initiate deformation in a preferred direction. The admissible rotation range is bounded between \(15^\circ\) and \(345^\circ\). The spring response remains linear between \(30^\circ\) and \(330^\circ\). Outside this interval, the tangent stiffness increases asymptotically as the spring angle approaches the prescribed limits. Using the notation from the previous subsection, these parameters correspond to \(\alpha_1 = 30^\circ\), \(\alpha_2 = 330^\circ\), and \(\delta_1 = 15^\circ\).
+
+The load--displacement response of the stacked square-linkage truss is shown in Fig.~\ref{fig-deployment-path}\,(b). At the beginning of loading, both units resist the applied vertical load. The structure carries a load of approximately 180~N before an instability develops in the lower unit. After this instability, the load drops as the lower unit folds. The lower unit continues to deform until the relative angle of its torsional spring approaches the lower angular limit of \(15^\circ\). At this stage, the enhanced spring law produces a large tangent stiffness, and the lower unit effectively locks.
+
+After the lower unit locks, additional deformation is transferred to the upper unit. The load then increases again until a second instability develops in the upper unit. The upper unit folds in a similar manner until its torsional spring also approaches the lower angular limit. Once both units are locked, further displacement requires axial deformation of the bars and additional deformation of the constrained joints. This produces the final steep increase in the load--displacement curve near \(\Delta = 1.6~\text{m}\).
 
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=\textwidth]{01-figures/04-01-spring-law-comparison.jpg}
-  \caption{Comparison between the original linear torsional spring law and the enhanced spring law: (a) strain energy; (b) restoring moment; and (c) tangent stiffness as functions of the relative angle \(\alpha\).}\label{fig-spring-law-comparison}
+  \includegraphics[width=\textwidth]{01-figures/04-02-path-analysis.jpg}
+  \caption{Analysis of deployment path for reconfigurable trusses. (a) Vertically stacked units of reconfigurable trusses augmented with enhanced torsional springs; (b) Load vs. Displacement curve of the vertically stacked units of reconfigurable trusses demonstrating sequential collapse of each degree of freedom.}\label{fig-deployment-path}
 \end{figure}
+
+This example illustrates the main advantage of the enhanced spring law. The formulation can capture sequential folding, locking, and load redistribution in a reconfigurable truss with multiple independent kinematic degrees of freedom. A conventional linear torsional spring cannot represent this behavior reliably because it does not impose a physical angular range. The enhanced law therefore provides a way to study collapse sequences, deployment sequences, and actuation paths in systems where different units activate at different stages of deformation.
+
+The second example considers the reconfigurable Warren truss shown in Fig.~\ref{fig-deployment-path}\,(c). The truss is 6~m long and 1~m high. The left support is restrained, and the right support is modeled as a roller. Three enhanced torsional springs are placed at the locations shown in Fig.~\ref{fig-deployment-path}\,(c). These springs introduce three independent kinematic degrees of freedom into the truss. As a result, the structure can occupy several intermediate configurations depending on which units are folded or open. Excluding symmetric cases, the truss has five unique starting configurations.
+
+Each configuration is loaded by applying a vertical displacement at the roller support in the negative \(y\)-direction. The corresponding load--displacement curves are shown in Fig.~\ref{fig-deployment-path}\,(d). Each torsional spring has a geometric imperfection of \(0.1^\circ\), and the linear-regime torsional stiffness is \(K_T = 20~\text{Nm/rad}\).
+
+The results show that all loading paths eventually require approximately 80~N to reach the most compact final state. However, the force demand varies substantially during the intermediate stages of folding. This variation occurs because each starting configuration activates a different set of kinematic degrees of freedom. Some configurations deform through a gradual folding sequence. Others require one or more units to snap through or lock before the remaining units can continue to fold. As individual units reach their angular limits, the enhanced springs restrict further rotation and redirect deformation to the remaining active units.
+
+Therefore, the final compact configuration alone does not define the actuation demand. The required force also depends on the folding path used to reach that configuration. The enhanced torsional spring law makes this path dependence accessible in simulation. It allows the force demand to be evaluated for different deployment or collapse sequences while maintaining physically admissible joint rotations. This capability is useful for designing reconfigurable trusses that must fold in a prescribed order, avoid unintended locking, or minimize actuation forces along a selected kinematic path.
+
+\section{Magnetic Multi-stable Torsional Hinges}\label{04-sec-multistable-hinge}
+\subsection{Prototype and Reduced-order Simulated Torque-displacement Response of a Magnetic Multistable Hinge}\label{04-subsec-magnetic-hinge-prototype}
+The magnetic torsional hinge prototype uses polarity-dependent interactions between permanent magnets to create preferred rotational states. The hinge is formed at the joint between two axial members whose ends remain adjacent during rotation. Each member terminates in a circular hub, which provides the mating surface for the magnetic connection, as shown in Fig.~\ref{fig-magnetic-prototype}\,(a). Each hub face contains eight identical N35-grade cylindrical neodymium magnets with a diameter of 6~mm and a thickness of 2~mm. The magnets are seated in individual holes and are equally spaced at 45\(^\circ{}\) intervals around a common centerline. The center of each magnet lies on a pitch circle with a radius of 13.75~mm. The mating hub uses the same geometric pattern, so the magnets align face-to-face at selected rotational configurations. On each hub face, the exposed magnet poles alternate around the pitch circle. The hub dimensions and magnet layout are shown in Fig.~\ref{fig-magnetic-prototype}\,(a).
+
+The alternating polarity pattern gives the hinge four preferred rotational states over one full rotation. As one hub rotates relative to the other, the facing magnet pairs periodically transition between attracting and repelling configurations. Stable states occur when the relative rotation aligns the two magnet patterns in an energetically favorable arrangement. For the eight-magnet pattern used in this prototype, the polarity sequence repeats every \(\pi/2\) radians. The hinge therefore exhibits four stable states between 0 and \(2\pi\). Figure~\ref{fig-magnetic-prototype}\,(b) shows the fabricated hinge in these stable configurations.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{01-figures/04-03-magnetic-hinge-prototype.jpg}
+  \caption{Magnetic multistable torsional hinge prototype. (a) Dimensions and magnet placement of the torsional hinge hub; (b) 3D printed and assemble prototye of a magnetic multistable hinge in a single unit truss; Simulated behavior of the magnetic multistable torsional hinge using a reduced-order magnetic interaction model: (c) Torque-displacement, and (d) Work-displacement response.}\label{fig-magnetic-prototype}
+\end{figure}
+
+The magnet is modeled as a cylindrical disc with diameter \(D\), radius \(r\), thickness \(t\), remanence \(B_r\), and axial gap \(g\). The radius is \(r = \frac{D}{2}\). The axial magnetic field at the opposing face is approximated as
+
+\begin{equation}
+B =\frac{B_r}{2}\left[\frac{z_1}{\sqrt{z_1^2+r^2}}-\frac{z_0}{\sqrt{z_0^2+r^2}}\right]
+\end{equation}
+
+where \(z_0 = g\) and \(z_1 = g + t\). The corresponding magnetic pressure is estimated using
+
+\begin{equation}
+P = \frac{B^2}{2\mu_0}
+\end{equation}
+
+where the permeability of free space is \(\mu_0 = 4\pi \times 10^{-7}\ \mathrm{N/A^2}\). For two fully aligned magnets, the effective face area is \(A = \pi r^2\). So the axial attractive force is approximated by \(F_{\mathrm{axial}} \approx P A\) or equivalently,
+
+\begin{equation}
+F_{\mathrm{axial}} \approx \frac{B^2}{2\mu_0}\pi r^2
+\end{equation}
+
+For laterally offset magnets, the effective overlap area decreases as the center-to-center offset \(d\) increases. The overlap area of two equal circular faces is
+
+\begin{equation}
+A(r,d)=
+\begin{cases}
+0, & d \ge 2r \\[6pt]
+\pi r^2, & d \le 0 \\[6pt]
+2r^2\cos^{-1}\left(\frac{d}{2r}\right)
+-\frac{d}{2}\sqrt{4r^2-d^2}, & 0<d<2r
+\end{cases}
+\end{equation}
+
+The normal attractive force at offset \(d\) is therefore estimated as
+
+\begin{equation}
+F_{\mathrm{normal}}(d) \approx P A(r,d)
+\end{equation}
+
+The lateral magnetic attraction is approximated from the rate of change of overlap area with respect to the signed lateral offset \(x\):
+
+\begin{equation}
+F_{\mathrm{lateral}}(x) \approx P\ell \frac{dA}{dx}
+\end{equation}
+
+where the interaction length is approximated by
+
+\begin{equation}
+\ell \approx t + g
+\end{equation}
+
+For the overlapping region \(0 < |x| < 2r\), the overlap-area derivative is
+\begin{equation}
+\frac{dA}{dx} = -\sqrt{4r^2-x^2}\,\mathrm{sign}(x)
+\end{equation}
+
+Thus the lateral magnetic force approximation becomes
+
+\begin{equation}
+F_{\mathrm{lateral}}(x) \approx -P\ell\sqrt{4r^2-x^2}\,\mathrm{sign}(x)
+\end{equation}
+
+If friction is included, the sliding resistance is approximated as
+
+\begin{equation}
+F_{\mathrm{friction}}(d) \approx \mu F_{\mathrm{normal}}(d)
+\end{equation}
+or
+\begin{equation}
+F_{\mathrm{friction}}(d) \approx \mu P A(r,d)
+\end{equation}
+
+The total approximate shear force required to slide the magnets is then
+
+\begin{equation}
+F_{\mathrm{shear}}(x) \approx \mu P A(r,|x|)-F_{\mathrm{lateral}}(x)
+\end{equation}
+
+\subsection{Computational Modeling of Multistable Magnetic Torsional Hinge for Matrix Structural Analysis}\label{04-subsec-magnetic-hinge-model}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{01-figures/04-04-magnetic-hinge-modeling.jpg}
+  \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a multistable magnetic torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-magnetic-hinge}
+\end{figure}
+Within the central angular interval \(\alpha_1<\alpha<\alpha_2\), the
+magnetic multistable hinge is described using the relative rotation
+\begin{equation}
+\theta=\alpha-\alpha_0,
+\label{eq:theta}
+\end{equation}
+where \(\alpha_0\) is the reference angle. The response outside
+\(\alpha_1<\alpha<\alpha_2\) is modeled using the enhanced spring law described
+in the preceding section.
+
+The hinge combines a weak linear stiffness with a periodic magnetic
+contribution. The two stiffness scales are
+\begin{equation}
+K_1=\frac{k_0}{10^4},
+\qquad
+K_2=k_0,
+\label{eq:stiffness-scales}
+\end{equation}
+where \(K_1\) controls the weak background stiffness and \(K_2\) controls the
+magnitude of the magnetic contribution. Let \(N=n_{\mathrm{peaks}}\) denote the
+number of magnetic periods on each side of \(\theta=0\). The period is
+\begin{equation}
+p=\frac{\alpha_2-\alpha_0}{N},
+\label{eq:period}
+\end{equation}
+so that, for the symmetric central region,
+\begin{equation}
+\alpha_1=\alpha_0-Np,
+\qquad
+\alpha_2=\alpha_0+Np.
+\label{eq:symmetric-central-region}
+\end{equation}
+
+The smoothing width is
+\begin{equation}
+\varepsilon=\frac{\pi}{180}\,\varepsilon_{\mathrm{deg}},
+\label{eq:smoothing-width}
+\end{equation}
+where \(\varepsilon_{\mathrm{deg}}\) is specified in degrees. Smaller
+\(\varepsilon\) produces sharper magnetic transitions, while larger
+\(\varepsilon\) produces smoother transitions.
+
+For each magnetic period, define the local phase coordinate
+\(\varphi\in[0,p]\). The three smooth transition functions within a period are
+centered at \(\varphi=0\), \(\varphi=p/2\), and \(\varphi=p\). Define
+\begin{align}
+\mathcal{T}(\varphi)
+&=
+\tanh\!\left(\frac{\varphi}{\varepsilon}\right)
+-\tanh\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
++\tanh\!\left(\frac{\varphi-p}{\varepsilon}\right),
+\label{eq:T-shape}\\
+\mathcal{S}(\varphi)
+&=
+\operatorname{sech}^2\!\left(\frac{\varphi}{\varepsilon}\right)
+-\operatorname{sech}^2\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
++\operatorname{sech}^2\!\left(\frac{\varphi-p}{\varepsilon}\right).
+\label{eq:S-shape}
+\end{align}
+Here \(\mathcal{T}\) defines the smooth magnetic moment shape within one
+period, and \(\mathcal{S}=d\mathcal{T}/d(\varphi/\varepsilon)\) defines the
+corresponding stiffness shape.
+
+The energy primitive uses
+\begin{equation}
+\operatorname{logCosh}(x)
+=
+|x|+\log\!\left(1+\exp[-2|x|]\right)-\log 2,
+\label{eq:logcosh}
+\end{equation}
+with the constant
+\begin{equation}
+c_0=
+\operatorname{logCosh}(0)
+-\operatorname{logCosh}\!\left(-\frac{p}{2\varepsilon}\right)
++\operatorname{logCosh}\!\left(-\frac{p}{\varepsilon}\right).
+\label{eq:c0}
+\end{equation}
+The corresponding dimensionless energy shape is
+\begin{equation}
+\mathcal{E}(\varphi)
+=
+\operatorname{logCosh}\!\left(\frac{\varphi}{\varepsilon}\right)
+-\operatorname{logCosh}\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
++\operatorname{logCosh}\!\left(\frac{\varphi-p}{\varepsilon}\right)
+-c_0.
+\label{eq:E-shape}
+\end{equation}
+
+For the \(m\)-th magnetic period, where \(m=0,1,\ldots,N-1\), the local phase
+coordinate is
+\begin{equation}
+\varphi_m^+(\theta)=\theta-mp,
+\qquad
+mp<\theta\le(m+1)p,
+\label{eq:positive-phase}
+\end{equation}
+on the positive side, and
+\begin{equation}
+\varphi_m^-(\theta)=-\theta-mp,
+\qquad
+-(m+1)p\le\theta< -mp,
+\label{eq:negative-phase}
+\end{equation}
+on the negative side.
+
+The restoring moment in the central region can then be written as the case
+equation
+\begin{equation}
+M(\theta)=
+\begin{cases}
+K_1\theta
+-K_2\mathcal{T}\!\left(\varphi_m^-(\theta)\right),
+& -(m+1)p\le\theta< -mp,\\[8pt]
+0,
+& \theta=0,\\[8pt]
+K_1\theta
++K_2\mathcal{T}\!\left(\varphi_m^+(\theta)\right),
+& mp<\theta\le(m+1)p,
+\end{cases}
+\qquad m=0,1,\ldots,N-1.
+\label{eq:moment-cases}
+\end{equation}
+
+The tangent stiffness is
+\begin{equation}
+k_T(\theta)=
+\begin{cases}
+K_1+\dfrac{K_2}{\varepsilon}
+\mathcal{S}\!\left(\varphi_m^-(\theta)\right),
+& -(m+1)p\le\theta< -mp,\\[12pt]
+K_1+\dfrac{K_2}{\varepsilon}\mathcal{S}(0),
+& \theta=0,\\[12pt]
+K_1+\dfrac{K_2}{\varepsilon}
+\mathcal{S}\!\left(\varphi_m^+(\theta)\right),
+& mp<\theta\le(m+1)p,
+\end{cases}
+\qquad m=0,1,\ldots,N-1.
+\label{eq:stiffness-cases}
+\end{equation}
+
+Finally, the strain energy is
+\begin{equation}
+U(\theta)=
+\begin{cases}
+\dfrac{1}{2}K_1\theta^2
++K_2\varepsilon\,\mathcal{E}\!\left(\varphi_m^-(\theta)\right),
+& -(m+1)p\le\theta< -mp,\\[12pt]
+0,
+& \theta=0,\\[8pt]
+\dfrac{1}{2}K_1\theta^2
++K_2\varepsilon\,\mathcal{E}\!\left(\varphi_m^+(\theta)\right),
+& mp<\theta\le(m+1)p,
+\end{cases}
+\qquad m=0,1,\ldots,N-1.
+\label{eq:energy-cases}
+\end{equation}
+Equations~\eqref{eq:moment-cases}--\eqref{eq:energy-cases} define the magnetic
+multistable hinge law used for \(\alpha_1<\alpha<\alpha_2\).
+
+
+\section{Bi-Stable Torsional Springs}\label{04-sec-bistable-spring}
+The piecewise torsional spring formulation introduced in the previous section provides a controlled way to restrict hinge rotation within a prescribed angular range. The next step is to extend this idea to hinges with nonlinear rotational response. Such hinges are useful when the structure is intended to store and release energy through large rotations, or when the hinge must exhibit multiple stable configurations.
+
+A common way to formulate the mechanical response of a structural element is to begin with a strain energy function. The internal force is obtained by differentiating the strain energy with respect to the deformation variable, and the tangent stiffness is obtained by differentiating the internal force. For a rotational spring, this means that the restoring moment is derived from the strain energy with respect to the hinge angle, and the tangent stiffness is derived from the restoring moment. This approach is convenient when the strain energy function is smooth and differentiable over the full deformation range.
+
+This requirement becomes more restrictive when the hinge response is nonlinear and piecewise-defined. In such cases, continuity must be enforced at every transition point between adjacent branches. The strain energy, restoring moment, and tangent stiffness should remain compatible across these points to avoid artificial jumps in the mechanical response. These jumps are especially problematic in nonlinear equilibrium solvers, such as arc-length or generalized displacement-control methods, because the solver relies on a consistent tangent stiffness to trace the equilibrium path.
+
+The difficulty becomes greater when the hinge is designed to be bistable. Bistability requires the strain energy to have two local minima separated by an energy barrier. This produces a nonlinear moment–rotation response with regions of positive and negative tangent stiffness. Although such behavior can be represented using high-order polynomials or trigonometric functions, constructing a piecewise strain energy function that satisfies all boundary conditions, preserves smoothness after differentiation, and produces the intended stable equilibria is not straightforward.
+
+For this reason, the bistable hinge response is formulated here by prescribing the restoring moment directly rather than by first defining the strain energy. The restoring moment is chosen as a smooth function of the hinge angle, and the tangent stiffness is then obtained by differentiating this moment with respect to rotation. The corresponding strain energy can still be recovered by integrating the restoring moment over the hinge rotation. This approach provides more direct control over the engineered rotational response while preserving a mechanically consistent energy interpretation.
+
+Using this formulation, the bistable torsional spring is defined through the following restoring moment and tangent stiffness functions.
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\textwidth]{01-figures/04-05-bistable-hinge-modeling.jpg}
+  \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a bistable torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-bistable-hinge}
+\end{figure}
+\subsection{Computational Formulation of Bistable Torsional Spring for Matrix Structural Analysis}\label{04-subsec-bistable-equations}
+Within the central angular interval \(\alpha_1<\alpha<\alpha_2\), the
+bistable torsional spring is described using the relative rotation
+\begin{equation}
+\theta=\alpha-\alpha_0,
+\label{eq:theta}
+\end{equation}
+where \(\alpha_0\) is the stress-free reference angle. The response outside
+\(\alpha_1<\alpha<\alpha_2\) is modeled using the enhanced spring law described
+in the preceding section.
+
+The spring is defined by an initial stiffness \(K_T\), a negative stiffness
+\(k_{\mathrm{neg}}\), and a post-transition positive stiffness
+\(k_{\mathrm{pos}}\). The transition rotations satisfy
+\begin{equation}
+0<\theta_1<\theta_2<\theta_3.
+\label{eq:transition-widths}
+\end{equation}
+The smooth transition function is
+\begin{equation}
+q(s)=
+\frac{
+\tanh\!\left[\beta\left(s-\frac{1}{2}\right)\right]
++\tanh\!\left(\frac{\beta}{2}\right)
+}{
+2\tanh\!\left(\frac{\beta}{2}\right)
+},
+\qquad 0\le s\le 1,
+\label{eq:q}
+\end{equation}
+where \(s\) is the local normalized coordinate within a transition interval and
+\(\beta\) controls the sharpness of the transition. The function satisfies
+\(q(0)=0\) and \(q(1)=1\), so it smoothly interpolates between two prescribed
+stiffness values over one transition interval. Larger values of \(\beta\)
+produce a sharper transition, while smaller values produce a more gradual
+transition. Its first and second primitives are denoted by
+\begin{equation}
+Q(s)=\int_0^s q(u)\,du,
+\qquad
+\mathcal{Q}(s)=\int_0^s Q(v)\,dv.
+\label{eq:q-primitives}
+\end{equation}
+
+The moment levels at the positive transition rotations are
+\begin{align}
+M_1 &= K_T\theta_1, \label{eq:M1}\\
+M_2 &=
+M_1
++(\theta_2-\theta_1)
+\left[
+K_T+\left(k_{\mathrm{neg}}-K_T\right)Q(1)
+\right],
+\label{eq:M2}\\
+M_3 &=
+M_2
++(\theta_3-\theta_2)
+\left[
+k_{\mathrm{neg}}
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(1)
+\right].
+\label{eq:M3}
+\end{align}
+The corresponding energy levels are
+\begin{align}
+U_1 &=
+\frac{1}{2}K_T\theta_1^2, \label{eq:U1}\\
+U_2 &=
+U_1+(\theta_2-\theta_1)M_1
++(\theta_2-\theta_1)^2
+\left[
+\frac{1}{2}K_T
++\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(1)
+\right],
+\label{eq:U2}\\
+U_3 &=
+U_2+(\theta_3-\theta_2)M_2
++(\theta_3-\theta_2)^2
+\left[
+\frac{1}{2}k_{\mathrm{neg}}
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(1)
+\right].
+\label{eq:U3}
+\end{align}
+
+The tangent stiffness in the central region is
+\begin{equation}
+k_T(\theta)=
+\begin{cases}
+k_{\mathrm{pos}},
+& \theta<-\theta_3,\\[4pt]
+k_{\mathrm{neg}}
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)
+q\!\left(\dfrac{-\theta-\theta_2}{\theta_3-\theta_2}\right),
+& -\theta_3\le\theta<-\theta_2,\\[12pt]
+K_T+\left(k_{\mathrm{neg}}-K_T\right)
+q\!\left(\dfrac{-\theta-\theta_1}{\theta_2-\theta_1}\right),
+& -\theta_2\le\theta<-\theta_1,\\[12pt]
+K_T,
+& -\theta_1\le\theta\le\theta_1,\\[4pt]
+K_T+\left(k_{\mathrm{neg}}-K_T\right)
+q\!\left(\dfrac{\theta-\theta_1}{\theta_2-\theta_1}\right),
+& \theta_1<\theta\le\theta_2,\\[12pt]
+k_{\mathrm{neg}}
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)
+q\!\left(\dfrac{\theta-\theta_2}{\theta_3-\theta_2}\right),
+& \theta_2<\theta\le\theta_3,\\[12pt]
+k_{\mathrm{pos}},
+& \theta>\theta_3.
+\end{cases}
+\label{eq:stiffness}
+\end{equation}
+
+The restoring moment is obtained by integrating the stiffness with respect to
+\(\theta\) and enforcing \(M(0)=0\):
+\begin{equation}
+M(\theta)=
+\begin{cases}
+-M_3+k_{\mathrm{pos}}(\theta+\theta_3),
+& \theta<-\theta_3,\\[6pt]
+-M_2-(\theta_3-\theta_2)\left[
+k_{\mathrm{neg}}s_+^-
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(s_+^-)
+\right],
+& -\theta_3\le\theta<-\theta_2,\\[10pt]
+-M_1-(\theta_2-\theta_1)\left[
+K_Ts_-^-
++\left(k_{\mathrm{neg}}-K_T\right)Q(s_-^-)
+\right],
+& -\theta_2\le\theta<-\theta_1,\\[10pt]
+K_T\theta,
+& -\theta_1\le\theta\le\theta_1,\\[6pt]
+M_1+(\theta_2-\theta_1)\left[
+K_Ts_-^+
++\left(k_{\mathrm{neg}}-K_T\right)Q(s_-^+)
+\right],
+& \theta_1<\theta\le\theta_2,\\[10pt]
+M_2+(\theta_3-\theta_2)\left[
+k_{\mathrm{neg}}s_+^+
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(s_+^+)
+\right],
+& \theta_2<\theta\le\theta_3,\\[10pt]
+M_3+k_{\mathrm{pos}}(\theta-\theta_3),
+& \theta>\theta_3,
+\end{cases}
+\label{eq:moment}
+\end{equation}
+where the scaled transition coordinates are
+\begin{equation}
+s_-^-=\frac{-\theta-\theta_1}{\theta_2-\theta_1},
+\qquad
+s_+^-=\frac{-\theta-\theta_2}{\theta_3-\theta_2},
+\qquad
+s_-^+=\frac{\theta-\theta_1}{\theta_2-\theta_1},
+\qquad
+s_+^+=\frac{\theta-\theta_2}{\theta_3-\theta_2}.
+\label{eq:s-coordinates}
+\end{equation}
+
+The strain energy is defined by \(U(0)=0\) and
+\(M=dU/d\theta\). In the central region,
+\begin{equation}
+U(\theta)=
+\begin{cases}
+U_3-M_3(\theta+\theta_3)
++\dfrac{1}{2}k_{\mathrm{pos}}(\theta+\theta_3)^2,
+& \theta<-\theta_3,\\[10pt]
+U_2+(\theta_3-\theta_2)M_2s_+^-
++(\theta_3-\theta_2)^2\left[
+\dfrac{1}{2}k_{\mathrm{neg}}(s_+^-)^2
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(s_+^-)
+\right],
+& -\theta_3\le\theta<-\theta_2,\\[14pt]
+U_1+(\theta_2-\theta_1)M_1s_-^-
++(\theta_2-\theta_1)^2\left[
+\dfrac{1}{2}K_T(s_-^-)^2
++\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(s_-^-)
+\right],
+& -\theta_2\le\theta<-\theta_1,\\[14pt]
+\dfrac{1}{2}K_T\theta^2,
+& -\theta_1\le\theta\le\theta_1,\\[10pt]
+U_1+(\theta_2-\theta_1)M_1s_-^+
++(\theta_2-\theta_1)^2\left[
+\dfrac{1}{2}K_T(s_-^+)^2
++\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(s_-^+)
+\right],
+& \theta_1<\theta\le\theta_2,\\[14pt]
+U_2+(\theta_3-\theta_2)M_2s_+^+
++(\theta_3-\theta_2)^2\left[
+\dfrac{1}{2}k_{\mathrm{neg}}(s_+^+)^2
++\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(s_+^+)
+\right],
+& \theta_2<\theta\le\theta_3,\\[14pt]
+U_3+M_3(\theta-\theta_3)
++\dfrac{1}{2}k_{\mathrm{pos}}(\theta-\theta_3)^2,
+& \theta>\theta_3.
+\end{cases}
+\label{eq:energy}
+\end{equation}
+Equations~\eqref{eq:stiffness}--\eqref{eq:energy} define the bistable spring
+law used for \(\alpha_1<\alpha<\alpha_2\).
+
+\subsection{Structural Analysis of Reconfigurable Trusses Augmented with Bistable Torsional Springs}\label{04-subsec-validating-bistable}
+
+\section{Discussion}\label{04-sec-discussion}
+
+\section{Concluding Remarks}\label{04-sec-conclusion}
