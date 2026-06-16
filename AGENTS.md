@@ -30,5 +30,4 @@ This repository contains files of my doctoral dissertation. Future coding agents
 
 - `AGENTS.md`
 - `README.md`
-- `NOTES.md`
 - `TODO.md`
