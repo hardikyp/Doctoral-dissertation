@@ -136,7 +136,7 @@ The magnetic multistable hinge response introduced in the previous section is in
 
 The strain energy associated with the hinge is obtained by integrating the moment-rotation relationship. The tangent stiffness is obtained by differentiating the same moment-rotation relationship with respect to the relative rotation. Because the moment law is represented as a smoothed square wave, the corresponding strain energy takes the form of a smoothed triangular wave. This energy landscape captures the repeated energy barriers produced by the magnetic hinge. Local minima of the energy define stable angular configurations, whereas local maxima define unstable transition states between neighboring stable configurations.
 
-The present subsection focuses on the interior magnetic response within the angular interval \(\alpha_1<\alpha<\alpha_2 \). The response outside this interval is modeled using the nonlinear stiffening formulation described in Section~\ref{04-subsec-enhanced-spring}. Within the interior interval, the hinge response is expressed in terms of the shifted rotation \(\theta = \alpha-\alpha_0\), where \(\alpha_0\) is the rest angle of the hinge. The interior response is defined as the superposition of a weak linear torsional spring and a nonlinear magnetic contribution. The weak linear contribution regularizes the constitutive response by providing a nonzero baseline stiffness. Without this term, the tangent stiffness can approach zero over the smoothed moment plateaus, which can make the global tangent stiffness matrix singular or poorly conditioned during nonlinear solution. The value of \(K_1\) is therefore chosen to be small relative to the magnetic scale \(K_2\), thereby improving numerical conditioning without altering the multistable response.
+The present subsection focuses on the magnetic response within the angular interval \(\alpha_1<\alpha<\alpha_2 \). The response outside this interval is modeled using the nonlinear stiffening formulation described in Section~\ref{04-subsec-enhanced-spring}. Within the interior interval, the hinge response is expressed in terms of the shifted rotation \(\theta = \alpha-\alpha_0\), where \(\alpha_0\) is the rest angle of the hinge. The interior response is defined as the superposition of a weak linear torsional spring and a nonlinear magnetic contribution. The weak linear contribution regularizes the constitutive response by providing a nonzero baseline stiffness. Without this term, the tangent stiffness can approach zero over the smoothed moment plateaus, which can make the global tangent stiffness matrix singular or poorly conditioned during nonlinear solution. Here, \(K_1\) is defined as the weak linear spring stiffness and \(M_0\) is defined as the magnitude of the resisting moment offered my the magnetic joint.
 
 The periodic magnetic interactions are represented using a phase variable \(\phi(\theta)=\operatorname{mod}\left(|\theta|,p\right)\). Here \(p\) is the angular period of the repeating magnetic features and is defined as \(p=(\alpha_2-\alpha_0)/N\). \(N\) is the number of periods and \(\alpha_3=p/2\) is the half-period. The smoothed transition coordinates are defined as
 \begin{flalign}
@@ -146,18 +146,18 @@ The parameter \(\varepsilon\) controls the sharpness of the transition between n
 
 The magnetic contribution to the restoring moment is defined as
 \begin{flalign}
-\quad M_{\mathrm{mag}}(\theta) &= \operatorname{sgn}(\theta)K_2\left[\tanh(\xi_0)-\tanh(\xi_1)+\tanh(\xi_2)\right].&
+\quad M_{\mathrm{mag}}(\theta) &= \operatorname{sgn}(\theta)M_0\left[\tanh(\xi_0)-\tanh(\xi_1)+\tanh(\xi_2)\right].&
 \end{flalign}
 This expression provides a smooth approximation of the alternating moment response produced by the magnetic hinge. The corresponding magnetic tangent stiffness is
 \begin{flalign}
-\quad K_{\mathrm{mag}}(\theta)&=\frac{K_2}{\varepsilon}\left[
+\quad K_{\mathrm{mag}}(\theta)&=\frac{M_0}{\varepsilon}\left[
 \operatorname{sech}^2(\xi_0)-\operatorname{sech}^2(\xi_1)+\operatorname{sech}^2(\xi_2)\right].&
 \end{flalign}
 The tangent stiffness is concentrated near the transition regions where the magnetic moment changes rapidly between adjacent plateaus.
 
 The magnetic energy is obtained by integrating the magnetic moment contribution. The energy is written as
 \begin{flalign}
-U_{\mathrm{mag}}(\theta)&=K_2\varepsilon\left[\operatorname{logCosh}(\xi_0)-\operatorname{logCosh}(\xi_1)+\operatorname{logCosh}(\xi_2)-c_0\right],&
+U_{\mathrm{mag}}(\theta)&=M_0\varepsilon\left[\operatorname{logCosh}(\xi_0)-\operatorname{logCosh}(\xi_1)+\operatorname{logCosh}(\xi_2)-c_0\right],&
 \end{flalign}
 where \( c_0 \) sets the reference value of the magnetic energy. The function \( \operatorname{logCosh}(\cdot) \) denotes \( \log(\cosh(\cdot)) \), which is the antiderivative of \( \tanh(\cdot) \).
 
@@ -165,7 +165,7 @@ where \( c_0 \) sets the reference value of the magnetic energy. The function \(
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{01-figures/04-04-magnetic-hinge-modeling.jpg}
-  \caption{Modeling magnetic multistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a multistable magnetic torsional hinge with respect to the relative angle \(\alpha\) of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-magnetic-hinge}
+  \caption{Modeling magnetic multistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a multistable magnetic torsional hinge with respect to the relative angle \(\alpha\) of the hinge; (b) Load vs. Displacement (middle) and System energy vs. Displacement (bottom) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-magnetic-hinge}
 \end{figure}
 
 The complete interior constitutive law is obtained by adding the weak linear elastic contribution to the magnetic contribution. The strain energy is represented as
@@ -178,11 +178,18 @@ The restoring moment becomes
 \end{flalign}
 The tangent stiffness is
 \begin{flalign}
-\quad K_T(\alpha)&=K_1+K{\mathrm{mag}}(\theta).&
+\quad K_T(\alpha)&=K_1+K_{\mathrm{mag}}(\theta).&
 \end{flalign}
 The tangent stiffness, restoring moment and strain energy with respect to the angular deformation of a magnetic multistable hinge obtained using the equations above is shown in Fig.~\ref{fig-magnetic-hinge}\,(a).
 
 \subsection{Structural Analysis of a 4-bar Linkage Fitted with Magnetic Multistable Torsional Hinge}
+This subsection demonstrates the nonlinear response of a four-bar linkage unit equipped with a magnetic multistable hinge, shown by the red arc in Fig.~\ref{fig-magnetic-hinge}\,(b, top). The unit has pinned supports at the base nodes. The horizontal and vertical members are each 1~m long, and the two diagonal segments are each \(1/\sqrt{2}\)~m long. All bars are modeled with elastic modulus \(E=3\times10^9~\text{N/m}^2\) and cross-sectional area \(A=0.5~\text{m}^2\). The multistable hinge is placed at the joint along the diagonal member. The weak linear stiffness of the torsional spring is set to \(K_1=1\times10^{-4}\)~Nm/rad, and the alternating magnetic moment amplitude is set to \(M_0=1\)~Nm. These values are selected only to demonstrate the modeling capability. They are not intended to represent a specific magnet design. In practice, the parameters can be calibrated from the measured or computed moment-rotation response of a physical hinge.
+
+A horizontal load is applied to the top node in the negative \(x\)-direction. The resulting load-displacement curve is shown in Fig.~\ref{fig-magnetic-hinge}\,(b, middle). At small displacements, the structure resists deformation, and the applied load required to further deform the structure increases to approximately 400~N. Beyond this point, an instability develops, and the diagonal member begins to fold about the magnetic hinge. As the hinge rotates away from its initial stable configuration, the magnetic interaction transitions from an attracting configuration to a repelling configuration. This transition produces a reversal in the applied load, shown by the negative-load branch in the load-displacement response.
+
+The corresponding energy response is shown in Fig.~\ref{fig-magnetic-hinge}\,(b, bottom). The spring energy increases as the hinge moves away from its initial stable configuration and reaches a local maximum near the energy barrier. After this barrier is crossed, the hinge snaps into the next stable state with the magnets in attracting configuration. This first stable state is marked by the blue star in the load-displacement and energy plots and is also illustrated in the deformed configuration in Fig.~\ref{fig-magnetic-hinge}\,(b, top). Continued displacement produces a second cycle of energy storage and release. The hinge again passes through a repelling configuration and then settles into another attracting configuration, marked by the blue circle.
+
+This example shows that the proposed torsional spring formulation can reproduce the essential mechanics of a magnetic multistable hinge within the nonlinear truss analysis tools. The model captures the load reversals, snap-through transitions, and repeated energy barriers associated with successive stable configurations.
 
 \section{Bi-Stable Torsional Springs}\label{04-sec-bistable-spring}
 The previous sections introduced piecewise nonlinear behavior into the 3NTS element through the enhanced spring law and the magnetic multistable hinge law. This section extends that idea to an idealized bistable torsional spring. Although a physical realization of this specific spring law is not considered here, the formulation serves as a demonstration of the modeling capabilities of the tools developed in this work. In particular, it shows how the 3NTS element can be used to simulate programmed mechanical response in reconfigurable trusses with multiple stable configurations.
