@@ -111,13 +111,13 @@ As one hub rotates relative to the other, the facing magnet pairs periodically m
 A reduced-order magnetic interaction model is used to estimate the torque required to drive the hinge through multiple stable states and the corresponding work associated with this rotation. The model provides a simple way to interpret the periodic peaks and troughs in the energy landscape produced by the alternating magnet-polarity pattern. The resulting torque-displacement and work–displacement relationships are later used to model multistable hinge behavior in the 3NTS element for multistable reconfigurable truss simulations.
 
 Each magnet is modeled as a cylindrical disc with diameter \(D\), radius \(r=D/2\), thickness \(t\), remanence \(B_r\), and axial gap \(g\) between the magnets. The axial magnetic field at the opposing face is approximated as:
-\begin{equation}
+\begin{flalign}
 B =\frac{B_r}{2}\left[\frac{z_1}{\sqrt{z_1^2+r^2}}-\frac{z_0} {\sqrt{z_0^2+r^2}}\right]
-\end{equation}
+\end{flalign}
 where, \(z_0 = g\) and \(z_1 = g + t\). The corresponding magnetic pressure is estimated using
-\begin{equation}
+\begin{flalign}
 P = \frac{B^2}{2\mu_0}
-\end{equation}
+\end{flalign}
 where \(\mu_0 = 4\pi \times 10^{-7}\ \mathrm{N/A^2}\) is the permeability of the free space. The units of \(P\) are N/m\(^2\), which are equivalent to J/m\(^3\). Therefore, the magnetic pressure can be interpreted as an approximate magnetic energy density. In this reduced-order model, the magnetic energy is estimated by multiplying this energy density by the effective interaction volume between the magnets. The force associated with a change in magnet position is then obtained by differentiating the magnetic energy with respect to the corresponding displacement direction.
 
 For the rotating assembly, one hub face is held fixed while the opposing hub face rotates over it. The effective overlap area between the two magnet arrays is denoted by \(A(\theta)\), where \(\theta\) is the angular position of the rotating face of the hub. The total magnetic interaction energy of the system at any given instance then becomes
@@ -131,172 +131,58 @@ where \(V(\theta)=\ell A(\theta)\) is the effective interaction volume between t
 
 The simulated torque required to rotate the magnetic multistable hinge and the corresponding work are shown in Fig.~\ref{fig-magnetic-prototype}\,(c) and (d), respectively. The alternating magnet polarity produces a periodic response with a period of \(\pi/2\) radians, resulting in four repeating regions over one full rotation. In the torque-rotation response, sharp transitions occur from a positive to negative torque as magnet pairs on either face switch between attractive and repulsive configurations. The corresponding work-rotation response forms a periodic energy landscape with four repeated energy wells. The local minima correspond to stable configurations, while the local maxima represent energy barriers between adjacent stable states. These four energy minima are consistent with the stable states observed in the fabricated four-bar linkage prototype.
 
-\subsection{Computational Modeling of Multistable Magnetic Torsional Hinge for Matrix Structural Analysis}\label{04-subsec-magnetic-hinge-model}
+\subsection{Constitutive Modeling of the Multistable Magnetic Torsional Hinge}\label{04-subsec-magnetic-hinge-model}
+The magnetic multistable hinge response introduced in the previous section is incorporated into the 3NTS element through a scalar nonlinear constitutive law. The simulated torque-rotation response of the hinge contains an alternating sequence of positive and negative torque plateaus. This behavior is idealized using a smoothed square-wave moment-rotation relationship. In this idealization, the restoring moment alternates between prescribed positive and negative values, and hyperbolic tangent functions provide smooth transitions between adjacent plateaus.
+
+The strain energy associated with the hinge is obtained by integrating the moment-rotation relationship. The tangent stiffness is obtained by differentiating the same moment-rotation relationship with respect to the relative rotation. Because the moment law is represented as a smoothed square wave, the corresponding strain energy takes the form of a smoothed triangular wave. This energy landscape captures the repeated energy barriers produced by the magnetic hinge. Local minima of the energy define stable angular configurations, whereas local maxima define unstable transition states between neighboring stable configurations.
+
+The present subsection focuses on the interior magnetic response within the angular interval \(\alpha_1<\alpha<\alpha_2 \). The response outside this interval is modeled using the nonlinear stiffening formulation described in Section~\ref{04-subsec-enhanced-spring}. Within the interior interval, the hinge response is expressed in terms of the shifted rotation \(\theta = \alpha-\alpha_0\), where \(\alpha_0\) is the rest angle of the hinge. The interior response is defined as the superposition of a weak linear torsional spring and a nonlinear magnetic contribution. The weak linear contribution regularizes the constitutive response by providing a nonzero baseline stiffness. Without this term, the tangent stiffness can approach zero over the smoothed moment plateaus, which can make the global tangent stiffness matrix singular or poorly conditioned during nonlinear solution. The value of \(K_1\) is therefore chosen to be small relative to the magnetic scale \(K_2\), thereby improving numerical conditioning without altering the multistable response.
+
+The periodic magnetic interactions are represented using a phase variable \(\phi(\theta)=\operatorname{mod}\left(|\theta|,p\right)\). Here \(p\) is the angular period of the repeating magnetic features and is defined as \(p=(\alpha_2-\alpha_0)/N\). \(N\) is the number of periods and \(\alpha_3=p/2\) is the half-period. The smoothed transition coordinates are defined as
+\begin{flalign}
+\quad \xi_0&=\frac{\phi}{\varepsilon}, &\qquad \xi_1&=\frac{\phi-\alpha_3}{\varepsilon}, &\qquad \xi_2&=\frac{\phi-p}{\varepsilon}.&
+\end{flalign}
+The parameter \(\varepsilon\) controls the sharpness of the transition between neighboring magnetic states. Smaller values of \(\varepsilon\) produce sharper transitions, while larger values produce smoother transitions.
+
+The magnetic contribution to the restoring moment is defined as
+\begin{flalign}
+\quad M_{\mathrm{mag}}(\theta) &= \operatorname{sgn}(\theta)K_2\left[\tanh(\xi_0)-\tanh(\xi_1)+\tanh(\xi_2)\right].&
+\end{flalign}
+This expression provides a smooth approximation of the alternating moment response produced by the magnetic hinge. The corresponding magnetic tangent stiffness is
+\begin{flalign}
+\quad K_{\mathrm{mag}}(\theta)&=\frac{K_2}{\varepsilon}\left[
+\operatorname{sech}^2(\xi_0)-\operatorname{sech}^2(\xi_1)+\operatorname{sech}^2(\xi_2)\right].&
+\end{flalign}
+The tangent stiffness is concentrated near the transition regions where the magnetic moment changes rapidly between adjacent plateaus.
+
+The magnetic energy is obtained by integrating the magnetic moment contribution. The energy is written as
+\begin{flalign}
+U_{\mathrm{mag}}(\theta)&=K_2\varepsilon\left[\operatorname{logCosh}(\xi_0)-\operatorname{logCosh}(\xi_1)+\operatorname{logCosh}(\xi_2)-c_0\right],&
+\end{flalign}
+where \( c_0 \) sets the reference value of the magnetic energy. The function \( \operatorname{logCosh}(\cdot) \) denotes \( \log(\cosh(\cdot)) \), which is the antiderivative of \( \tanh(\cdot) \).
+
+
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{01-figures/04-04-magnetic-hinge-modeling.jpg}
-  \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a multistable magnetic torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-magnetic-hinge}
+  \caption{Modeling magnetic multistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a multistable magnetic torsional hinge with respect to the relative angle \(\alpha\) of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-magnetic-hinge}
 \end{figure}
-Within the central angular interval \(\alpha_1<\alpha<\alpha_2\), the
-magnetic multistable hinge is described using the relative rotation
-\begin{equation}
-\theta=\alpha-\alpha_0,
-\label{eq:theta}
-\end{equation}
-where \(\alpha_0\) is the reference angle. The response outside
-\(\alpha_1<\alpha<\alpha_2\) is modeled using the enhanced spring law described
-in the preceding section.
 
-The hinge combines a weak linear stiffness with a periodic magnetic
-contribution. The two stiffness scales are
-\begin{equation}
-K_1=\frac{k_0}{10^4},
-\qquad
-K_2=k_0,
-\label{eq:stiffness-scales}
-\end{equation}
-where \(K_1\) controls the weak background stiffness and \(K_2\) controls the
-magnitude of the magnetic contribution. Let \(N=n_{\mathrm{peaks}}\) denote the
-number of magnetic periods on each side of \(\theta=0\). The period is
-\begin{equation}
-p=\frac{\alpha_2-\alpha_0}{N},
-\label{eq:period}
-\end{equation}
-so that, for the symmetric central region,
-\begin{equation}
-\alpha_1=\alpha_0-Np,
-\qquad
-\alpha_2=\alpha_0+Np.
-\label{eq:symmetric-central-region}
-\end{equation}
-
-The smoothing width is
-\begin{equation}
-\varepsilon=\frac{\pi}{180}\,\varepsilon_{\mathrm{deg}},
-\label{eq:smoothing-width}
-\end{equation}
-where \(\varepsilon_{\mathrm{deg}}\) is specified in degrees. Smaller
-\(\varepsilon\) produces sharper magnetic transitions, while larger
-\(\varepsilon\) produces smoother transitions.
-
-For each magnetic period, define the local phase coordinate
-\(\varphi\in[0,p]\). The three smooth transition functions within a period are
-centered at \(\varphi=0\), \(\varphi=p/2\), and \(\varphi=p\). Define
-\begin{align}
-\mathcal{T}(\varphi)
-&=
-\tanh\!\left(\frac{\varphi}{\varepsilon}\right)
--\tanh\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
-+\tanh\!\left(\frac{\varphi-p}{\varepsilon}\right),
-\label{eq:T-shape}\\
-\mathcal{S}(\varphi)
-&=
-\operatorname{sech}^2\!\left(\frac{\varphi}{\varepsilon}\right)
--\operatorname{sech}^2\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
-+\operatorname{sech}^2\!\left(\frac{\varphi-p}{\varepsilon}\right).
-\label{eq:S-shape}
-\end{align}
-Here \(\mathcal{T}\) defines the smooth magnetic moment shape within one
-period, and \(\mathcal{S}=d\mathcal{T}/d(\varphi/\varepsilon)\) defines the
-corresponding stiffness shape.
-
-The energy primitive uses
-\begin{equation}
-\operatorname{logCosh}(x)
-=
-|x|+\log\!\left(1+\exp[-2|x|]\right)-\log 2,
-\label{eq:logcosh}
-\end{equation}
-with the constant
-\begin{equation}
-c_0=
-\operatorname{logCosh}(0)
--\operatorname{logCosh}\!\left(-\frac{p}{2\varepsilon}\right)
-+\operatorname{logCosh}\!\left(-\frac{p}{\varepsilon}\right).
-\label{eq:c0}
-\end{equation}
-The corresponding dimensionless energy shape is
-\begin{equation}
-\mathcal{E}(\varphi)
-=
-\operatorname{logCosh}\!\left(\frac{\varphi}{\varepsilon}\right)
--\operatorname{logCosh}\!\left(\frac{\varphi-\frac{p}{2}}{\varepsilon}\right)
-+\operatorname{logCosh}\!\left(\frac{\varphi-p}{\varepsilon}\right)
--c_0.
-\label{eq:E-shape}
-\end{equation}
-
-For the \(m\)-th magnetic period, where \(m=0,1,\ldots,N-1\), the local phase
-coordinate is
-\begin{equation}
-\varphi_m^+(\theta)=\theta-mp,
-\qquad
-mp<\theta\le(m+1)p,
-\label{eq:positive-phase}
-\end{equation}
-on the positive side, and
-\begin{equation}
-\varphi_m^-(\theta)=-\theta-mp,
-\qquad
--(m+1)p\le\theta< -mp,
-\label{eq:negative-phase}
-\end{equation}
-on the negative side.
-
-The restoring moment in the central region can then be written as the case
-equation
-\begin{equation}
-M(\theta)=
-\begin{cases}
-K_1\theta
--K_2\mathcal{T}\!\left(\varphi_m^-(\theta)\right),
-& -(m+1)p\le\theta< -mp,\\[8pt]
-0,
-& \theta=0,\\[8pt]
-K_1\theta
-+K_2\mathcal{T}\!\left(\varphi_m^+(\theta)\right),
-& mp<\theta\le(m+1)p,
-\end{cases}
-\qquad m=0,1,\ldots,N-1.
-\label{eq:moment-cases}
-\end{equation}
-
+The complete interior constitutive law is obtained by adding the weak linear elastic contribution to the magnetic contribution. The strain energy is represented as
+\begin{flalign}
+\quad U(\alpha)&=\frac{1}{2}K_1\theta^2+U_{\mathrm{mag}}(\theta).&
+\end{flalign}
+The restoring moment becomes
+\begin{flalign}
+\quad M(\alpha)&=K_1\theta+M_{\mathrm{mag}}(\theta).&
+\end{flalign}
 The tangent stiffness is
-\begin{equation}
-k_T(\theta)=
-\begin{cases}
-K_1+\dfrac{K_2}{\varepsilon}
-\mathcal{S}\!\left(\varphi_m^-(\theta)\right),
-& -(m+1)p\le\theta< -mp,\\[12pt]
-K_1+\dfrac{K_2}{\varepsilon}\mathcal{S}(0),
-& \theta=0,\\[12pt]
-K_1+\dfrac{K_2}{\varepsilon}
-\mathcal{S}\!\left(\varphi_m^+(\theta)\right),
-& mp<\theta\le(m+1)p,
-\end{cases}
-\qquad m=0,1,\ldots,N-1.
-\label{eq:stiffness-cases}
-\end{equation}
+\begin{flalign}
+\quad K_T(\alpha)&=K_1+K{\mathrm{mag}}(\theta).&
+\end{flalign}
+The tangent stiffness, restoring moment and strain energy with respect to the angular deformation of a magnetic multistable hinge obtained using the equations above is shown in Fig.~\ref{fig-magnetic-hinge}\,(a).
 
-Finally, the strain energy is
-\begin{equation}
-U(\theta)=
-\begin{cases}
-\dfrac{1}{2}K_1\theta^2
-+K_2\varepsilon\,\mathcal{E}\!\left(\varphi_m^-(\theta)\right),
-& -(m+1)p\le\theta< -mp,\\[12pt]
-0,
-& \theta=0,\\[8pt]
-\dfrac{1}{2}K_1\theta^2
-+K_2\varepsilon\,\mathcal{E}\!\left(\varphi_m^+(\theta)\right),
-& mp<\theta\le(m+1)p,
-\end{cases}
-\qquad m=0,1,\ldots,N-1.
-\label{eq:energy-cases}
-\end{equation}
-Equations~\eqref{eq:moment-cases}--\eqref{eq:energy-cases} define the magnetic
-multistable hinge law used for \(\alpha_1<\alpha<\alpha_2\).
-
+\subsection{Structural Analysis of a 4-bar Linkage Fitted with Magnetic Multistable Torsional Hinge}
 
 \section{Bi-Stable Torsional Springs}\label{04-sec-bistable-spring}
 The piecewise torsional spring formulation introduced in the previous section provides a controlled way to restrict hinge rotation within a prescribed angular range. The next step is to extend this idea to hinges with nonlinear rotational response. Such hinges are useful when the structure is intended to store and release energy through large rotations, or when the hinge must exhibit multiple stable configurations.
@@ -313,208 +199,89 @@ Using this formulation, the bistable torsional spring is defined through the fol
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{01-figures/04-05-bistable-hinge-modeling.jpg}
-  \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a bistable torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and System energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-bistable-hinge}
+  \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a bistable torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and Strain energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-bistable-hinge}
 \end{figure}
 \subsection{Computational Formulation of Bistable Torsional Spring for Matrix Structural Analysis}\label{04-subsec-bistable-equations}
-Within the central angular interval \(\alpha_1<\alpha<\alpha_2\), the
-bistable torsional spring is described using the relative rotation
-\begin{equation}
-\theta=\alpha-\alpha_0,
-\label{eq:theta}
-\end{equation}
-where \(\alpha_0\) is the stress-free reference angle. The response outside
-\(\alpha_1<\alpha<\alpha_2\) is modeled using the enhanced spring law described
-in the preceding section.
+Within the admissible hinge-angle interval \(\alpha_1 < \alpha < \alpha_2\), the bistable torsional spring is defined by prescribing its tangent stiffness as a smooth function of the hinge rotation. The rest angle \(\alpha_0\) denotes the central equilibrium configuration. The signed relative rotation is defined as \(\theta = \alpha - \alpha_0\). The constitutive law is assumed to be symmetric about \(\alpha_0\). Therefore, the tangent stiffness is written in terms of the rotation magnitude \(|\theta|\), while the sign of the restoring moment is recovered using \(\chi = \operatorname{sgn}(\theta)\).
 
-The spring is defined by an initial stiffness \(K_T\), a negative stiffness
-\(k_{\mathrm{neg}}\), and a post-transition positive stiffness
-\(k_{\mathrm{pos}}\). The transition rotations satisfy
-\begin{equation}
-0<\theta_1<\theta_2<\theta_3.
-\label{eq:transition-widths}
-\end{equation}
-The smooth transition function is
-\begin{equation}
-q(s)=
-\frac{
-\tanh\!\left[\beta\left(s-\frac{1}{2}\right)\right]
-+\tanh\!\left(\frac{\beta}{2}\right)
-}{
-2\tanh\!\left(\frac{\beta}{2}\right)
-},
-\qquad 0\le s\le 1,
-\label{eq:q}
-\end{equation}
-where \(s\) is the local normalized coordinate within a transition interval and
-\(\beta\) controls the sharpness of the transition. The function satisfies
-\(q(0)=0\) and \(q(1)=1\), so it smoothly interpolates between two prescribed
-stiffness values over one transition interval. Larger values of \(\beta\)
-produce a sharper transition, while smaller values produce a more gradual
-transition. Its first and second primitives are denoted by
-\begin{equation}
-Q(s)=\int_0^s q(u)\,du,
-\qquad
-\mathcal{Q}(s)=\int_0^s Q(v)\,dv.
-\label{eq:q-primitives}
-\end{equation}
+The bistable response is constructed by prescribing a tangent stiffness that transitions from an initial positive stiffness, to a negative stiffness region, and finally to a positive stiffness region. The initial positive stiffness defines the response near the central equilibrium. The negative stiffness region creates an unstable segment in the moment-rotation response. This unstable segment produces the energy barrier between stable configurations. The final positive stiffness region restores stability after the hinge passes through the unstable segment.
 
-The moment levels at the positive transition rotations are
-\begin{align}
-M_1 &= K_T\theta_1, \label{eq:M1}\\
-M_2 &=
-M_1
-+(\theta_2-\theta_1)
-\left[
-K_T+\left(k_{\mathrm{neg}}-K_T\right)Q(1)
-\right],
-\label{eq:M2}\\
-M_3 &=
-M_2
-+(\theta_3-\theta_2)
-\left[
-k_{\mathrm{neg}}
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(1)
-\right].
-\label{eq:M3}
-\end{align}
-The corresponding energy levels are
-\begin{align}
-U_1 &=
-\frac{1}{2}K_T\theta_1^2, \label{eq:U1}\\
-U_2 &=
-U_1+(\theta_2-\theta_1)M_1
-+(\theta_2-\theta_1)^2
-\left[
-\frac{1}{2}K_T
-+\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(1)
-\right],
-\label{eq:U2}\\
-U_3 &=
-U_2+(\theta_3-\theta_2)M_2
-+(\theta_3-\theta_2)^2
-\left[
-\frac{1}{2}k_{\mathrm{neg}}
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(1)
-\right].
-\label{eq:U3}
-\end{align}
+The smooth transition between stiffness regimes is defined using the normalized function
+\begin{flalign}
+\quad q(s)&=\frac{\tanh\left[\beta\left(s-\frac{1}{2}\right)\right] +\tanh\left(\frac{\beta}{2}\right)}{2\tanh\left(\frac{\beta}{2}\right)},&\qquad &0 \le s \le 1 .&
+\end{flalign}
+The parameter \(\beta\) controls the sharpness of the transition. Larger values of \(\beta\) produce sharper transitions between stiffness regimes, while smaller values produce more gradual transitions. The function satisfies \(q(0)=0\) and \(q(1)=1\), so it provides a smooth interpolation between two prescribed stiffness values.
 
-The tangent stiffness in the central region is
-\begin{equation}
-k_T(\theta)=
+Let \(K_T\) denote the initial positive stiffness, \( K_n \) denote the negative stiffness, and \( K_p \) denote the final positive stiffness. The transition rotations are denoted by \(\theta_1\), \(\theta_2\), and \(\theta_3\), where \(\theta_1 < \theta_2 < \theta_3\). The tangent stiffness in the bistable region is defined as
+\begin{flalign}
+\quad K_T(\theta)&=
 \begin{cases}
-k_{\mathrm{pos}},
-& \theta<-\theta_3,\\[4pt]
-k_{\mathrm{neg}}
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)
-q\!\left(\dfrac{-\theta-\theta_2}{\theta_3-\theta_2}\right),
-& -\theta_3\le\theta<-\theta_2,\\[12pt]
-K_T+\left(k_{\mathrm{neg}}-K_T\right)
-q\!\left(\dfrac{-\theta-\theta_1}{\theta_2-\theta_1}\right),
-& -\theta_2\le\theta<-\theta_1,\\[12pt]
 K_T,
-& -\theta_1\le\theta\le\theta_1,\\[4pt]
-K_T+\left(k_{\mathrm{neg}}-K_T\right)
-q\!\left(\dfrac{\theta-\theta_1}{\theta_2-\theta_1}\right),
-& \theta_1<\theta\le\theta_2,\\[12pt]
-k_{\mathrm{neg}}
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)
-q\!\left(\dfrac{\theta-\theta_2}{\theta_3-\theta_2}\right),
-& \theta_2<\theta\le\theta_3,\\[12pt]
-k_{\mathrm{pos}},
-& \theta>\theta_3.
-\end{cases}
-\label{eq:stiffness}
-\end{equation}
+\qquad \qquad & 0 \le |\theta| \le \theta_1, \\[6pt]
+K_T + (K_n - K_T)
+q\left(\dfrac{|\theta|-\theta_1}{\theta_2-\theta_1}\right),
+\qquad \qquad & \theta_1 < |\theta| \le \theta_2, \\[12pt]
+K_n + (K_p - K_n)
+q\left(\dfrac{|\theta|-\theta_2}{\theta_3-\theta_2}\right),
+\qquad \qquad & \theta_2 < |\theta| \le \theta_3, \\[12pt]
+K_p,
+\qquad \qquad & |\theta| > \theta_3 .
+\end{cases}&
+\end{flalign}
+This expression directly defines the desired stiffness landscape. The first branch gives a stable linear response near \(\alpha_0\). The second branch smoothly decreases the tangent stiffness from \(K_T\) to \(K_n\), thereby introducing a negative-stiffness regime. The third branch smoothly increases the tangent stiffness from \(K_n\) to \(K_p\), which restores positive stiffness and creates the second stable region.
 
-The restoring moment is obtained by integrating the stiffness with respect to
-\(\theta\) and enforcing \(M(0)=0\):
-\begin{equation}
-M(\theta)=
+The restoring moment is obtained by integrating the tangent stiffness with respect to the relative rotation. To write the moment in closed form, the primitive of \(q(s)\) is defined as
+\begin{flalign}
+\quad Q(s)&=\int_0^s q(\eta)\,d\eta~.&
+\end{flalign}
+Using the definition of \(q(s)\), this primitive can be written as
+\begin{flalign}
+\quad Q(s)&=\frac{s}{2}+\frac{\ln\cosh\left[\beta\left(s-\frac{1}{2}\right)\right]-\ln\cosh\left(-\frac{\beta}{2}\right)}{2\beta\tanh\left(\frac{\beta}{2}\right)}~.&
+\end{flalign}
+The normalized transition variables are
+\begin{flalign}
+\quad s_n&=\frac{|\theta|-\theta_1}{\theta_2-\theta_1}~,&\qquad &s_p=\frac{|\theta|-\theta_2}{\theta_3-\theta_2}~.&
+\end{flalign}
+The moment magnitude is then
+\begin{flalign}
+\quad M_{\mathrm{mag}}(\theta)&=
 \begin{cases}
--M_3+k_{\mathrm{pos}}(\theta+\theta_3),
-& \theta<-\theta_3,\\[6pt]
--M_2-(\theta_3-\theta_2)\left[
-k_{\mathrm{neg}}s_+^-
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(s_+^-)
-\right],
-& -\theta_3\le\theta<-\theta_2,\\[10pt]
--M_1-(\theta_2-\theta_1)\left[
-K_Ts_-^-
-+\left(k_{\mathrm{neg}}-K_T\right)Q(s_-^-)
-\right],
-& -\theta_2\le\theta<-\theta_1,\\[10pt]
-K_T\theta,
-& -\theta_1\le\theta\le\theta_1,\\[6pt]
-M_1+(\theta_2-\theta_1)\left[
-K_Ts_-^+
-+\left(k_{\mathrm{neg}}-K_T\right)Q(s_-^+)
-\right],
-& \theta_1<\theta\le\theta_2,\\[10pt]
-M_2+(\theta_3-\theta_2)\left[
-k_{\mathrm{neg}}s_+^+
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)Q(s_+^+)
-\right],
-& \theta_2<\theta\le\theta_3,\\[10pt]
-M_3+k_{\mathrm{pos}}(\theta-\theta_3),
-& \theta>\theta_3,
-\end{cases}
-\label{eq:moment}
-\end{equation}
-where the scaled transition coordinates are
-\begin{equation}
-s_-^-=\frac{-\theta-\theta_1}{\theta_2-\theta_1},
-\qquad
-s_+^-=\frac{-\theta-\theta_2}{\theta_3-\theta_2},
-\qquad
-s_-^+=\frac{\theta-\theta_1}{\theta_2-\theta_1},
-\qquad
-s_+^+=\frac{\theta-\theta_2}{\theta_3-\theta_2}.
-\label{eq:s-coordinates}
-\end{equation}
+K_T |\theta|, \qquad & 0 \le |\theta| \le \theta_1, \\[6pt]
+K_T\theta_1+(\theta_2-\theta_1)\left[K_T s_n+(K_n - K_T)Q(s_n)\right], \qquad & \theta_1 < |\theta| \le \theta_2, \\[12pt]
+M_{\mathrm{peak}}+(\theta_3-\theta_2)\left[K_n s_p+(K_p - K_n)Q(s_p)\right], \qquad & \theta_2 < |\theta| \le \theta_3, \\[12pt]
+M_{\mathrm{well}}+K_p(|\theta|-\theta_3), \qquad & |\theta| > \theta_3 .
+\end{cases}&
+\end{flalign}
+The constants \( M_{\mathrm{peak}} \) and \( M_{\mathrm{well}} \) ensure continuity of the moment between adjacent branches. These constants are defined as
+\begin{flalign}
+\quad M_{\mathrm{peak}}&=K_T\theta_1+(\theta_2-\theta_1)\left[K_T+(K_n - K_T)Q(1)\right]~,&
+\end{flalign}
+and
+\begin{flalign}
+\quad M_{\mathrm{well}}&=M_{\mathrm{peak}}+(\theta_3-\theta_2)\left[K_n+(K_p - K_n)Q(1)\right]~.&
+\end{flalign}
 
-The strain energy is defined by \(U(0)=0\) and
-\(M=dU/d\theta\). In the central region,
-\begin{equation}
-U(\theta)=
-\begin{cases}
-U_3-M_3(\theta+\theta_3)
-+\dfrac{1}{2}k_{\mathrm{pos}}(\theta+\theta_3)^2,
-& \theta<-\theta_3,\\[10pt]
-U_2+(\theta_3-\theta_2)M_2s_+^-
-+(\theta_3-\theta_2)^2\left[
-\dfrac{1}{2}k_{\mathrm{neg}}(s_+^-)^2
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(s_+^-)
-\right],
-& -\theta_3\le\theta<-\theta_2,\\[14pt]
-U_1+(\theta_2-\theta_1)M_1s_-^-
-+(\theta_2-\theta_1)^2\left[
-\dfrac{1}{2}K_T(s_-^-)^2
-+\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(s_-^-)
-\right],
-& -\theta_2\le\theta<-\theta_1,\\[14pt]
-\dfrac{1}{2}K_T\theta^2,
-& -\theta_1\le\theta\le\theta_1,\\[10pt]
-U_1+(\theta_2-\theta_1)M_1s_-^+
-+(\theta_2-\theta_1)^2\left[
-\dfrac{1}{2}K_T(s_-^+)^2
-+\left(k_{\mathrm{neg}}-K_T\right)\mathcal{Q}(s_-^+)
-\right],
-& \theta_1<\theta\le\theta_2,\\[14pt]
-U_2+(\theta_3-\theta_2)M_2s_+^+
-+(\theta_3-\theta_2)^2\left[
-\dfrac{1}{2}k_{\mathrm{neg}}(s_+^+)^2
-+\left(k_{\mathrm{pos}}-k_{\mathrm{neg}}\right)\mathcal{Q}(s_+^+)
-\right],
-& \theta_2<\theta\le\theta_3,\\[14pt]
-U_3+M_3(\theta-\theta_3)
-+\dfrac{1}{2}k_{\mathrm{pos}}(\theta-\theta_3)^2,
-& \theta>\theta_3.
-\end{cases}
-\label{eq:energy}
-\end{equation}
-Equations~\eqref{eq:stiffness}--\eqref{eq:energy} define the bistable spring
-law used for \(\alpha_1<\alpha<\alpha_2\).
+The signed restoring moment is obtained by restoring the sign of the relative rotation:
+\begin{flalign}
+\quad M(\alpha)&=\chi M_{\mathrm{mag}}(\theta)~.&
+\end{flalign}
+This definition makes the moment antisymmetric about \(\alpha_0\), while the tangent stiffness remains symmetric about \(\alpha_0\).
+
+The strain energy is obtained by integrating the restoring moment from the reference configuration to the current hinge angle:
+\begin{flalign}
+\quad U_B(\alpha)&=\int_{\alpha_0}^{\alpha}M_B(\tilde{\alpha})\,d\tilde{\alpha}~.&
+\end{flalign}
+Because the constitutive law is symmetric about \( \alpha_0 \), the energy can also be expressed in terms of the rotation magnitude as
+\begin{flalign}
+\quad U_B(\theta)&=\int_0^{|\theta|}M_{\mathrm{mag}}(\eta)\,d\eta~.&
+\end{flalign}
+Equivalently, since the moment is the integral of the tangent stiffness, the energy may be written as
+\begin{flalign}
+\quad U_B(\theta)&=\int_0^{|\theta|}\left[\int_0^\eta K_B(\xi) \ d\xi\right]d\eta~.&
+\end{flalign}
+This expression emphasizes that the bistable energy landscape is generated directly from the prescribed tangent stiffness. The positive-stiffness regions form stable wells, while the negative-stiffness region creates the energy barrier separating them.
+
+For rotations outside the interval \(\alpha_1 < \alpha < \alpha_2\), the spring response follows the enhanced torsional spring law introduced in the previous section. The bistable law therefore governs the interior response, while the enhanced law controls the limiting behavior near the admissible rotation bounds.
 
 \subsection{Structural Response of Reconfigurable Trusses with Bistable Torsional Hinges}\label{04-subsec-bistable-examples}
 This subsection presents two example structures fitted with bistable torsional hinges. The examples demonstrate how the proposed formulation can represent highly nonlinear hinge response within the structural analysis of reconfigurable trusses. A physical prototype of this idealized bistable torsional spring has not yet been developed. Therefore, the examples are intended as computational demonstrations of the modeling capability. They show how bistable hinge laws can be used to study snap-through, post-transition stiffening, and transitions between multiple stable states.
@@ -534,5 +301,19 @@ With continued compression, the load rises again until a second instability deve
 These examples show that bistable torsional hinges can introduce multiple stable configurations into reconfigurable trusses. In the single-hinge example, the structure transitions between two stable states. In the stacked truss, the two independent kinematic degrees of freedom produce a sequence of stable-state transitions. The analysis therefore demonstrates how nonlinear hinge laws can be used to program the deployment path and stable configurations of reconfigurable truss systems.
 
 \section{Discussion}\label{04-sec-discussion}
+In this chapter:
+- have modeled the enhanced torsional spring law which enabled the study of sequential folding of reconfigurable trusses
+- We introduced a new hinge design which uses magnetic interaction to achieve multiple stable states
+- introduced analysis tools that help simulate multistable behaviour in reconfigurable trusses
+
+This makes the following things possible:
+- we now have enough tools to program the behaviour of multi-kinematic degree of freedom structures by fitting them with magnetic hinges. Since the behavior of magnetic hinges is dependent on arrangement of magnets, we can play around with the strength of the hinges, deformation required to achieve stable states, as well as number of states. In a way we get a lot of control on the way structure can respond under loading. The response can be further finetuned with the use of electromagnets in place of permanenet magnets as electromagnetically controlled hinges can offer a lot of control on how the structure behaves. We can increase or decrese resistance according to the need of the application and in real time. Also, the joints can be driven to deploy the structure from a folded state or have programmable resistance when loaded.
+
+- The ideas and tools introduced in this chapter are a step towards reusable infrastructure for applications involving impact absorption from external loads or increasing the standoff distance when we want to protext a useful piece of equipment. Since the energy from impact is typically dissipated by the plastic deformation of structures, most infrastructures are sacrificial. The magnetic multistable hinges fitted within reconfugrable truss designs allow deformation of the structure and dissipate the energy from external loads by overcoming the magnetic attraction in the joints and the structure simply moves to its next stable state without undergoing any damage or plastic deformation. THe structure can then safely be restored to its intended service configurations on the removal of external impact loads.
+
+- The combined ability to model mutistability and sequential loading/folding of reconfigurable trusses offers us immense control over how a structure deforms in space. This gives the ability to navigate around obstables in space, deform the structure in kinematic paths. These qualities are especially important in robotics or even in space structures. The same structure can span through its stable configuraitons and move through space while avoiding obstables and serving different functions in space. Another great application could be the design of support structures for continuous deployable systems like origami or membrane systems. This allows us to create support structures that have kinematic compatibility with the outer shell and can be designed to have multiple intermediate stable states that are important when considering the folding/stowing operations.
 
 \section{Concluding Remarks}\label{04-sec-conclusion}
+\subsection{Bistable Torsional Hinge Law}
+\label{subsec-bistable-torsional-hinge-law}
+
