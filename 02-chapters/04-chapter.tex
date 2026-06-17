@@ -95,91 +95,41 @@ The results show that all loading paths eventually require approximately 80~N to
 Therefore, the final compact configuration alone does not define the actuation demand. The required force also depends on the folding path used to reach that configuration. The enhanced torsional spring law makes this path dependence accessible in simulation. It allows the force demand to be evaluated for different deployment or collapse sequences while maintaining physically admissible joint rotations. This capability is useful for designing reconfigurable trusses that must fold in a prescribed order, avoid unintended locking, or minimize actuation forces along a selected kinematic path.
 
 \section{Magnetic Multi-stable Torsional Hinges}\label{04-sec-multistable-hinge}
-\subsection{Prototype and Reduced-order Simulated Torque-displacement Response of a Magnetic Multistable Hinge}\label{04-subsec-magnetic-hinge-prototype}
-The magnetic torsional hinge prototype uses polarity-dependent interactions between permanent magnets to create preferred rotational states. The hinge is formed at the joint between two axial members whose ends remain adjacent during rotation. Each member terminates in a circular hub, which provides the mating surface for the magnetic connection, as shown in Fig.~\ref{fig-magnetic-prototype}\,(a). Each hub face contains eight identical N35-grade cylindrical neodymium magnets with a diameter of 6~mm and a thickness of 2~mm. The magnets are seated in individual holes and are equally spaced at 45\(^\circ{}\) intervals around a common centerline. The center of each magnet lies on a pitch circle with a radius of 13.75~mm. The mating hub uses the same geometric pattern, so the magnets align face-to-face at selected rotational configurations. On each hub face, the exposed magnet poles alternate around the pitch circle. The hub dimensions and magnet layout are shown in Fig.~\ref{fig-magnetic-prototype}\,(a).
+This section presents a magnetic multistable torsional hinge that uses polarity-dependent interactions between permanent magnets to create multiple stable rotational states. The physical design, fabrication, and reduced-order torque--rotation model are first introduced to characterize the hinge behavior. The multistable hinge response is then incorporated into the 3NTS element formulation, enabling programmable mechanical response in the reconfigurable trusses.
 
-The alternating polarity pattern gives the hinge four preferred rotational states over one full rotation. As one hub rotates relative to the other, the facing magnet pairs periodically transition between attracting and repelling configurations. Stable states occur when the relative rotation aligns the two magnet patterns in an energetically favorable arrangement. For the eight-magnet pattern used in this prototype, the polarity sequence repeats every \(\pi/2\) radians. The hinge therefore exhibits four stable states between 0 and \(2\pi\). Figure~\ref{fig-magnetic-prototype}\,(b) shows the fabricated hinge in these stable configurations.
+\subsection{Prototype and Reduced-order Simulated Response of a Magnetic Multistable Hinge}\label{04-subsec-magnetic-hinge-prototype}
+The magnetic torsional hinge prototype uses polarity-dependent interactions between permanent magnets to create preferred rotational states. The hinge is formed at the joint between two axial members whose ends remain adjacent during rotation. Each member terminates in a circular hub, which provides the mating surface for the magnetic connection, as shown in Fig.~\ref{fig-magnetic-prototype}\,(a). Each hub face contains eight identical N35-grade cylindrical neodymium magnets with a diameter of 6~mm and a thickness of 2~mm. The magnets are seated in individual holes and are equally spaced at 45\(^\circ{}\) intervals around the hinge axis. The center of each magnet lies on a pitch circle with a radius of 13.75~mm. The opposing hub uses the same geometric layout, so corresponding magnets align face-to-face when the two hubs are in selected relative orientations. The exposed poles alternate between north and south around each hub face, and the pole sequence on the opposing hub is arranged so that aligned magnet pairs have opposite-facing poles in the preferred configurations. As the hubs rotate relative to each other, the facing magnet pairs move between attractive and repulsive alignments, producing a periodic magnetic torque and multiple stable rotational states. The hub dimensions and magnet layout are shown in Fig.~\ref{fig-magnetic-prototype}\,(a).
+
+As one hub rotates relative to the other, the facing magnet pairs periodically move between attracting and repelling configurations. Stable states occur at relative rotations where the two magnet arrays form an energetically favorable pole arrangement. For the eight-magnet alternating-polarity pattern used in this prototype, the magnetic layout repeats every \(\pi/2\) radians, resulting in four stable states over one full rotation. Figure~\ref{fig-magnetic-prototype}\,(b, left) shows the 3D-printed hinge components with embedded magnets, and Fig.~\ref{fig-magnetic-prototype}\,(b, right) shows the four stable configurations of the magnetic multistable hinge integrated into a four-bar linkage unit.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{01-figures/04-03-magnetic-hinge-prototype.jpg}
-  \caption{Magnetic multistable torsional hinge prototype. (a) Dimensions and magnet placement of the torsional hinge hub; (b) 3D printed and assemble prototye of a magnetic multistable hinge in a single unit truss; Simulated behavior of the magnetic multistable torsional hinge using a reduced-order magnetic interaction model: (c) Torque-displacement, and (d) Work-displacement response.}\label{fig-magnetic-prototype}
+  \caption{Magnetic multistable torsional hinge prototype: (a) Magnet placement and dimensions of the torsional hinge hub; (b) 3D printed and assembled prototype of a magnetic multistable hinge in a 4-bar linkage unit; Simulated behavior of the magnetic multistable torsional hinge using a reduced-order magnetic interaction model: (c) Torque-displacement, and (d) Work-displacement response over one full rotation.}\label{fig-magnetic-prototype}
 \end{figure}
 
-The magnet is modeled as a cylindrical disc with diameter \(D\), radius \(r\), thickness \(t\), remanence \(B_r\), and axial gap \(g\). The radius is \(r = \frac{D}{2}\). The axial magnetic field at the opposing face is approximated as
+A reduced-order magnetic interaction model is used to estimate the torque required to drive the hinge through multiple stable states and the corresponding work associated with this rotation. The model provides a simple way to interpret the periodic peaks and troughs in the energy landscape produced by the alternating magnet-polarity pattern. The resulting torque-displacement and work–displacement relationships are later used to model multistable hinge behavior in the 3NTS element for multistable reconfigurable truss simulations.
 
+Each magnet is modeled as a cylindrical disc with diameter \(D\), radius \(r=D/2\), thickness \(t\), remanence \(B_r\), and axial gap \(g\) between the magnets. The axial magnetic field at the opposing face is approximated as:
 \begin{equation}
-B =\frac{B_r}{2}\left[\frac{z_1}{\sqrt{z_1^2+r^2}}-\frac{z_0}{\sqrt{z_0^2+r^2}}\right]
+B =\frac{B_r}{2}\left[\frac{z_1}{\sqrt{z_1^2+r^2}}-\frac{z_0} {\sqrt{z_0^2+r^2}}\right]
 \end{equation}
-
-where \(z_0 = g\) and \(z_1 = g + t\). The corresponding magnetic pressure is estimated using
-
+where, \(z_0 = g\) and \(z_1 = g + t\). The corresponding magnetic pressure is estimated using
 \begin{equation}
 P = \frac{B^2}{2\mu_0}
 \end{equation}
+where \(\mu_0 = 4\pi \times 10^{-7}\ \mathrm{N/A^2}\) is the permeability of the free space. The units of \(P\) are N/m\(^2\), which are equivalent to J/m\(^3\). Therefore, the magnetic pressure can be interpreted as an approximate magnetic energy density. In this reduced-order model, the magnetic energy is estimated by multiplying this energy density by the effective interaction volume between the magnets. The force associated with a change in magnet position is then obtained by differentiating the magnetic energy with respect to the corresponding displacement direction.
 
-where the permeability of free space is \(\mu_0 = 4\pi \times 10^{-7}\ \mathrm{N/A^2}\). For two fully aligned magnets, the effective face area is \(A = \pi r^2\). So the axial attractive force is approximated by \(F_{\mathrm{axial}} \approx P A\) or equivalently,
-
+For the rotating assembly, one hub face is held fixed while the opposing hub face rotates over it. The effective overlap area between the two magnet arrays is denoted by \(A(\theta)\), where \(\theta\) is the angular position of the rotating face of the hub. The total magnetic interaction energy of the system at any given instance then becomes
 \begin{equation}
-F_{\mathrm{axial}} \approx \frac{B^2}{2\mu_0}\pi r^2
+U(\theta) \approx PV(\theta)
+\end{equation}
+where \(V(\theta)=\ell A(\theta)\) is the effective interaction volume between the two hub faces and \(\ell=t+g\) is the interaction height, taken as the sum of the magnet thickness and axial gap. The torque associated with the magnetic interaction is approximated from the rate of change of the overlap area with respect to the angular displacement  \(\theta\):
+\begin{equation}
+\tau(\theta) \approx - P \ell \frac{dA}{d\theta}
 \end{equation}
 
-For laterally offset magnets, the effective overlap area decreases as the center-to-center offset \(d\) increases. The overlap area of two equal circular faces is
-
-\begin{equation}
-A(r,d)=
-\begin{cases}
-0, & d \ge 2r \\[6pt]
-\pi r^2, & d \le 0 \\[6pt]
-2r^2\cos^{-1}\left(\frac{d}{2r}\right)
--\frac{d}{2}\sqrt{4r^2-d^2}, & 0<d<2r
-\end{cases}
-\end{equation}
-
-The normal attractive force at offset \(d\) is therefore estimated as
-
-\begin{equation}
-F_{\mathrm{normal}}(d) \approx P A(r,d)
-\end{equation}
-
-The lateral magnetic attraction is approximated from the rate of change of overlap area with respect to the signed lateral offset \(x\):
-
-\begin{equation}
-F_{\mathrm{lateral}}(x) \approx P\ell \frac{dA}{dx}
-\end{equation}
-
-where the interaction length is approximated by
-
-\begin{equation}
-\ell \approx t + g
-\end{equation}
-
-For the overlapping region \(0 < |x| < 2r\), the overlap-area derivative is
-\begin{equation}
-\frac{dA}{dx} = -\sqrt{4r^2-x^2}\,\mathrm{sign}(x)
-\end{equation}
-
-Thus the lateral magnetic force approximation becomes
-
-\begin{equation}
-F_{\mathrm{lateral}}(x) \approx -P\ell\sqrt{4r^2-x^2}\,\mathrm{sign}(x)
-\end{equation}
-
-If friction is included, the sliding resistance is approximated as
-
-\begin{equation}
-F_{\mathrm{friction}}(d) \approx \mu F_{\mathrm{normal}}(d)
-\end{equation}
-or
-\begin{equation}
-F_{\mathrm{friction}}(d) \approx \mu P A(r,d)
-\end{equation}
-
-The total approximate shear force required to slide the magnets is then
-
-\begin{equation}
-F_{\mathrm{shear}}(x) \approx \mu P A(r,|x|)-F_{\mathrm{lateral}}(x)
-\end{equation}
+The simulated torque required to rotate the magnetic multistable hinge and the corresponding work are shown in Fig.~\ref{fig-magnetic-prototype}\,(c) and (d), respectively. The alternating magnet polarity produces a periodic response with a period of \(\pi/2\) radians, resulting in four repeating regions over one full rotation. In the torque-rotation response, sharp transitions occur from a positive to negative torque as magnet pairs on either face switch between attractive and repulsive configurations. The corresponding work-rotation response forms a periodic energy landscape with four repeated energy wells. The local minima correspond to stable configurations, while the local maxima represent energy barriers between adjacent stable states. These four energy minima are consistent with the stable states observed in the fabricated four-bar linkage prototype.
 
 \subsection{Computational Modeling of Multistable Magnetic Torsional Hinge for Matrix Structural Analysis}\label{04-subsec-magnetic-hinge-model}
 \begin{figure}[!ht]
