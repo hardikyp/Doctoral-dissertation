@@ -185,50 +185,42 @@ The tangent stiffness, restoring moment and strain energy with respect to the an
 \subsection{Structural Analysis of a 4-bar Linkage Fitted with Magnetic Multistable Torsional Hinge}
 
 \section{Bi-Stable Torsional Springs}\label{04-sec-bistable-spring}
-The piecewise torsional spring formulation introduced in the previous section provides a controlled way to restrict hinge rotation within a prescribed angular range. The next step is to extend this idea to hinges with nonlinear rotational response. Such hinges are useful when the structure is intended to store and release energy through large rotations, or when the hinge must exhibit multiple stable configurations.
+The previous sections introduced piecewise nonlinear behavior into the 3NTS element through the enhanced spring law and the magnetic multistable hinge law. This section extends that idea to an idealized bistable torsional spring. Although a physical realization of this specific spring law is not considered here, the formulation serves as a demonstration of the modeling capabilities of the tools developed in this work. In particular, it shows how the 3NTS element can be used to simulate programmed mechanical response in reconfigurable trusses with multiple stable configurations.
 
-A common way to formulate the mechanical response of a structural element is to begin with a strain energy function. The internal force is obtained by differentiating the strain energy with respect to the deformation variable, and the tangent stiffness is obtained by differentiating the internal force. For a rotational spring, this means that the restoring moment is derived from the strain energy with respect to the hinge angle, and the tangent stiffness is derived from the restoring moment. This approach is convenient when the strain energy function is smooth and differentiable over the full deformation range.
+An ideal bistable torsional spring is a useful model problem because it contains two stable rotational states separated by an unstable transition region. When such springs are embedded in reconfigurable trusses, the resulting structural response can include multiple equilibrium configurations and sequential snap-through events during deployment or loading. This makes the model suitable for studying how nonlinear hinge laws can be used to program stable states in systems with one or more kinematic degrees of freedom.
 
-This requirement becomes more restrictive when the hinge response is nonlinear and piecewise-defined. In such cases, continuity must be enforced at every transition point between adjacent branches. The strain energy, restoring moment, and tangent stiffness should remain compatible across these points to avoid artificial jumps in the mechanical response. These jumps are especially problematic in nonlinear equilibrium solvers, such as arc-length or generalized displacement-control methods, because the solver relies on a consistent tangent stiffness to trace the equilibrium path.
+The bistable response is defined by prescribing the tangent stiffness as a function of the relative hinge rotation. This stiffness-first approach is appropriate because the desired bistable behavior can be easily specified through the sign and variation of the tangent stiffness. The tangent stiffness is positive near the first stable configuration, which corresponds to the undeformed or rest state. It then becomes negative over an intermediate range of rotation, creating an unstable transition region and an energy barrier between stable states. After this transition, the tangent stiffness returns to a positive value, forming the second stable region. The bistable law is therefore constructed as a smooth stiffness landscape with an initial positive-stiffness regime, a negative-stiffness regime, and a post-transition positive-stiffness regime.
 
-The difficulty becomes greater when the hinge is designed to be bistable. Bistability requires the strain energy to have two local minima separated by an energy barrier. This produces a nonlinear moment–rotation response with regions of positive and negative tangent stiffness. Although such behavior can be represented using high-order polynomials or trigonometric functions, constructing a piecewise strain energy function that satisfies all boundary conditions, preserves smoothness after differentiation, and produces the intended stable equilibria is not straightforward.
+This approach avoids the need to first assume a strain-energy function and then differentiate it to obtain the restoring moment and tangent stiffness. That traditional formulation is effective when a suitable smooth energy function is known in advance. For the engineered bistable response considered here, it is easier to prescribe the tangent stiffness and integrate it to obtain the restoring moment. The spring energy remains mechanically consistent because it is obtained from the work-conjugate pair of restoring moment and relative rotation. In the structural examples, the spring energy is evaluated from the internal moment and hinge rotation during the nonlinear simulation. The stiffness-first formulation also provides direct control over the bistable response, since the locations and depths of the energy wells can be adjusted by changing the positive- and negative-stiffness regimes over the prescribed range of rotation.
 
-For this reason, the bistable hinge response is formulated here by prescribing the restoring moment directly rather than by first defining the strain energy. The restoring moment is chosen as a smooth function of the hinge angle, and the tangent stiffness is then obtained by differentiating this moment with respect to rotation. The corresponding strain energy can still be recovered by integrating the restoring moment over the hinge rotation. This approach provides more direct control over the engineered rotational response while preserving a mechanically consistent energy interpretation.
+The following subsection presents the constitutive equations used to define the bistable response of the 3NTS element.
 
-Using this formulation, the bistable torsional spring is defined through the following restoring moment and tangent stiffness functions.
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\textwidth]{01-figures/04-05-bistable-hinge-modeling.jpg}
   \caption{Bistable torsional hinge: (a) Schematic representation of the strain energy (top), restoring moment (middle), and tangent stiffness (bottom) curves for a bistable torsional hinge with respect to the relative angle of the hinge; (b) Load vs. Displacement (left) and Strain energy vs. Displacement (right) curves for the buckling of colinear bars in compression fitted with a bistable torsional hinge.}\label{fig-bistable-hinge}
 \end{figure}
-\subsection{Computational Formulation of Bistable Torsional Spring for Matrix Structural Analysis}\label{04-subsec-bistable-equations}
-Within the admissible hinge-angle interval \(\alpha_1 < \alpha < \alpha_2\), the bistable torsional spring is defined by prescribing its tangent stiffness as a smooth function of the hinge rotation. The rest angle \(\alpha_0\) denotes the central equilibrium configuration. The signed relative rotation is defined as \(\theta = \alpha - \alpha_0\). The constitutive law is assumed to be symmetric about \(\alpha_0\). Therefore, the tangent stiffness is written in terms of the rotation magnitude \(|\theta|\), while the sign of the restoring moment is recovered using \(\chi = \operatorname{sgn}(\theta)\).
 
-The bistable response is constructed by prescribing a tangent stiffness that transitions from an initial positive stiffness, to a negative stiffness region, and finally to a positive stiffness region. The initial positive stiffness defines the response near the central equilibrium. The negative stiffness region creates an unstable segment in the moment-rotation response. This unstable segment produces the energy barrier between stable configurations. The final positive stiffness region restores stability after the hinge passes through the unstable segment.
+\subsection{Constitutive Modeling of a Bistable Torsional Spring Law}\label{04-subsec-bistable-equations}
+The constitutive law of the bistable torsional spring is defined over the angular interval \(\alpha_1 < \alpha < \alpha_2\). Outside this interval, the spring follows the nonlinear stiffening response introduced in the enhanced spring law from Section~\ref{04-subsec-enhanced-spring}. The rest angle \(\alpha_0\) denotes the first stable equilibrium configuration, and the signed relative rotation is defined as \(\theta = \alpha - \alpha_0\). This law is assumed to be symmetric about \(\alpha_0\). Therefore, the tangent stiffness is written in terms of the rotation magnitude \(|\theta|\), while the sign of the restoring moment is recovered using \(\chi = \operatorname{sgn}(\theta)\).
 
-The smooth transition between stiffness regimes is defined using the normalized function
+Let \(K_T\) denote the initial positive stiffness, \(K_n\) denote the negative stiffness, and \(K_p\) denote the post-snap positive stiffness. The angular values for the transition of stiffness are denoted by \(\theta_1\), \(\theta_2\), and \(\theta_3\), where \(\theta_1 < \theta_2 < \theta_3\). These transition rotations define the locations at which the stiffness changes between regimes. For \(0 \le |\theta| \le \theta_1\), the stiffness remains constant at \(K_T\). For \(\theta_1 \le |\theta| \le \theta_2\), the stiffness transitions from \(K_T\) to \(K_n\), introducing the negative-stiffness region. \(\theta_2 \le |\theta| \le \theta_3\), the stiffness transitions from \(K_n\) to \(K_p\). The stiffness remains constant at \(K_p\) for rotations beyond \(\theta_3\).
+
+To avoid discontinuities in the tangent stiffness, the transitions are smoothed using the normalized function
 \begin{flalign}
 \quad q(s)&=\frac{\tanh\left[\beta\left(s-\frac{1}{2}\right)\right] +\tanh\left(\frac{\beta}{2}\right)}{2\tanh\left(\frac{\beta}{2}\right)},&\qquad &0 \le s \le 1 .&
 \end{flalign}
-The parameter \(\beta\) controls the sharpness of the transition. Larger values of \(\beta\) produce sharper transitions between stiffness regimes, while smaller values produce more gradual transitions. The function satisfies \(q(0)=0\) and \(q(1)=1\), so it provides a smooth interpolation between two prescribed stiffness values.
-
-Let \(K_T\) denote the initial positive stiffness, \( K_n \) denote the negative stiffness, and \( K_p \) denote the final positive stiffness. The transition rotations are denoted by \(\theta_1\), \(\theta_2\), and \(\theta_3\), where \(\theta_1 < \theta_2 < \theta_3\). The tangent stiffness in the bistable region is defined as
+Here, the parameter \(\beta\) controls the sharpness of the transition. Larger values of \(\beta\) produce sharper transitions between stiffness regimes, while smaller values produce more gradual transitions. The function satisfies \(q(0)=0\) and \(q(1)=1\), so it provides a smooth interpolation between two prescribed stiffness values. The tangent stiffness in the bistable region is then defined as
 \begin{flalign}
 \quad K_T(\theta)&=
 \begin{cases}
-K_T,
-\qquad \qquad & 0 \le |\theta| \le \theta_1, \\[6pt]
-K_T + (K_n - K_T)
-q\left(\dfrac{|\theta|-\theta_1}{\theta_2-\theta_1}\right),
-\qquad \qquad & \theta_1 < |\theta| \le \theta_2, \\[12pt]
-K_n + (K_p - K_n)
-q\left(\dfrac{|\theta|-\theta_2}{\theta_3-\theta_2}\right),
-\qquad \qquad & \theta_2 < |\theta| \le \theta_3, \\[12pt]
-K_p,
-\qquad \qquad & |\theta| > \theta_3 .
+K_T, \qquad \qquad & 0 \le |\theta| \le \theta_1, \\[6pt]
+K_T + (K_n - K_T)q\left(\dfrac{|\theta|-\theta_1}{\theta_2-\theta_1}\right), \qquad \qquad & \theta_1 < |\theta| \le \theta_2, \\[12pt]
+K_n + (K_p - K_n) q\left(\dfrac{|\theta|-\theta_2}{\theta_3-\theta_2}\right), \qquad \qquad & \theta_2 < |\theta| \le \theta_3, \\[12pt]
+K_p, \qquad \qquad & |\theta| > \theta_3 .
 \end{cases}&
 \end{flalign}
-This expression directly defines the desired stiffness landscape. The first branch gives a stable linear response near \(\alpha_0\). The second branch smoothly decreases the tangent stiffness from \(K_T\) to \(K_n\), thereby introducing a negative-stiffness regime. The third branch smoothly increases the tangent stiffness from \(K_n\) to \(K_p\), which restores positive stiffness and creates the second stable region.
+This expression directly defines the desired stiffness landscape as shown in Fig.~\ref{fig-bistable-hinge}\,(a, bottom).
 
 The restoring moment is obtained by integrating the tangent stiffness with respect to the relative rotation. To write the moment in closed form, the primitive of \(q(s)\) is defined as
 \begin{flalign}
@@ -242,7 +234,7 @@ The normalized transition variables are
 \begin{flalign}
 \quad s_n&=\frac{|\theta|-\theta_1}{\theta_2-\theta_1}~,&\qquad &s_p=\frac{|\theta|-\theta_2}{\theta_3-\theta_2}~.&
 \end{flalign}
-The moment magnitude is then
+The moment magnitude can then be expressed as
 \begin{flalign}
 \quad M_{\mathrm{mag}}(\theta)&=
 \begin{cases}
@@ -260,28 +252,17 @@ and
 \begin{flalign}
 \quad M_{\mathrm{well}}&=M_{\mathrm{peak}}+(\theta_3-\theta_2)\left[K_n+(K_p - K_n)Q(1)\right]~.&
 \end{flalign}
-
 The signed restoring moment is obtained by restoring the sign of the relative rotation:
 \begin{flalign}
 \quad M(\alpha)&=\chi M_{\mathrm{mag}}(\theta)~.&
 \end{flalign}
-This definition makes the moment antisymmetric about \(\alpha_0\), while the tangent stiffness remains symmetric about \(\alpha_0\).
+This definition makes the moment antisymmetric about \(\alpha_0\), while the tangent stiffness remains symmetric about \(\alpha_0\), as shown in Fig.~\ref{fig-bistable-hinge}\,(a, middle).
 
-The strain energy is obtained by integrating the restoring moment from the reference configuration to the current hinge angle:
+The strain energy is obtained by integrating the moment from the reference configuration to the current hinge angle:
 \begin{flalign}
-\quad U_B(\alpha)&=\int_{\alpha_0}^{\alpha}M_B(\tilde{\alpha})\,d\tilde{\alpha}~.&
+\quad U(\alpha)&=\int_{\alpha_0}^{\alpha}M(\tilde{\alpha})\,d\tilde{\alpha}~.&
 \end{flalign}
-Because the constitutive law is symmetric about \( \alpha_0 \), the energy can also be expressed in terms of the rotation magnitude as
-\begin{flalign}
-\quad U_B(\theta)&=\int_0^{|\theta|}M_{\mathrm{mag}}(\eta)\,d\eta~.&
-\end{flalign}
-Equivalently, since the moment is the integral of the tangent stiffness, the energy may be written as
-\begin{flalign}
-\quad U_B(\theta)&=\int_0^{|\theta|}\left[\int_0^\eta K_B(\xi) \ d\xi\right]d\eta~.&
-\end{flalign}
-This expression emphasizes that the bistable energy landscape is generated directly from the prescribed tangent stiffness. The positive-stiffness regions form stable wells, while the negative-stiffness region creates the energy barrier separating them.
-
-For rotations outside the interval \(\alpha_1 < \alpha < \alpha_2\), the spring response follows the enhanced torsional spring law introduced in the previous section. The bistable law therefore governs the interior response, while the enhanced law controls the limiting behavior near the admissible rotation bounds.
+and is shown in Fig.~\ref{fig-bistable-hinge}\,(a, top). This strain energy curve shows the first stable configuration at \(\alpha = \alpha_0\), the unstable energy barrier at \(|\alpha-\alpha_0|=\theta_2\) characterized by the energy local maximum and the second stable configuration of the spring at \(|\alpha-\alpha_0|=\theta_3\) characterized by the energy local minimum.
 
 \subsection{Structural Response of Reconfigurable Trusses with Bistable Torsional Hinges}\label{04-subsec-bistable-examples}
 This subsection presents two example structures fitted with bistable torsional hinges. The examples demonstrate how the proposed formulation can represent highly nonlinear hinge response within the structural analysis of reconfigurable trusses. A physical prototype of this idealized bistable torsional spring has not yet been developed. Therefore, the examples are intended as computational demonstrations of the modeling capability. They show how bistable hinge laws can be used to study snap-through, post-transition stiffening, and transitions between multiple stable states.
