@@ -398,7 +398,10 @@
  % Add this page to the table of contents.
  \phantomsection\addcontentsline{toc}{frontchapter}{Acknowledgements}
  % Apply formatting style 7
- \formatfrontmatter{Acknowledgements}{\@acknowledgments}
+ \begingroup
+  \setlength{\parskip}{1\baselineskip}
+  \formatfrontmatter{Acknowledgements}{\@acknowledgments}
+ \endgroup
 }
 
 %% ---- PREFACE PAGE ---------------------------------------------------
@@ -741,7 +744,10 @@
  % Insert the abstract text.
  \onehalfspacing %
  % Insert the text.
- \insertabstract %
+ \begingroup
+  \setlength{\parskip}{1\baselineskip}
+  \insertabstract %
+ \endgroup
  % Vertical rubber space
  \vspace*{\stretch{1}} %
 }
