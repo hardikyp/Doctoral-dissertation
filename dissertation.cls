@@ -399,7 +399,7 @@
  \phantomsection\addcontentsline{toc}{frontchapter}{Acknowledgements}
  % Apply formatting style 7
  \begingroup
-  \setlength{\parskip}{1\baselineskip}
+  \setlength{\parskip}{0.5\baselineskip}
   \formatfrontmatter{Acknowledgements}{\@acknowledgments}
  \endgroup
 }
@@ -745,7 +745,7 @@
  \onehalfspacing %
  % Insert the text.
  \begingroup
-  \setlength{\parskip}{1\baselineskip}
+  \setlength{\parskip}{0.5\baselineskip}
   \insertabstract %
  \endgroup
  % Vertical rubber space
