@@ -133,9 +133,7 @@ For the rotating assembly, one hub face is held fixed while the opposing hub fac
 U(\theta) \approx PV(\theta)
 \end{equation}
 where \(V(\theta)=\ell A(\theta)\) is the effective interaction volume between the two hub faces and \(\ell=t+g\) is the interaction height, taken as the sum of the magnet thickness and axial gap. The torque associated with the magnetic interaction is approximated from the rate of change of the overlap area with respect to the angular displacement  \(\theta\):
-\begin{equation}
-\tau(\theta) \approx - P \ell \frac{dA}{d\theta}
-\end{equation}
+
 
 The simulated torque required to rotate the magnetic multistable hinge and the corresponding work are shown in Fig.~\ref{fig-magnetic-prototype}\,(c) and (d), respectively. The alternating magnet polarity produces a periodic response with a period of \(\pi/2\) radians, resulting in four repeating regions over one full rotation. In the torque-rotation response, sharp transitions occur from a positive to negative torque as magnet pairs on either face switch between attractive and repulsive configurations. The corresponding work-rotation response forms a periodic energy landscape with four repeated energy wells. The local minima correspond to stable configurations, while the local maxima represent energy barriers between adjacent stable states. These four energy minima are consistent with the stable states observed in the fabricated four-bar linkage prototype.
 
@@ -199,7 +197,26 @@ The corresponding energy response is shown in Fig.~\ref{fig-magnetic-hinge}\,(b,
 
 This example shows that the proposed torsional spring formulation can reproduce the essential mechanics of a magnetic multistable hinge within the nonlinear truss analysis tools. The model captures the load reversals, snap-through transitions, and repeated energy barriers associated with successive stable configurations.
 
-\subsection{A note on scaling the magnetic hinges to large-scale structures}\label{04-subsec-magnetic-hinge-scalability}
+\subsection{A Note on Scaling Magnetic Hinges to Larger Systems}\label{04-subsec-magnetic-hinge-scalability}
+The simulated torque required to deform the magnetic multistable hinge prototype presented in Section~\ref{04-subsec-magnetic-hinge-prototype} is on the order of \(10^{-2}\)~Nm. The corresponding energy required to move the hinge between stable states is on the order of \(10^{-2}\)~J. Similarly, the loads required to move the reconfigurable truss between its stable configurations in Section~\ref{04-subsec-magnetic-hinge-model} are relatively small. These values are a consequence of the scale and geometry of the prototype rather than an inherent limitation of magnetic multistable hinges.
+
+The prototype uses small permanent magnets and a compact hinge geometry. In addition, rotation of the hinge primarily produces relative tangential motion between the magnets rather than direct axial separation. Permanent magnets generally resist direct pull-off more strongly than relative sliding or shearing motion. The resulting tangential force available to resist hinge rotation is therefore lower than the maximum attractive force associated with axial separation. The small dimensions of the prototype also limit the moment arm through which this force generates a resisting torque. Consequently, the magnetic resistance to rotation remains relatively small. In a structure, these smaller hinges also require smaller forces to move between stable configurations. 
+
+The prototype was intended primarily to demonstrate the multistable hinge concept and to establish a basis for modeling its response. Larger structural systems can accommodate larger, stronger magnets, which would substantially increase the resisting torque of the hinge. The magnetic strength could also be scaled using actively controlled electromagnets. Such systems would allow the resistance of the hinge to be adjusted according to the loading conditions or desired structural response. Friction between components may provide an additional source of resistance and energy dissipation, although this effect is not included in the present model.
+
+The reduced-order model developed in Section~\ref{04-subsec-magnetic-hinge-prototype} also provides a useful basis for understanding how the hinge response changes with magnet strength. For a fixed hinge geometry and magnet arrangement, the model indicates that the resisting torque, \(\tau\), follows
+\begin{equation}
+\tau(\theta) \propto B_r^2~,
+\end{equation}
+where \(\theta\) is the angle of hinge rotation and \(B_r\) is the remanent magnetic flux density of the permanent magnets. This quadratic dependence arises because the magnetic interaction depends on the product of the magnetic strengths of the interacting magnets. For identical permanent magnets, the magnetic moment of each magnet is approximately proportional to \(B_r\). The interaction energy, and therefore the torque obtained from its variation with rotation, consequently scales with \(B_r^2\).
+
+This relationship has important implications for scaling the hinge to practical structures. For an otherwise unchanged hinge, increasing \(B_r\) by a factor of two would produce approximately a fourfold increase in resisting torque. The energy barrier between stable states,
+\begin{equation}
+\Delta U = \int_{\theta_1}^{\theta_2} \tau(\theta)\,d\theta~,
+\end{equation}
+inherits the same quadratic dependence when the shape of the torque-rotation response remains unchanged. Stronger magnets can therefore increase both the load required to reconfigure the structure and the energy associated with transitions between stable states. Increasing the physical dimensions of the magnets and the hinge provides an additional means of increasing these quantities beyond the dependence on \(B_r\) alone.
+
+Finally, the resistance of an individual magnetic hinge should not be interpreted as the sole measure of the load-carrying or energy-absorbing capacity of the complete structure. In the systems considered here, magnetic multistability can be combined with elastic buckling of the reconfigurable truss members. Sequential activation of multiple hinges can further distribute deformation over a larger range of structural motion. The structural response, therefore, results from the combined behavior of the magnetic hinges and the sequence in which different mechanisms are activated.
 
 \section{Bi-Stable Torsional Springs}\label{04-sec-bistable-spring}
 The previous sections introduced piecewise nonlinear behavior into the 3NTS element through the enhanced spring law and the magnetic multistable hinge law. This section extends that idea to an idealized bistable torsional spring. Although a physical realization of this specific spring law is not considered here, the formulation serves as a demonstration of the modeling capabilities of the tools developed in this work. In particular, it shows how the 3NTS element can be used to simulate programmed mechanical response in reconfigurable trusses with multiple stable configurations.
